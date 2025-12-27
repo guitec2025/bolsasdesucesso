@@ -1,0 +1,76 @@
+{
+  "placeholderImages": [
+    {
+      "id": "logo",
+      "description": "Logo do Fioleta Crochê, uma planta de crochê num vaso",
+      "imageUrl": "https://images.unsplash.com/photo-1756361771435-b60616ef968c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjcm9jaGV0JTIwbG9nb3xlbnwwfHx8fDE3NjY3MjI1NjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crochet logo"
+    },
+    {
+      "id": "hero-crochet-flowers",
+      "description": "Flores de crochê (tulipas) em vasos, com um fundo desfocado",
+      "imageUrl": "https://images.unsplash.com/photo-1700170447159-9d2d0da133a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjcm9jaGV0JTIwZmxvd2Vyc3xlbnwwfHx8fDE3NjY3MjI1NjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crochet flowers"
+    },
+    {
+      "id": "crochet-flower-1",
+      "description": "Vaso com flor de crochê roxa",
+      "imageUrl": "https://images.unsplash.com/photo-1700171518313-5dd219beaaa6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjcm9jaGV0JTIwZmxvd2VyfGVufDB8fHx8MTc2NjcyMTMwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crochet flower"
+    },
+    {
+      "id": "crochet-flower-2",
+      "description": "Vaso com flor de crochê laranja",
+      "imageUrl": "https://images.unsplash.com/photo-1700170447159-9d2d0da133a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjcm9jaGV0JTIwZmxvd2VyfGVufDB8fHx8MTc2NjcyMTMwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crochet flower"
+    },
+    {
+      "id": "crochet-flower-3",
+      "description": "Vaso com flor de crochê branca",
+      "imageUrl": "https://images.unsplash.com/photo-1700170447159-9d2d0da133a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjcm9jaGV0JTIwZmxvd2VyfGVufDB8fHx8MTc2NjcyMTMwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crochet flower"
+    },
+    {
+      "id": "crochet-flower-4",
+      "description": "Vaso com flor de crochê vermelha",
+      "imageUrl": "https://images.unsplash.com/photo-1700161093261-e059af3897c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y3JvY2hldCUyMGZsb3dlcnxlbnwwfHx8fDE3NjY3MjEzMDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crochet flower"
+    },
+    {
+      "id": "crochet-flower-5",
+      "description": "Vaso com flor de crochê rosa",
+      "imageUrl": "https://images.unsplash.com/photo-1700171394718-2457b1190444?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjcm9jaGV0JTIwZmxvd2VyfGVufDB8fHx8MTc2NjcyMTMwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crochet flower"
+    },
+    {
+      "id": "crochet-flower-6",
+      "description": "Vaso com flor de crochê margarida",
+      "imageUrl": "https://images.unsplash.com/photo-1700171518313-5dd219beaaa6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjcm9jaGV0JTIwZmxvd2VyfGVufDB8fHx8MTc2NjcyMTMwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crochet flower"
+    },
+    {
+      "id": "crochet-flower-7",
+      "description": "Vaso com flor de crochê azul",
+      "imageUrl": "https://images.unsplash.com/photo-1700171458554-46cfd3f2a87a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjcm9jaGV0JTIwZmxvd2VyfGVufDB8fHx8MTc2NjcyMTMwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crochet flower"
+    },
+    {
+      "id": "crochet-flower-8",
+      "description": "Vaso com flores de crochê coloridas",
+      "imageUrl": "https://images.unsplash.com/photo-1752755098269-58113eb87d61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjcm9jaGV0JTIwZmxvd2VyfGVufDB8fHx8MTc2NjcyMTMwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crochet flower"
+    },
+    {
+      "id": "crochet-flower-9",
+      "description": "Vaso com flor de crochê rosa claro",
+      "imageUrl": "https://images.unsplash.com/photo-1752755098269-58113eb87d61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjcm9jaGV0JTIwZmxvd2VyfGVufDB8fHx8MTc2NjcyMTMwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crochet flower"
+    },
+    {
+      "id": "crochet-flower-10",
+      "description": "Vaso com flor de crochê cacto",
+      "imageUrl": "https://images.unsplash.com/photo-1570321427645-80ff2e10908b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjcm9jaGV0JTIwY2FjdHVzfGVufDB8fHx8MTc2NjcyMjU2Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crochet cactus"
+    }
+  ]
+}

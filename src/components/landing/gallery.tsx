@@ -1,0 +1,95 @@
+
+'use client';
+
+import Image from 'next/image';
+import { Button } from '../ui/button';
+import { useState } from 'react';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { Eye } from 'lucide-react';
+
+const allImages = [
+  { id: 'crochet-bag-1', imageUrl: `https://i.imgur.com/r76j16N.jpeg`, description: `Bolsa de crochê 1`, imageHint: 'crochet bag' },
+  { id: 'crochet-bag-2', imageUrl: `https://i.imgur.com/ON1Tyqp.jpeg`, description: `Bolsa de crochê 2`, imageHint: 'crochet bag' },
+  { id: 'crochet-bag-3', imageUrl: `https://i.imgur.com/ftp5Wn6.jpeg`, description: `Bolsa de crochê 3`, imageHint: 'crochet bag' },
+  { id: 'crochet-bag-4', imageUrl: `https://i.imgur.com/Kc3jGcW.jpeg`, description: `Bolsa de crochê 4`, imageHint: 'crochet bag' },
+  { id: 'crochet-bag-5', imageUrl: `https://i.imgur.com/7HMTFU7.jpeg`, description: `Bolsa de crochê 5`, imageHint: 'crochet bag' },
+  { id: 'crochet-bag-6', imageUrl: `https://i.imgur.com/7xmWbQN.jpeg`, description: `Bolsa de crochê 6`, imageHint: 'crochet bag' },
+  { id: 'crochet-bag-7', imageUrl: `https://i.imgur.com/tgEESxy.png`, description: `Bolsa de crochê 7`, imageHint: 'crochet bag' },
+  { id: 'crochet-bag-8', imageUrl: `https://i.imgur.com/LBRCsGE.jpeg`, description: `Bolsa de crochê 8`, imageHint: 'crochet bag' },
+  { id: 'crochet-bag-9', imageUrl: `https://i.imgur.com/OviKXmZ.png`, description: `Bolsa de crochê 9`, imageHint: 'crochet bag' },
+  { id: 'crochet-bag-10', imageUrl: `https://i.imgur.com/euJlX0g.png`, description: `Bolsa de crochê 10`, imageHint: 'crochet bag' },
+  { id: 'crochet-bag-11', imageUrl: `https://i.imgur.com/I7tSjwc.jpeg`, description: `Bolsa de crochê 11`, imageHint: 'crochet bag' },
+  { id: 'crochet-bag-12', imageUrl: `https://i.imgur.com/rZ02jgI.jpeg`, description: `Bolsa de crochê 12`, imageHint: 'crochet bag' },
+  { id: 'crochet-bag-13', imageUrl: `https://i.imgur.com/ERj3yZh.png`, description: `Bolsa de crochê 13`, imageHint: 'crochet bag' },
+  { id: 'crochet-bag-14', imageUrl: `https://i.imgur.com/C5JfdZW.png`, description: `Bolsa de crochê 14`, imageHint: 'crochet bag' },
+];
+
+
+export function Gallery() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  return (
+    <section id="gallery" className="py-12 sm:py-24 bg-background">
+      <div className="container mx-auto text-center px-4">
+        <p className="inline-block bg-accent text-accent-foreground px-3 py-1 rounded-lg text-sm font-semibold border border-border shadow-sm">
+          Galeria de Bolsas
+        </p>
+        <h2 className="text-3xl sm:text-4xl font-bold font-headline mt-4 text-[#563209]">
+          +de 67 Coleções Incriveis
+        </h2>
+        <p className="mt-4 max-w-2xl mx-auto text-foreground text-lg">
+          Todos os modelos foram desenhados para serem <b>lindos, vendáveis</b> e perfeitos para quem ama artesanato.
+        </p>
+        
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 mt-8">
+          {allImages.slice(0, 10).map((image) => (
+              <div 
+                key={image.id} 
+                className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 group bg-card cursor-pointer"
+                onClick={() => setSelectedImage(image.imageUrl)}
+              >
+                <Image
+                    src={image.imageUrl}
+                    alt={image.description}
+                    width={300}
+                    height={300}
+                    className="object-cover w-full h-full aspect-square transition-transform duration-300 group-hover:scale-105"
+                    data-ai-hint={image.imageHint}
+                />
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-full p-3">
+                    <Eye className="w-6 h-6 text-[#AE5A32]" />
+                  </div>
+                </div>
+              </div>
+          ))}
+        </div>
+        
+        {selectedImage && (
+          <Dialog open={!!selectedImage} onOpenChange={(isOpen) => !isOpen && setSelectedImage(null)}>
+            <DialogContent className="max-w-3xl p-4 sm:p-6 border-0">
+               <DialogTitle className="sr-only">Visualização da imagem da bolsa de crochê</DialogTitle>
+               <DialogDescription className="text-center text-foreground/80 -mb-2 sm:mb-0">
+                Um dos mais de 67 padrões exclusivos que você vai aprender no curso.
+               </DialogDescription>
+              <Image 
+                src={selectedImage}
+                alt="Visualização da bolsa de crochê"
+                width={800}
+                height={800}
+                className="object-contain w-full h-full rounded-md"
+              />
+            </DialogContent>
+          </Dialog>
+        )}
+
+        <p className="mt-12 text-foreground text-lg">Clique no botão abaixo para garantir sua vaga e ter acesso à coleção completa.</p>
+        <Button size="lg" className="mt-4 h-14 text-lg bg-primary hover:bg-primary/90 text-primary-foreground font-medium" asChild>
+          <a href="#pricing">
+            QUERO A COLEÇÃO COMPLETA
+          </a>
+        </Button>
+      </div>
+    </section>
+  );
+}
