@@ -38,6 +38,7 @@ const AnimatedSection = ({ children, className }: { children: React.ReactNode, c
 const componentConfig = [
   { ref: 'gallery', Component: Gallery },
   { ref: 'bonuses', Component: dynamic(() => import('@/components/landing/bonuses').then(mod => mod.Bonuses)) },
+  { ref: 'more-testimonials', Component: dynamic(() => import('@/components/landing/more-testimonials').then(mod => mod.MoreTestimonials)) },
   { ref: 'pricing', Component: dynamic(() => import('@/components/landing/pricing').then(mod => mod.Pricing)) },
   { ref: 'guarantee', Component: dynamic(() => import('@/components/landing/guarantee').then(mod => mod.Guarantee)) },
   { ref: 'about', Component: dynamic(() => import('@/components/landing/about').then(mod => mod.About)) },
