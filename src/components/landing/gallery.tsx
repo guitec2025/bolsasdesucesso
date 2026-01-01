@@ -6,64 +6,84 @@ import { Button } from '../ui/button';
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Eye } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const allImages = [
-  { id: 'crochet-bag-1', imageUrl: `https://i.imgur.com/r76j16N.jpeg`, description: `Bolsa de crochê 1`, imageHint: 'crochet bag' },
-  { id: 'crochet-bag-2', imageUrl: `https://i.imgur.com/ON1Tyqp.jpeg`, description: `Bolsa de crochê 2`, imageHint: 'crochet bag' },
-  { id: 'crochet-bag-3', imageUrl: `https://i.imgur.com/ftp5Wn6.jpeg`, description: `Bolsa de crochê 3`, imageHint: 'crochet bag' },
-  { id: 'crochet-bag-4', imageUrl: `https://i.imgur.com/Kc3jGcW.jpeg`, description: `Bolsa de crochê 4`, imageHint: 'crochet bag' },
-  { id: 'crochet-bag-5', imageUrl: `https://i.imgur.com/7HMTFU7.jpeg`, description: `Bolsa de crochê 5`, imageHint: 'crochet bag' },
-  { id: 'crochet-bag-6', imageUrl: `https://i.imgur.com/7xmWbQN.jpeg`, description: `Bolsa de crochê 6`, imageHint: 'crochet bag' },
-  { id: 'crochet-bag-7', imageUrl: `https://i.imgur.com/tgEESxy.png`, description: `Bolsa de crochê 7`, imageHint: 'crochet bag' },
-  { id: 'crochet-bag-8', imageUrl: `https://i.imgur.com/LBRCsGE.jpeg`, description: `Bolsa de crochê 8`, imageHint: 'crochet bag' },
-  { id: 'crochet-bag-9', imageUrl: `https://i.imgur.com/OviKXmZ.png`, description: `Bolsa de crochê 9`, imageHint: 'crochet bag' },
-  { id: 'crochet-bag-10', imageUrl: `https://i.imgur.com/euJlX0g.png`, description: `Bolsa de crochê 10`, imageHint: 'crochet bag' },
-  { id: 'crochet-bag-11', imageUrl: `https://i.imgur.com/I7tSjwc.jpeg`, description: `Bolsa de crochê 11`, imageHint: 'crochet bag' },
-  { id: 'crochet-bag-12', imageUrl: `https://i.imgur.com/rZ02jgI.jpeg`, description: `Bolsa de crochê 12`, imageHint: 'crochet bag' },
-  { id: 'crochet-bag-13', imageUrl: `https://i.imgur.com/ERj3yZh.png`, description: `Bolsa de crochê 13`, imageHint: 'crochet bag' },
-  { id: 'crochet-bag-14', imageUrl: `https://i.imgur.com/C5JfdZW.png`, description: `Bolsa de crochê 14`, imageHint: 'crochet bag' },
+  { id: 'crochet-bag-1', imageUrl: `https://i.imgur.com/r76j16N.jpeg`, description: `Bolsa de crochê 1`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-2', imageUrl: `https://i.imgur.com/ON1Tyqp.jpeg`, description: `Bolsa de crochê 2`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-3', imageUrl: `https://i.imgur.com/ftp5Wn6.jpeg`, description: `Bolsa de crochê 3`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-4', imageUrl: `https://i.imgur.com/Kc3jGcW.jpeg`, description: `Bolsa de crochê 4`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-5', imageUrl: `https://i.imgur.com/7HMTFU7.jpeg`, description: `Bolsa de crochê 5`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-6', imageUrl: `https://i.imgur.com/7xmWbQN.jpeg`, description: `Bolsa de crochê 6`, imageHint: 'crochet bag', category: 'praia' },
+  { id: 'crochet-bag-7', imageUrl: `https://i.imgur.com/tgEESxy.png`, description: `Bolsa de crochê 7`, imageHint: 'crochet bag', category: 'praia' },
+  { id: 'crochet-bag-8', imageUrl: `https://i.imgur.com/LBRCsGE.jpeg`, description: `Bolsa de crochê 8`, imageHint: 'crochet bag', category: 'praia' },
+  { id: 'crochet-bag-9', imageUrl: `https://i.imgur.com/OviKXmZ.png`, description: `Bolsa de crochê 9`, imageHint: 'crochet bag', category: 'praia' },
+  { id: 'crochet-bag-10', imageUrl: `https://i.imgur.com/euJlX0g.png`, description: `Bolsa de crochê 10`, imageHint: 'crochet bag', category: 'praia' },
+  { id: 'crochet-bag-11', imageUrl: `https://i.imgur.com/I7tSjwc.jpeg`, description: `Bolsa de crochê 11`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-12', imageUrl: `https://i.imgur.com/rZ02jgI.jpeg`, description: `Bolsa de crochê 12`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-13', imageUrl: `https://i.imgur.com/ERj3yZh.png`, description: `Bolsa de crochê 13`, imageHint: 'crochet bag', category: 'praia' },
+  { id: 'crochet-bag-14', imageUrl: `https://i.imgur.com/C5JfdZW.png`, description: `Bolsa de crochê 14`, imageHint: 'crochet bag', category: 'praia' },
 ];
 
 
 export function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  
+  const renderGalleryGrid = (category: 'bolsas' | 'praia') => {
+    const images = allImages.filter(img => img.category === category).slice(0, 10);
+    return (
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 mt-8">
+        {images.map((image) => (
+            <div 
+              key={image.id} 
+              className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 group bg-card cursor-pointer"
+              onClick={() => setSelectedImage(image.imageUrl)}
+            >
+              <Image
+                  src={image.imageUrl}
+                  alt={image.description}
+                  width={300}
+                  height={300}
+                  className="object-cover w-full h-full aspect-square transition-transform duration-300 group-hover:scale-105"
+                  data-ai-hint={image.imageHint}
+              />
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="bg-white/80 backdrop-blur-sm rounded-full p-3">
+                  <Eye className="w-6 h-6 text-[#AE5A32]" />
+                </div>
+              </div>
+            </div>
+        ))}
+      </div>
+    );
+  };
+
 
   return (
     <section id="gallery" className="py-12 sm:py-24 bg-background">
       <div className="container mx-auto text-center px-4">
-        <p className="inline-block bg-accent text-accent-foreground px-3 py-1 rounded-lg text-sm font-semibold border border-border shadow-sm">
+        <div className="inline-block bg-card text-accent-foreground px-3 py-1 rounded-lg text-sm font-semibold border border-border shadow-sm">
           Galeria de Bolsas
-        </p>
+        </div>
         <h2 className="text-3xl sm:text-4xl font-bold font-headline mt-4 text-[#563209]">
-          +de 67 Coleções Incriveis
+          +de 67 Coleções Incríveis
         </h2>
         <p className="mt-4 max-w-2xl mx-auto text-foreground text-lg">
           Todos os modelos foram desenhados para serem <b>lindos, vendáveis</b> e perfeitos para quem ama artesanato.
         </p>
-        
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 mt-8">
-          {allImages.slice(0, 10).map((image) => (
-              <div 
-                key={image.id} 
-                className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 group bg-card cursor-pointer"
-                onClick={() => setSelectedImage(image.imageUrl)}
-              >
-                <Image
-                    src={image.imageUrl}
-                    alt={image.description}
-                    width={300}
-                    height={300}
-                    className="object-cover w-full h-full aspect-square transition-transform duration-300 group-hover:scale-105"
-                    data-ai-hint={image.imageHint}
-                />
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="bg-white/80 backdrop-blur-sm rounded-full p-3">
-                    <Eye className="w-6 h-6 text-[#AE5A32]" />
-                  </div>
-                </div>
-              </div>
-          ))}
-        </div>
+
+        <Tabs defaultValue="bolsas" className="w-full max-w-sm mx-auto mt-8">
+          <TabsList className="grid w-full grid-cols-2 h-auto p-2">
+            <TabsTrigger value="bolsas" className="text-base">Bolsas</TabsTrigger>
+            <TabsTrigger value="praia" className="text-base">Bolsas Praia Luxo</TabsTrigger>
+          </TabsList>
+          <TabsContent value="bolsas">
+            {renderGalleryGrid('bolsas')}
+          </TabsContent>
+          <TabsContent value="praia">
+            {renderGalleryGrid('praia')}
+          </TabsContent>
+        </Tabs>
         
         {selectedImage && (
           <Dialog open={!!selectedImage} onOpenChange={(isOpen) => !isOpen && setSelectedImage(null)}>
