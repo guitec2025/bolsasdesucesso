@@ -39,7 +39,7 @@ export function ThankYou() {
           
           <div className="mt-10 w-full">
             <Button asChild size="lg" className="h-14 w-full text-lg font-bold bg-primary hover:bg-primary/90 text-primary-foreground animate-pulse">
-                <Link href="#">
+                <Link href="https://acessobolsaslucrativas.netlify.app/">
                     QUERO ACESSAR O CURSO AGORA
                 </Link>
             </Button>
