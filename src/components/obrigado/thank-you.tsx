@@ -1,9 +1,9 @@
+
 'use client';
 
-import { CheckCircle, Mail, Users } from 'lucide-react';
+import { CheckCircle, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export function ThankYou() {
   return (
@@ -33,15 +33,6 @@ export function ThankYou() {
                 <div>
                     <h3 className="font-bold text-foreground">Verifique seu e-mail</h3>
                     <p className="text-sm text-foreground/80">Enviamos todas as informações de acesso ao curso para o seu e-mail. Caso não encontre, verifique a caixa de spam.</p>
-                </div>
-            </div>
-             <div className="flex items-start gap-4">
-                <div className="p-2 bg-primary/10 rounded-full mt-1">
-                    <Users className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                    <h3 className="font-bold text-foreground">Entre para a Comunidade</h3>
-                    <p className="text-sm text-foreground/80">O link para o nosso grupo exclusivo de alunas também está no seu e-mail. Estamos te esperando lá!</p>
                 </div>
             </div>
           </div>
