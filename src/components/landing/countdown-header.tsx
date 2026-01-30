@@ -21,15 +21,15 @@ export function CountdownHeader() {
   });
 
   useEffect(() => {
-    // Set target date to January 30th of the current or next year
+    // Set target date to February 2nd of the current or next year
     const now = new Date();
     let targetYear = now.getFullYear();
-    const targetDateForCurrentYear = new Date(targetYear, 0, 30); // Month is 0-indexed (0 = January)
+    const targetDateForCurrentYear = new Date(targetYear, 1, 2); // Month is 0-indexed (1 = February)
 
     if (now > targetDateForCurrentYear) {
       targetYear += 1;
     }
-    const targetDate = new Date(targetYear, 0, 30);
+    const targetDate = new Date(targetYear, 1, 2);
 
     const interval = setInterval(() => {
       const now = new Date();
@@ -54,7 +54,7 @@ export function CountdownHeader() {
     <div className="bg-background py-3 border-b border-border/10">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 px-4">
         <p className="text-foreground/90 font-body text-lg">
-          Inscrições abertas até dia 30 de janeiro
+          Inscrições abertas até dia 02 de fevereiro
         </p>
         <div className="flex items-center gap-3">
           <CountdownUnit value={timeLeft.days} label="Dias" />
