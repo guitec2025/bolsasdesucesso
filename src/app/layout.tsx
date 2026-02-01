@@ -34,8 +34,23 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <head>
+        {/* Google Tag Manager */}
+        <Script id="google-tag-manager" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-5C63QDLL');
+          `}
+        </Script>
+        {/* End Google Tag Manager */}
       </head>
       <body className={cn("font-body antialiased", alegreya.variable, belleza.variable)}>
+        {/* Google Tag Manager (noscript) */}
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5C63QDLL"
+        height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
+        {/* End Google Tag Manager (noscript) */}
         {children}
         <Toaster />
         <Script id="meta-pixel" strategy="afterInteractive">
@@ -48,7 +63,7 @@ export default function RootLayout({
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '836192886056120', {});
+            fbq('init', '836192886056120', { em: 'email@email.com', ph: '1234567890' });
             fbq('track', 'PageView');
           `}
         </Script>
