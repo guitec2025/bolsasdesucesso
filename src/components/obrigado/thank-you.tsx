@@ -97,7 +97,7 @@ export function ThankYou() {
                 animate={{ opacity: 1, y: 0 }}
                 className="flex items-start gap-4"
               >
-                <Avatar className="w-16 h-16 sm:w-20 sm:h-20 border-2 border-primary/20 shrink-0">
+                <Avatar className="w-20 h-20 sm:w-24 sm:h-24 border-2 border-primary/20 shrink-0">
                   <AvatarImage src={MENTOR_AVATAR} className="object-cover" />
                   <AvatarFallback>TB</AvatarFallback>
                 </Avatar>
@@ -118,12 +118,12 @@ export function ThankYou() {
                 animate={{ opacity: 1, y: 0 }}
                 className="flex items-start gap-4"
               >
-                <Avatar className="w-16 h-16 sm:w-20 sm:h-20 border-2 border-primary/20 shrink-0">
+                <Avatar className="w-20 h-20 sm:w-24 sm:h-24 border-2 border-primary/20 shrink-0">
                   <AvatarImage src={MENTOR_AVATAR} className="object-cover" />
                   <AvatarFallback>TB</AvatarFallback>
                 </Avatar>
                 <div className="bg-white p-4 sm:p-5 rounded-2xl rounded-tl-none shadow-sm border border-gray-100 max-w-[85%]">
-                  <p className="text-[#D97706] text-xl sm:text-3xl font-extrabold">
+                  <p className="text-[#D97706] text-2xl sm:text-4xl font-extrabold">
                     ⚠️ Espere! Antes de acessar suas aulas...
                   </p>
                 </div>
@@ -139,7 +139,7 @@ export function ThankYou() {
                 animate={{ opacity: 1, y: 0 }}
                 className="flex items-start gap-4"
               >
-                <Avatar className="w-16 h-16 sm:w-20 sm:h-20 border-2 border-primary/20 shrink-0">
+                <Avatar className="w-20 h-20 sm:w-24 sm:h-24 border-2 border-primary/20 shrink-0">
                   <AvatarImage src={MENTOR_AVATAR} className="object-cover" />
                   <AvatarFallback>TB</AvatarFallback>
                 </Avatar>
@@ -193,7 +193,7 @@ export function ThankYou() {
                 animate={{ opacity: 1, y: 0 }}
                 className="flex items-start gap-4"
               >
-                <Avatar className="w-16 h-16 sm:w-20 sm:h-20 border-2 border-primary/20 shrink-0">
+                <Avatar className="w-20 h-20 sm:w-24 sm:h-24 border-2 border-primary/20 shrink-0">
                   <AvatarImage src={MENTOR_AVATAR} className="object-cover" />
                   <AvatarFallback>TB</AvatarFallback>
                 </Avatar>
@@ -267,12 +267,11 @@ export function ThankYou() {
                     </Link>
                 </Button>
                 
-                <Link 
-                  href="https://acessobolsaslucrativas.netlify.app/" 
-                  className="text-base text-gray-500 hover:text-gray-800 underline transition-colors font-semibold py-2"
-                >
-                  Prefiro continuar apenas com o material que já comprei
-                </Link>
+                <Button asChild variant="destructive" size="sm" className="bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg h-10 px-6 transition-all active:scale-[0.98]">
+                  <Link href="https://acessobolsaslucrativas.netlify.app/">
+                    Prefiro continuar apenas com o material que já comprei
+                  </Link>
+                </Button>
               </motion.div>
             )}
           </AnimatePresence>
