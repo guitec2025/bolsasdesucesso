@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { CheckCircle, Sparkles, Play, Pause, Volume2 } from 'lucide-react';
+import { CheckCircle, Sparkles, Gift, Pause, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
@@ -72,7 +72,7 @@ export function ThankYou() {
                 </Avatar>
                 <div className="bg-white p-4 sm:p-5 rounded-2xl rounded-tl-none shadow-sm border border-gray-100 max-w-[85%]">
                   <p className="text-[#1F2937] text-lg sm:text-xl font-medium">
-                    Que alegria ter você com a gente! Prepare-se para mergulhar no universo do crochê e transformar sua paixão em um negócio de sucesso. ❤️‍🩹
+                    Prepare-se para mergulhar no universo do crochê e transformar sua paixão em um negócio de sucesso. ❤️‍🩹
                   </p>
                 </div>
               </motion.div>
@@ -124,7 +124,7 @@ export function ThankYou() {
                       onClick={togglePlay}
                       className="bg-[#D97706] p-3 rounded-full text-white cursor-pointer hover:bg-[#B45309] transition-colors flex items-center justify-center outline-none"
                     >
-                      {isPlaying ? <Pause className="w-6 h-6 fill-current" /> : <Play className="w-6 h-6 fill-current ml-1" />}
+                      {isPlaying ? <Pause className="w-6 h-6 fill-current" /> : <Gift className="w-6 h-6 fill-current" />}
                     </button>
                     <div className="flex-grow">
                       <div className="h-2 bg-gray-100 rounded-full w-full overflow-hidden">
