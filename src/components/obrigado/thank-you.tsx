@@ -13,13 +13,6 @@ const MENTOR_AVATAR = "https://i.imgur.com/OjoRTG0.png";
 export function ThankYou() {
   const [messagesVisible, setMessagesVisible] = useState(0);
 
-  const benefits = [
-    "Centenas de novos modelos de crochê",
-    "Receitas extras e exclusivas",
-    "Mais ideias de peças para criar",
-    "Conteúdo adicional para ampliar seu acervo"
-  ];
-
   useEffect(() => {
     const timers = [
       setTimeout(() => setMessagesVisible(1), 1000),
@@ -34,7 +27,7 @@ export function ThankYou() {
     <section className="py-8 sm:py-16 bg-[#f9fafb] min-h-screen font-body">
       <div className="container mx-auto px-4 max-w-2xl">
         
-        {/* Bloco de Confirmação (Conforme a imagem enviada) */}
+        {/* Bloco de Confirmação */}
         <div className="flex flex-col items-center text-center mb-10">
           <motion.div 
             initial={{ scale: 0 }}
@@ -58,14 +51,14 @@ export function ThankYou() {
               <motion.div 
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex items-start gap-3"
+                className="flex items-start gap-4"
               >
-                <Avatar className="w-10 h-10 border-2 border-primary/20">
+                <Avatar className="w-14 h-14 sm:w-16 sm:h-16 border-2 border-primary/20 shrink-0">
                   <AvatarImage src={MENTOR_AVATAR} />
                   <AvatarFallback>TB</AvatarFallback>
                 </Avatar>
-                <div className="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm border border-gray-100 max-w-[85%]">
-                  <p className="text-[#1F2937] text-lg font-medium">
+                <div className="bg-white p-4 sm:p-5 rounded-2xl rounded-tl-none shadow-sm border border-gray-100 max-w-[85%]">
+                  <p className="text-[#1F2937] text-lg sm:text-xl font-medium">
                     Que alegria ter você com a gente! Prepare-se para mergulhar no universo do crochê e transformar sua paixão em um negócio de sucesso. ❤️‍🩹
                   </p>
                 </div>
@@ -79,14 +72,14 @@ export function ThankYou() {
               <motion.div 
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex items-start gap-3"
+                className="flex items-start gap-4"
               >
-                <Avatar className="w-10 h-10 border-2 border-primary/20">
+                <Avatar className="w-14 h-14 sm:w-16 sm:h-16 border-2 border-primary/20 shrink-0">
                   <AvatarImage src={MENTOR_AVATAR} />
                   <AvatarFallback>TB</AvatarFallback>
                 </Avatar>
-                <div className="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm border border-gray-100 max-w-[85%]">
-                  <p className="text-[#D97706] text-xl font-bold">
+                <div className="bg-white p-4 sm:p-5 rounded-2xl rounded-tl-none shadow-sm border border-gray-100 max-w-[85%]">
+                  <p className="text-[#D97706] text-xl sm:text-2xl font-bold">
                     ⚠️ Espere! Antes de acessar suas aulas...
                   </p>
                 </div>
@@ -94,15 +87,15 @@ export function ThankYou() {
             )}
           </AnimatePresence>
 
-          {/* Mensagem 3 (Audio Placeholder / Oferta) */}
+          {/* Mensagem 3 (Audio Oferta) */}
           <AnimatePresence>
             {messagesVisible >= 3 && (
               <motion.div 
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex items-start gap-3"
+                className="flex items-start gap-4"
               >
-                <Avatar className="w-10 h-10 border-2 border-primary/20">
+                <Avatar className="w-14 h-14 sm:w-16 sm:h-16 border-2 border-primary/20 shrink-0">
                   <AvatarImage src={MENTOR_AVATAR} />
                   <AvatarFallback>TB</AvatarFallback>
                 </Avatar>
@@ -112,8 +105,8 @@ export function ThankYou() {
                     <span className="font-bold uppercase tracking-wider text-sm">Presente Misterioso</span>
                   </div>
 
-                  {/* Placeholder de Áudio (Será configurado depois) */}
-                  <div className="bg-white rounded-xl p-4 border border-[#D97706]/20 mb-6 flex items-center gap-4">
+                  {/* Placeholder de Áudio */}
+                  <div className="bg-white rounded-xl p-4 border border-[#D97706]/20 flex items-center gap-4">
                     <div className="bg-[#D97706] p-3 rounded-full text-white">
                       <Play className="w-6 h-6 fill-current" />
                     </div>
@@ -134,31 +127,8 @@ export function ThankYou() {
                     </div>
                     <Volume2 className="w-5 h-5 text-gray-400" />
                   </div>
-
-                  <div className="space-y-4 mb-6">
-                    <p className="text-[#1F2937] text-lg font-bold leading-relaxed">
-                      Você desbloqueou uma surpresa especial liberada apenas para novos alunos!
-                    </p>
-                    <ul className="space-y-2">
-                      {benefits.map((benefit, index) => (
-                        <li key={index} className="flex items-center gap-2 text-[#1F2937] text-sm font-medium">
-                          <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="border-t border-[#D97706]/10 pt-4 text-center">
-                    <p className="text-[#D97706] line-through font-bold text-lg mb-1">Valor original: R$39,90</p>
-                    <div className="bg-white inline-block px-6 py-2 rounded-full shadow-sm border border-[#D97706]/10">
-                      <p className="text-xs font-bold text-gray-500 uppercase tracking-widest">Hoje por apenas</p>
-                      <p className="text-4xl font-black text-[#16A34A]">R$9,90</p>
-                    </div>
-                    <p className="text-[10px] text-[#DC2626] font-bold mt-4 uppercase tracking-[0.1em] animate-pulse">
-                      Essa oferta desaparece quando você sair desta página.
-                    </p>
-                  </div>
+                  
+                  {/* Nota: O texto de benefícios e preços foi removido pois será substituído pelo áudio */}
                 </div>
               </motion.div>
             )}
