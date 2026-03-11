@@ -13,14 +13,15 @@ const AUDIO_URL = "https://files.catbox.moe/ef4ovv.MP3";
 export function ThankYou() {
   const [messagesVisible, setMessagesVisible] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [showButtons, setShowButtons] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const audioStartedRef = useRef(false);
 
   useEffect(() => {
     const timers = [
       setTimeout(() => setMessagesVisible(1), 1000),
       setTimeout(() => setMessagesVisible(2), 2500),
       setTimeout(() => setMessagesVisible(3), 4000),
-      setTimeout(() => setMessagesVisible(4), 5500),
     ];
     return () => timers.forEach(clearTimeout);
   }, []);
@@ -31,6 +32,12 @@ export function ThankYou() {
         audioRef.current.pause();
       } else {
         audioRef.current.play();
+        
+        // Inicia o contador para os botões apenas no primeiro play
+        if (!audioStartedRef.current) {
+          audioStartedRef.current = true;
+          setTimeout(() => setShowButtons(true), 30000); // 30 segundos
+        }
       }
       setIsPlaying(!isPlaying);
     }
@@ -50,7 +57,7 @@ export function ThankYou() {
             <CheckCircle className="h-16 w-16 text-[#4ade80]" />
           </motion.div>
           <p className="text-2xl font-semibold text-[#4D4237]">Parabéns!</p>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-[#4D4237] mt-1 leading-tight">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-[#4D4237] mt-1 leading-tight text-balance">
             Sua inscrição foi <br /> confirmada!
           </h1>
         </div>
@@ -66,7 +73,7 @@ export function ThankYou() {
                 animate={{ opacity: 1, y: 0 }}
                 className="flex items-start gap-4"
               >
-                <Avatar className="w-20 h-20 sm:w-24 sm:h-24 border-2 border-primary/20 shrink-0">
+                <Avatar className="w-24 h-24 sm:w-28 sm:h-28 border-2 border-primary/20 shrink-0">
                   <AvatarImage src={MENTOR_AVATAR} className="object-cover" />
                   <AvatarFallback>TB</AvatarFallback>
                 </Avatar>
@@ -87,7 +94,7 @@ export function ThankYou() {
                 animate={{ opacity: 1, y: 0 }}
                 className="flex items-start gap-4"
               >
-                <Avatar className="w-20 h-20 sm:w-24 sm:h-24 border-2 border-primary/20 shrink-0">
+                <Avatar className="w-24 h-24 sm:w-28 sm:h-28 border-2 border-primary/20 shrink-0">
                   <AvatarImage src={MENTOR_AVATAR} className="object-cover" />
                   <AvatarFallback>TB</AvatarFallback>
                 </Avatar>
@@ -108,26 +115,26 @@ export function ThankYou() {
                 animate={{ opacity: 1, y: 0 }}
                 className="flex items-start gap-4"
               >
-                <Avatar className="w-20 h-20 sm:w-24 sm:h-24 border-2 border-primary/20 shrink-0">
+                <Avatar className="w-24 h-24 sm:w-28 sm:h-28 border-2 border-primary/20 shrink-0">
                   <AvatarImage src={MENTOR_AVATAR} className="object-cover" />
                   <AvatarFallback>TB</AvatarFallback>
                 </Avatar>
                 <div className="bg-[#FFF8EC] p-6 rounded-2xl rounded-tl-none shadow-md border-2 border-[#D97706]/20 w-full max-w-[90%]">
                   <div className="flex items-center gap-2 mb-4 text-[#D97706]">
                     <Sparkles className="w-5 h-5 fill-current" />
-                    <span className="font-bold uppercase tracking-wider text-sm">Presente Misterioso</span>
+                    <span className="font-bold uppercase tracking-wider text-sm sm:text-base">Presente Misterioso</span>
                   </div>
 
                   {/* Player de Áudio Real */}
-                  <div className="bg-white rounded-xl p-4 border border-[#D97706]/20 flex items-center gap-4">
+                  <div className="bg-white rounded-xl p-4 sm:p-6 border border-[#D97706]/20 flex items-center gap-4">
                     <button 
                       onClick={togglePlay}
-                      className="bg-[#D97706] p-3 rounded-full text-white cursor-pointer hover:bg-[#B45309] transition-colors flex items-center justify-center outline-none"
+                      className="bg-[#D97706] p-4 rounded-full text-white cursor-pointer hover:bg-[#B45309] transition-all active:scale-95 flex items-center justify-center outline-none shadow-lg"
                     >
-                      {isPlaying ? <Pause className="w-6 h-6 fill-current" /> : <Gift className="w-6 h-6 fill-current" />}
+                      {isPlaying ? <Pause className="w-7 h-7 fill-current" /> : <Gift className="w-7 h-7 fill-current" />}
                     </button>
                     <div className="flex-grow">
-                      <div className="h-2 bg-gray-100 rounded-full w-full overflow-hidden">
+                      <div className="h-2.5 bg-gray-100 rounded-full w-full overflow-hidden">
                         <motion.div 
                           initial={{ width: 0 }}
                           animate={isPlaying ? { width: "100%" } : { width: "40%" }}
@@ -135,13 +142,13 @@ export function ThankYou() {
                           className="h-full bg-[#D97706]/40"
                         ></motion.div>
                       </div>
-                      <div className="flex justify-between mt-2 text-[10px] text-gray-400 font-bold uppercase tracking-tighter">
-                        <span>{isPlaying ? "Reproduzindo..." : "0:00"}</span>
-                        <span>Ouça sua mensagem importante</span>
-                        <span>{isPlaying ? "" : "3:45"}</span>
+                      <div className="flex justify-between mt-3 text-xs sm:text-sm text-gray-700 font-bold uppercase tracking-tight">
+                        <span className="min-w-[40px]">{isPlaying ? "Play" : "0:00"}</span>
+                        <span className="text-center px-2">Ouça sua mensagem importante</span>
+                        <span className="min-w-[40px] text-right">{isPlaying ? "" : "3:45"}</span>
                       </div>
                     </div>
-                    <Volume2 className="w-5 h-5 text-gray-400" />
+                    <Volume2 className="w-6 h-6 text-[#D97706] hidden sm:block" />
                   </div>
                   <audio 
                     ref={audioRef} 
@@ -154,15 +161,18 @@ export function ThankYou() {
             )}
           </AnimatePresence>
 
-          {/* Botões de Ação */}
+          {/* Botões de Ação - Aparecem 30s após o Play */}
           <AnimatePresence>
-            {messagesVisible >= 4 && (
+            {showButtons && (
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="flex flex-col items-center gap-4 mt-8"
+                className="flex flex-col items-center gap-4 mt-12"
               >
-                <Button asChild size="lg" className="h-16 w-full text-lg sm:text-xl font-black bg-[#16A34A] hover:bg-[#15803D] text-white shadow-xl rounded-xl transition-all active:scale-[0.98]">
+                <div className="w-full text-center mb-2">
+                    <p className="text-red-600 font-bold text-lg animate-pulse">ESTA OFERTA SUMIRÁ EM BREVE!</p>
+                </div>
+                <Button asChild size="lg" className="h-16 w-full text-lg sm:text-2xl font-black bg-[#16A34A] hover:bg-[#15803D] text-white shadow-xl rounded-xl transition-all active:scale-[0.98]">
                     <Link href="https://checkout.bolsasdesucesso.com/VCCL1O8SCPBX">
                         <Sparkles className="w-6 h-6 mr-2" />
                         SIM! QUERO MEU PRESENTE MISTERIOSO
@@ -171,7 +181,7 @@ export function ThankYou() {
                 
                 <Link 
                   href="#" 
-                  className="text-sm text-gray-400 hover:text-gray-600 underline transition-colors font-medium"
+                  className="text-base text-gray-500 hover:text-gray-800 underline transition-colors font-semibold py-2"
                 >
                   Prefiro continuar apenas com o material que já comprei
                 </Link>
