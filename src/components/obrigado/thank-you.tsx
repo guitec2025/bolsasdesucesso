@@ -45,7 +45,6 @@ export function ThankYou() {
           // Inicia o processo da imagem aos 30 segundos
           setTimeout(() => {
             setShowImageLoading(true);
-            // Simula progresso de download do WhatsApp (~3 segundos)
             let progress = 0;
             const interval = setInterval(() => {
               progress += 5;
@@ -167,10 +166,10 @@ export function ThankYou() {
                           className="h-full bg-[#D97706]/40"
                         ></motion.div>
                       </div>
-                      <div className="flex justify-between mt-3 text-sm text-gray-700 font-bold uppercase tracking-tight">
-                        <span className="min-w-[40px]">{isPlaying ? "Play" : "0:00"}</span>
+                      <div className="flex justify-between mt-3 text-sm sm:text-base text-gray-700 font-bold uppercase tracking-tight">
+                        <span className="min-w-[45px]">{isPlaying ? "Play" : "0:00"}</span>
                         <span className="text-center px-2">Ouça sua mensagem importante</span>
-                        <span className="min-w-[40px] text-right">{isPlaying ? "" : "3:45"}</span>
+                        <span className="min-w-[45px] text-right">{isPlaying ? "" : "3:45"}</span>
                       </div>
                     </div>
                     <Volume2 className="w-6 h-6 text-[#D97706] hidden sm:block" />
@@ -201,13 +200,9 @@ export function ThankYou() {
                 <div className="relative rounded-2xl rounded-tl-none overflow-hidden shadow-md border border-gray-100 max-w-[85%] bg-white p-1">
                   {showImageLoading ? (
                     <div className="relative w-full aspect-square bg-gray-200 flex items-center justify-center min-w-[280px]">
-                      {/* Efeito de Blur/Escurecido do WhatsApp */}
                       <div className="absolute inset-0 bg-black/10 backdrop-blur-[2px]"></div>
-                      
-                      {/* Círculo de Carregamento */}
                       <div className="relative z-10 flex flex-col items-center">
                         <div className="relative w-16 h-16">
-                           {/* Fundo do progresso */}
                           <svg className="w-full h-full rotate-[-90deg]">
                             <circle
                               cx="32"
@@ -217,7 +212,6 @@ export function ThankYou() {
                               strokeWidth="4"
                               fill="rgba(0,0,0,0.4)"
                             />
-                            {/* Barra de progresso real */}
                             <motion.circle
                               cx="32"
                               cy="32"
@@ -267,14 +261,14 @@ export function ThankYou() {
                     <p className="text-red-600 font-bold text-lg animate-pulse">ESTA OFERTA SUMIRÁ EM BREVE!</p>
                 </div>
                 <Button asChild size="lg" className="h-16 w-full text-lg sm:text-2xl font-black bg-[#16A34A] hover:bg-[#15803D] text-white shadow-xl rounded-xl transition-all active:scale-[0.98]">
-                    <Link href="https://checkout.bolsasdesucesso.com/VCCL1O8SCPBX">
+                    <Link href="https://checkout.bolsasdesucesso.com/VCCL1O8SCV0P">
                         <Sparkles className="w-6 h-6 mr-2" />
                         SIM! QUERO MEU PRESENTE MISTERIOSO
                     </Link>
                 </Button>
                 
                 <Link 
-                  href="#" 
+                  href="https://acessobolsaslucrativas.netlify.app/" 
                   className="text-base text-gray-500 hover:text-gray-800 underline transition-colors font-semibold py-2"
                 >
                   Prefiro continuar apenas com o material que já comprei
