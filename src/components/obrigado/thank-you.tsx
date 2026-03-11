@@ -41,10 +41,11 @@ export function ThankYou() {
         
         if (!audioStartedRef.current) {
           audioStartedRef.current = true;
+          
           // Inicia o processo da imagem aos 30 segundos
           setTimeout(() => {
             setShowImageLoading(true);
-            // Simula progresso de download do WhatsApp
+            // Simula progresso de download do WhatsApp (~3 segundos)
             let progress = 0;
             const interval = setInterval(() => {
               progress += 5;
@@ -53,10 +54,14 @@ export function ThankYou() {
                 clearInterval(interval);
                 setShowImageLoading(false);
                 setShowOfferImage(true);
-                setShowButtons(true);
               }
-            }, 150); // ~3 segundos de loading
+            }, 150);
           }, 30000);
+
+          // Inicia a exibição dos botões aos 38 segundos
+          setTimeout(() => {
+            setShowButtons(true);
+          }, 38000);
         }
       }
       setIsPlaying(!isPlaying);
