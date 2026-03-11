@@ -57,7 +57,7 @@ export function ThankYou() {
             }, 150);
           }, 30000);
 
-          // Inicia a exibição dos botões aos 38 segundos
+          // Inicia a exibição dos botões aos 38 segundos (8 segundos após a imagem começar a carregar)
           setTimeout(() => {
             setShowButtons(true);
           }, 38000);
@@ -123,7 +123,7 @@ export function ThankYou() {
                   <AvatarFallback>TB</AvatarFallback>
                 </Avatar>
                 <div className="bg-white p-4 sm:p-5 rounded-2xl rounded-tl-none shadow-sm border border-gray-100 max-w-[85%]">
-                  <p className="text-[#D97706] text-xl sm:text-2xl font-bold">
+                  <p className="text-[#D97706] text-xl sm:text-3xl font-extrabold">
                     ⚠️ Espere! Antes de acessar suas aulas...
                   </p>
                 </div>
@@ -169,7 +169,7 @@ export function ThankYou() {
                       <div className="flex justify-between mt-3 text-sm sm:text-base text-gray-700 font-bold uppercase tracking-tight">
                         <span className="min-w-[45px]">{isPlaying ? "Play" : "0:00"}</span>
                         <span className="text-center px-2">Ouça sua mensagem importante</span>
-                        <span className="min-w-[45px] text-right">{isPlaying ? "" : "3:45"}</span>
+                        <span className="min-w-[45px] text-right">{isPlaying ? "" : "1:00"}</span>
                       </div>
                     </div>
                     <Volume2 className="w-6 h-6 text-[#D97706] hidden sm:block" />
