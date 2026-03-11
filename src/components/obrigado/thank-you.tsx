@@ -1,16 +1,19 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { CheckCircle, Sparkles, Play, Volume2 } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { CheckCircle, Sparkles, Play, Pause, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const MENTOR_AVATAR = "https://i.imgur.com/7HSLUP4.png";
+const AUDIO_URL = "https://files.catbox.moe/ef4ovv.MP3";
 
 export function ThankYou() {
   const [messagesVisible, setMessagesVisible] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     const timers = [
@@ -21,6 +24,17 @@ export function ThankYou() {
     ];
     return () => timers.forEach(clearTimeout);
   }, []);
+
+  const togglePlay = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
 
   return (
     <section className="py-8 sm:py-16 bg-[#f9fafb] min-h-screen font-body">
@@ -104,28 +118,37 @@ export function ThankYou() {
                     <span className="font-bold uppercase tracking-wider text-sm">Presente Misterioso</span>
                   </div>
 
-                  {/* Placeholder de Áudio */}
+                  {/* Player de Áudio Real */}
                   <div className="bg-white rounded-xl p-4 border border-[#D97706]/20 flex items-center gap-4">
-                    <div className="bg-[#D97706] p-3 rounded-full text-white cursor-pointer hover:bg-[#B45309] transition-colors">
-                      <Play className="w-6 h-6 fill-current" />
-                    </div>
+                    <button 
+                      onClick={togglePlay}
+                      className="bg-[#D97706] p-3 rounded-full text-white cursor-pointer hover:bg-[#B45309] transition-colors flex items-center justify-center outline-none"
+                    >
+                      {isPlaying ? <Pause className="w-6 h-6 fill-current" /> : <Play className="w-6 h-6 fill-current ml-1" />}
+                    </button>
                     <div className="flex-grow">
                       <div className="h-2 bg-gray-100 rounded-full w-full overflow-hidden">
                         <motion.div 
                           initial={{ width: 0 }}
-                          animate={{ width: "40%" }}
-                          transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+                          animate={isPlaying ? { width: "100%" } : { width: "40%" }}
+                          transition={isPlaying ? { duration: 60, ease: "linear" } : { duration: 2, repeat: Infinity, repeatType: "reverse" }}
                           className="h-full bg-[#D97706]/40"
                         ></motion.div>
                       </div>
                       <div className="flex justify-between mt-2 text-[10px] text-gray-400 font-bold uppercase tracking-tighter">
-                        <span>0:00</span>
+                        <span>{isPlaying ? "Reproduzindo..." : "0:00"}</span>
                         <span>Ouça sua mensagem importante</span>
-                        <span>3:45</span>
+                        <span>{isPlaying ? "" : "3:45"}</span>
                       </div>
                     </div>
                     <Volume2 className="w-5 h-5 text-gray-400" />
                   </div>
+                  <audio 
+                    ref={audioRef} 
+                    src={AUDIO_URL} 
+                    onEnded={() => setIsPlaying(false)}
+                    className="hidden" 
+                  />
                 </div>
               </motion.div>
             )}
