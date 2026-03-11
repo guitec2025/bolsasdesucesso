@@ -9,7 +9,7 @@ export default function ObrigadoPage() {
       <main>
         <ThankYou />
       </main>
-      <Footer />
+      <Footer hideCTA={true} />
     </div>
   );
 }

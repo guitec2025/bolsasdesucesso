@@ -1,4 +1,3 @@
-
 'use client';
 
 import { CheckCircle, Mail, Gift, Sparkles, ArrowRight, Check } from 'lucide-react';
@@ -86,37 +85,7 @@ export function ThankYou() {
                         SIM! QUERO DESBLOQUEAR MINHA COLEÇÃO MISTERIOSA
                     </Link>
                 </Button>
-
-                <div className="text-center mt-6">
-                    <Link href="#next-steps" className="text-sm text-gray-500 hover:text-[#D97706] font-medium underline underline-offset-4">
-                        Não tenho interesse, prefiro continuar apenas com o que já comprei
-                    </Link>
-                </div>
             </div>
-          </div>
-
-          {/* Próximos Passos */}
-          <div id="next-steps" className="mt-12 text-left bg-accent/50 p-6 rounded-lg border border-border w-full space-y-4">
-            <h2 className="text-xl font-bold font-headline text-center text-[#4D4237] mb-4">Próximos Passos</h2>
-            <div className="flex items-start gap-4">
-                <div className="p-2 bg-primary/10 rounded-full mt-1">
-                    <Mail className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                    <h3 className="font-bold text-foreground">Verifique seu e-mail</h3>
-                    <p className="text-sm text-foreground/80">Enviamos todas as informações de acesso ao curso para o seu e-mail. Caso não encontre, verifique a caixa de spam.</p>
-                </div>
-            </div>
-          </div>
-          
-          <div className="mt-10 w-full">
-            <Button asChild size="lg" className="h-14 w-full text-lg font-bold bg-primary hover:bg-primary/90 text-primary-foreground">
-                <Link href="https://acessobolsaslucrativas.netlify.app/">
-                    QUERO ACESSAR O CURSO AGORA
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
-            </Button>
-            <p className="text-xs text-foreground/60 mt-2">Você será redirecionada para a plataforma do curso.</p>
           </div>
         </div>
       </div>
