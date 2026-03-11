@@ -1,19 +1,25 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { CheckCircle, Sparkles, Gift, Pause, Volume2 } from 'lucide-react';
+import { CheckCircle, Sparkles, Gift, Pause, Volume2, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import Image from 'next/image';
 
 const MENTOR_AVATAR = "https://i.imgur.com/7HSLUP4.png";
 const AUDIO_URL = "https://files.catbox.moe/ef4ovv.MP3";
+const OFFER_IMAGE = "https://i.imgur.com/zZZZJPO.jpeg";
 
 export function ThankYou() {
   const [messagesVisible, setMessagesVisible] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [showImageLoading, setShowImageLoading] = useState(false);
+  const [showOfferImage, setShowOfferImage] = useState(false);
   const [showButtons, setShowButtons] = useState(false);
+  const [loadingProgress, setLoadingProgress] = useState(0);
+  
   const audioRef = useRef<HTMLAudioElement>(null);
   const audioStartedRef = useRef(false);
 
@@ -33,10 +39,24 @@ export function ThankYou() {
       } else {
         audioRef.current.play();
         
-        // Inicia o contador para os botões apenas no primeiro play
         if (!audioStartedRef.current) {
           audioStartedRef.current = true;
-          setTimeout(() => setShowButtons(true), 30000); // 30 segundos
+          // Inicia o processo da imagem aos 30 segundos
+          setTimeout(() => {
+            setShowImageLoading(true);
+            // Simula progresso de download do WhatsApp
+            let progress = 0;
+            const interval = setInterval(() => {
+              progress += 5;
+              setLoadingProgress(progress);
+              if (progress >= 100) {
+                clearInterval(interval);
+                setShowImageLoading(false);
+                setShowOfferImage(true);
+                setShowButtons(true);
+              }
+            }, 150); // ~3 segundos de loading
+          }, 30000);
         }
       }
       setIsPlaying(!isPlaying);
@@ -73,7 +93,7 @@ export function ThankYou() {
                 animate={{ opacity: 1, y: 0 }}
                 className="flex items-start gap-4"
               >
-                <Avatar className="w-24 h-24 sm:w-28 sm:h-28 border-2 border-primary/20 shrink-0">
+                <Avatar className="w-16 h-16 sm:w-20 sm:h-20 border-2 border-primary/20 shrink-0">
                   <AvatarImage src={MENTOR_AVATAR} className="object-cover" />
                   <AvatarFallback>TB</AvatarFallback>
                 </Avatar>
@@ -94,7 +114,7 @@ export function ThankYou() {
                 animate={{ opacity: 1, y: 0 }}
                 className="flex items-start gap-4"
               >
-                <Avatar className="w-24 h-24 sm:w-28 sm:h-28 border-2 border-primary/20 shrink-0">
+                <Avatar className="w-16 h-16 sm:w-20 sm:h-20 border-2 border-primary/20 shrink-0">
                   <AvatarImage src={MENTOR_AVATAR} className="object-cover" />
                   <AvatarFallback>TB</AvatarFallback>
                 </Avatar>
@@ -115,7 +135,7 @@ export function ThankYou() {
                 animate={{ opacity: 1, y: 0 }}
                 className="flex items-start gap-4"
               >
-                <Avatar className="w-24 h-24 sm:w-28 sm:h-28 border-2 border-primary/20 shrink-0">
+                <Avatar className="w-16 h-16 sm:w-20 sm:h-20 border-2 border-primary/20 shrink-0">
                   <AvatarImage src={MENTOR_AVATAR} className="object-cover" />
                   <AvatarFallback>TB</AvatarFallback>
                 </Avatar>
@@ -125,7 +145,7 @@ export function ThankYou() {
                     <span className="font-bold uppercase tracking-wider text-sm sm:text-base">Presente Misterioso</span>
                   </div>
 
-                  {/* Player de Áudio Real */}
+                  {/* Player de Áudio */}
                   <div className="bg-white rounded-xl p-4 sm:p-6 border border-[#D97706]/20 flex items-center gap-4">
                     <button 
                       onClick={togglePlay}
@@ -142,7 +162,7 @@ export function ThankYou() {
                           className="h-full bg-[#D97706]/40"
                         ></motion.div>
                       </div>
-                      <div className="flex justify-between mt-3 text-xs sm:text-sm text-gray-700 font-bold uppercase tracking-tight">
+                      <div className="flex justify-between mt-3 text-sm text-gray-700 font-bold uppercase tracking-tight">
                         <span className="min-w-[40px]">{isPlaying ? "Play" : "0:00"}</span>
                         <span className="text-center px-2">Ouça sua mensagem importante</span>
                         <span className="min-w-[40px] text-right">{isPlaying ? "" : "3:45"}</span>
@@ -161,7 +181,76 @@ export function ThankYou() {
             )}
           </AnimatePresence>
 
-          {/* Botões de Ação - Aparecem 30s após o Play */}
+          {/* Mensagem 4 (Imagem com Loading WhatsApp) */}
+          <AnimatePresence>
+            {(showImageLoading || showOfferImage) && (
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="flex items-start gap-4"
+              >
+                <Avatar className="w-16 h-16 sm:w-20 sm:h-20 border-2 border-primary/20 shrink-0">
+                  <AvatarImage src={MENTOR_AVATAR} className="object-cover" />
+                  <AvatarFallback>TB</AvatarFallback>
+                </Avatar>
+                <div className="relative rounded-2xl rounded-tl-none overflow-hidden shadow-md border border-gray-100 max-w-[85%] bg-white p-1">
+                  {showImageLoading ? (
+                    <div className="relative w-full aspect-square bg-gray-200 flex items-center justify-center min-w-[280px]">
+                      {/* Efeito de Blur/Escurecido do WhatsApp */}
+                      <div className="absolute inset-0 bg-black/10 backdrop-blur-[2px]"></div>
+                      
+                      {/* Círculo de Carregamento */}
+                      <div className="relative z-10 flex flex-col items-center">
+                        <div className="relative w-16 h-16">
+                           {/* Fundo do progresso */}
+                          <svg className="w-full h-full rotate-[-90deg]">
+                            <circle
+                              cx="32"
+                              cy="32"
+                              r="28"
+                              stroke="white"
+                              strokeWidth="4"
+                              fill="rgba(0,0,0,0.4)"
+                            />
+                            {/* Barra de progresso real */}
+                            <motion.circle
+                              cx="32"
+                              cy="32"
+                              r="28"
+                              stroke="white"
+                              strokeWidth="4"
+                              fill="none"
+                              strokeDasharray="175.9"
+                              animate={{ strokeDashoffset: 175.9 - (175.9 * loadingProgress) / 100 }}
+                              strokeLinecap="round"
+                            />
+                          </svg>
+                          <div className="absolute inset-0 flex items-center justify-center">
+                             <Download className="w-6 h-6 text-white" />
+                          </div>
+                        </div>
+                        <span className="mt-2 text-xs font-bold text-white bg-black/40 px-2 py-0.5 rounded-full">
+                          {loadingProgress < 100 ? '452 KB' : 'Download concluído'}
+                        </span>
+                      </div>
+                    </div>
+                  ) : (
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+                       <Image 
+                        src={OFFER_IMAGE} 
+                        alt="Oferta Especial" 
+                        width={400} 
+                        height={400}
+                        className="rounded-xl object-cover"
+                      />
+                    </motion.div>
+                  )}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Botões de Ação */}
           <AnimatePresence>
             {showButtons && (
               <motion.div 
