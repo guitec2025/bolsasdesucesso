@@ -1,14 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { CheckCircle, Gift, Sparkles, Check, Play, Volume2 } from 'lucide-react';
+import { CheckCircle, Sparkles, Play, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
-const MENTOR_AVATAR = "https://i.imgur.com/OjoRTG0.png";
+const MENTOR_AVATAR = "https://i.imgur.com/7HSLUP4.png";
 
 export function ThankYou() {
   const [messagesVisible, setMessagesVisible] = useState(0);
@@ -53,8 +52,8 @@ export function ThankYou() {
                 animate={{ opacity: 1, y: 0 }}
                 className="flex items-start gap-4"
               >
-                <Avatar className="w-14 h-14 sm:w-16 sm:h-16 border-2 border-primary/20 shrink-0">
-                  <AvatarImage src={MENTOR_AVATAR} />
+                <Avatar className="w-20 h-20 sm:w-24 sm:h-24 border-2 border-primary/20 shrink-0">
+                  <AvatarImage src={MENTOR_AVATAR} className="object-cover" />
                   <AvatarFallback>TB</AvatarFallback>
                 </Avatar>
                 <div className="bg-white p-4 sm:p-5 rounded-2xl rounded-tl-none shadow-sm border border-gray-100 max-w-[85%]">
@@ -74,8 +73,8 @@ export function ThankYou() {
                 animate={{ opacity: 1, y: 0 }}
                 className="flex items-start gap-4"
               >
-                <Avatar className="w-14 h-14 sm:w-16 sm:h-16 border-2 border-primary/20 shrink-0">
-                  <AvatarImage src={MENTOR_AVATAR} />
+                <Avatar className="w-20 h-20 sm:w-24 sm:h-24 border-2 border-primary/20 shrink-0">
+                  <AvatarImage src={MENTOR_AVATAR} className="object-cover" />
                   <AvatarFallback>TB</AvatarFallback>
                 </Avatar>
                 <div className="bg-white p-4 sm:p-5 rounded-2xl rounded-tl-none shadow-sm border border-gray-100 max-w-[85%]">
@@ -95,8 +94,8 @@ export function ThankYou() {
                 animate={{ opacity: 1, y: 0 }}
                 className="flex items-start gap-4"
               >
-                <Avatar className="w-14 h-14 sm:w-16 sm:h-16 border-2 border-primary/20 shrink-0">
-                  <AvatarImage src={MENTOR_AVATAR} />
+                <Avatar className="w-20 h-20 sm:w-24 sm:h-24 border-2 border-primary/20 shrink-0">
+                  <AvatarImage src={MENTOR_AVATAR} className="object-cover" />
                   <AvatarFallback>TB</AvatarFallback>
                 </Avatar>
                 <div className="bg-[#FFF8EC] p-6 rounded-2xl rounded-tl-none shadow-md border-2 border-[#D97706]/20 w-full max-w-[90%]">
@@ -107,7 +106,7 @@ export function ThankYou() {
 
                   {/* Placeholder de Áudio */}
                   <div className="bg-white rounded-xl p-4 border border-[#D97706]/20 flex items-center gap-4">
-                    <div className="bg-[#D97706] p-3 rounded-full text-white">
+                    <div className="bg-[#D97706] p-3 rounded-full text-white cursor-pointer hover:bg-[#B45309] transition-colors">
                       <Play className="w-6 h-6 fill-current" />
                     </div>
                     <div className="flex-grow">
@@ -119,16 +118,14 @@ export function ThankYou() {
                           className="h-full bg-[#D97706]/40"
                         ></motion.div>
                       </div>
-                      <div className="flex justify-between mt-2 text-[10px] text-gray-400 font-bold">
+                      <div className="flex justify-between mt-2 text-[10px] text-gray-400 font-bold uppercase tracking-tighter">
                         <span>0:00</span>
-                        <span>OUÇA A MENSAGEM IMPORTANTE</span>
+                        <span>Ouça sua mensagem importante</span>
                         <span>3:45</span>
                       </div>
                     </div>
                     <Volume2 className="w-5 h-5 text-gray-400" />
                   </div>
-                  
-                  {/* Nota: O texto de benefícios e preços foi removido pois será substituído pelo áudio */}
                 </div>
               </motion.div>
             )}
@@ -143,9 +140,9 @@ export function ThankYou() {
                 className="flex flex-col items-center gap-4 mt-8"
               >
                 <Button asChild size="lg" className="h-16 w-full text-lg sm:text-xl font-black bg-[#16A34A] hover:bg-[#15803D] text-white shadow-xl rounded-xl transition-all active:scale-[0.98]">
-                    <Link href="https://checkout.bolsasdesucesso.com/YOUR_UPS_LINK_HERE">
+                    <Link href="https://checkout.bolsasdesucesso.com/VCCL1O8SCPBX">
                         <Sparkles className="w-6 h-6 mr-2" />
-                        SIM! QUERO DESBLOQUEAR MEU PRESENTE
+                        SIM! QUERO MEU PRESENTE MISTERIOSO
                     </Link>
                 </Button>
                 
