@@ -10,15 +10,17 @@ export function Guarantee() {
     <section className="py-12 sm:py-24 bg-background">
       <div className="container mx-auto max-w-3xl px-4">
         <div 
-          className="border-2 border-dashed border-primary/50 rounded-lg p-6 sm:p-10 text-center flex flex-col items-center"
-          style={{ backgroundColor: '#E2C1E5' }}
+          className="border-2 border-dashed border-[#4D4237]/30 rounded-2xl p-6 sm:p-12 text-center flex flex-col items-center"
+          style={{ backgroundColor: 'rgba(226, 193, 229, 0.4)' }}
         >
-            <div className="bg-primary rounded-full p-3 mb-4">
-                <ShieldCheck className="h-8 w-8 text-primary-foreground" />
+            <div className="mb-6">
+                <ShieldCheck className="h-10 w-10 text-[#4D4237]/80" />
             </div>
-          <h3 className="text-2xl sm:text-3xl font-bold font-headline text-[#4D4237]">30 Dias de Garantia Incondicional</h3>
+          <h3 className="text-2xl sm:text-4xl font-bold font-headline text-[#4D4237] leading-tight">
+            30 Dias de Garantia Incondicional
+          </h3>
           <p 
-            className="mt-4 text-foreground max-w-xl mx-auto text-base sm:text-lg"
+            className="mt-6 text-[#4D4237]/90 max-w-2xl mx-auto text-lg sm:text-xl leading-relaxed"
             dangerouslySetInnerHTML={{ __html: guaranteeText }}
           >
           </p>
