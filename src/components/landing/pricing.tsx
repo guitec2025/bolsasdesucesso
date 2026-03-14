@@ -6,7 +6,19 @@ import { Button } from '../ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card';
 import Image from 'next/image';
 
-export function Pricing() {
+interface PricingProps {
+  priceWhole?: string;
+  priceCents?: string;
+  originalPrice?: string;
+  checkoutUrl?: string;
+}
+
+export function Pricing({ 
+  priceWhole = "37", 
+  priceCents = "90", 
+  originalPrice = "97",
+  checkoutUrl = "https://checkout.bolsasdesucesso.com/VCCL1O8SCPBX"
+}: PricingProps) {
   const features = [
     { icon: '✅', text: '<b>Acesso vitalício</b> às aulas + atualizações futuras' },
     { icon: '👗', text: 'Mais de <b>67 modelos de bolsas</b> de crochê lucrativas e exclusivas' },
@@ -40,10 +52,10 @@ export function Pricing() {
             <CardTitle className="font-bold font-headline text-primary">Plano Completo</CardTitle>
             <CardDescription className="text-base text-center max-w-xs text-foreground">Aproveite <b>acesso total e para sempre</b> a todas as aulas, bônus e atualizações!</CardDescription>
             <div className="mt-4 text-center">
-                <p className="text-base text-black">💰De <span className="line-through">R$97</span> por</p>
+                <p className="text-base text-black">💰De <span className="line-through">R${originalPrice}</span> por</p>
                 <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-5xl font-extrabold text-black"><b>R$37</b></span>
-                    <span className="text-3xl font-extrabold text-black"><b>,90</b></span>
+                    <span className="text-5xl font-extrabold text-black"><b>R${priceWhole}</b></span>
+                    <span className="text-3xl font-extrabold text-black"><b>,{priceCents}</b></span>
                 </div>
                  <p className="text-sm text-black flex items-center gap-2 justify-center mt-2 font-bold">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-clock"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -74,7 +86,7 @@ export function Pricing() {
               className='w-full h-14 text-lg font-medium text-white'
               style={{ backgroundColor: '#478552' }}
             >
-              <a href="https://checkout.bolsasdesucesso.com/VCCL1O8SCPBX">
+              <a href={checkoutUrl}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-sparkles mr-2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
                 QUERO ACESSO VITALÍCIO
               </a>

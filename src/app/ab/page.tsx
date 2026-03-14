@@ -39,7 +39,15 @@ const componentConfig = [
   { ref: 'gallery', Component: Gallery },
   { ref: 'bonuses', Component: dynamic(() => import('@/components/landing/bonuses').then(mod => mod.Bonuses)) },
   { ref: 'more-testimonials', Component: dynamic(() => import('@/components/landing/more-testimonials').then(mod => mod.MoreTestimonials)) },
-  { ref: 'pricing', Component: dynamic(() => import('@/components/landing/pricing').then(mod => mod.Pricing)) },
+  { 
+    ref: 'pricing', 
+    Component: dynamic(() => import('@/components/landing/pricing').then(mod => {
+      const Pricing = mod.Pricing;
+      return function PricingAB() {
+        return <Pricing priceWhole="27" priceCents="90" />;
+      };
+    })) 
+  },
   { ref: 'guarantee', Component: dynamic(() => import('@/components/landing/guarantee').then(mod => mod.Guarantee)) },
   { ref: 'about', Component: dynamic(() => import('@/components/landing/about').then(mod => mod.About)) },
 ];
