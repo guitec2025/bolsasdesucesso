@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Button } from '../ui/button';
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { Eye, Layers } from 'lucide-react';
+import { Eye, Layers, Star } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   Carousel,
@@ -22,6 +22,7 @@ interface GalleryImage {
   imageHint: string;
   category: 'bolsas' | 'praia';
   variations?: string[];
+  isFavorite?: boolean;
 }
 
 const allImages: GalleryImage[] = [
@@ -31,6 +32,7 @@ const allImages: GalleryImage[] = [
     description: 'Bolsa de crochê exclusiva 1', 
     imageHint: 'crochet bag', 
     category: 'bolsas',
+    isFavorite: true,
     variations: [
       'https://i.imgur.com/mTixFpW.jpeg',
       'https://i.imgur.com/ditKxzZ.jpeg',
@@ -38,7 +40,14 @@ const allImages: GalleryImage[] = [
       'https://i.imgur.com/0qiHfCY.jpeg'
     ]
   },
-  { id: 'new-bag-2', imageUrl: 'https://i.imgur.com/2h8DPj5.png', description: 'Bolsa de crochê exclusiva 2', imageHint: 'crochet bag', category: 'bolsas' },
+  { 
+    id: 'new-bag-2', 
+    imageUrl: 'https://i.imgur.com/2h8DPj5.png', 
+    description: 'Bolsa de crochê exclusiva 2', 
+    imageHint: 'crochet bag', 
+    category: 'bolsas',
+    isFavorite: true 
+  },
   { id: 'crochet-bag-1', imageUrl: `https://i.imgur.com/r76j16N.jpeg`, description: `Bolsa de crochê 1`, imageHint: 'crochet bag', category: 'bolsas' },
   { id: 'crochet-bag-2', imageUrl: `https://i.imgur.com/ON1Tyqp.jpeg`, description: `Bolsa de crochê 2`, imageHint: 'crochet bag', category: 'bolsas' },
   { id: 'crochet-bag-3', imageUrl: `https://i.imgur.com/ftp5Wn6.jpeg`, description: `Bolsa de crochê 3`, imageHint: 'crochet bag', category: 'bolsas' },
@@ -108,9 +117,9 @@ export function Gallery() {
                   className="object-cover w-full h-full aspect-square transition-transform duration-300 group-hover:scale-105"
                   data-ai-hint={image.imageHint}
               />
-              {image.variations && (
+              {image.isFavorite && (
                 <div className="absolute top-2 right-2 bg-black/60 text-white p-1.5 rounded-md z-20">
-                  <Layers className="w-4 h-4" />
+                  <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                 </div>
               )}
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
