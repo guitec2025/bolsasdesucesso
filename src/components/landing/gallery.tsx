@@ -9,6 +9,8 @@ import { Eye } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const allImages = [
+  { id: 'new-bag-1', imageUrl: 'https://i.imgur.com/mTixFpW.jpeg', description: 'Bolsa de crochê exclusiva 1', imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'new-bag-2', imageUrl: 'https://i.imgur.com/2h8DPj5.png', description: 'Bolsa de crochê exclusiva 2', imageHint: 'crochet bag', category: 'bolsas' },
   { id: 'crochet-bag-1', imageUrl: `https://i.imgur.com/r76j16N.jpeg`, description: `Bolsa de crochê 1`, imageHint: 'crochet bag', category: 'bolsas' },
   { id: 'crochet-bag-2', imageUrl: `https://i.imgur.com/ON1Tyqp.jpeg`, description: `Bolsa de crochê 2`, imageHint: 'crochet bag', category: 'bolsas' },
   { id: 'crochet-bag-3', imageUrl: `https://i.imgur.com/ftp5Wn6.jpeg`, description: `Bolsa de crochê 3`, imageHint: 'crochet bag', category: 'bolsas' },
