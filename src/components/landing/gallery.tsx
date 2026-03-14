@@ -5,11 +5,39 @@ import Image from 'next/image';
 import { Button } from '../ui/button';
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { Eye } from 'lucide-react';
+import { Eye, Layers } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
-const allImages = [
-  { id: 'new-bag-1', imageUrl: 'https://i.imgur.com/mTixFpW.jpeg', description: 'Bolsa de crochê exclusiva 1', imageHint: 'crochet bag', category: 'bolsas' },
+interface GalleryImage {
+  id: string;
+  imageUrl: string;
+  description: string;
+  imageHint: string;
+  category: 'bolsas' | 'praia';
+  variations?: string[];
+}
+
+const allImages: GalleryImage[] = [
+  { 
+    id: 'new-bag-1', 
+    imageUrl: 'https://i.imgur.com/mTixFpW.jpeg', 
+    description: 'Bolsa de crochê exclusiva 1', 
+    imageHint: 'crochet bag', 
+    category: 'bolsas',
+    variations: [
+      'https://i.imgur.com/mTixFpW.jpeg',
+      'https://i.imgur.com/ditKxzZ.jpeg',
+      'https://i.imgur.com/6kaz2tp.jpeg',
+      'https://i.imgur.com/0qiHfCY.jpeg'
+    ]
+  },
   { id: 'new-bag-2', imageUrl: 'https://i.imgur.com/2h8DPj5.png', description: 'Bolsa de crochê exclusiva 2', imageHint: 'crochet bag', category: 'bolsas' },
   { id: 'crochet-bag-1', imageUrl: `https://i.imgur.com/r76j16N.jpeg`, description: `Bolsa de crochê 1`, imageHint: 'crochet bag', category: 'bolsas' },
   { id: 'crochet-bag-2', imageUrl: `https://i.imgur.com/ON1Tyqp.jpeg`, description: `Bolsa de crochê 2`, imageHint: 'crochet bag', category: 'bolsas' },
@@ -58,24 +86,19 @@ const allImages = [
 
 
 export function Gallery() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImageId, setSelectedImageId] = useState<string | null>(null);
   
+  const selectedImageData = allImages.find(img => img.id === selectedImageId);
+
   const renderGalleryGrid = (category: 'bolsas' | 'praia') => {
     const images = allImages.filter(img => img.category === category);
-    if (images.length === 0 && category === 'praia') {
-      return (
-        <div className="text-center py-10 text-foreground/70">
-          <p>As fotos para esta seção serão adicionadas em breve!</p>
-        </div>
-      )
-    }
     return (
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 mt-8">
         {images.map((image) => (
             <div 
               key={image.id} 
               className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 group bg-card cursor-pointer"
-              onClick={() => setSelectedImage(image.imageUrl)}
+              onClick={() => setSelectedImageId(image.id)}
             >
               <Image
                   src={image.imageUrl}
@@ -85,6 +108,11 @@ export function Gallery() {
                   className="object-cover w-full h-full aspect-square transition-transform duration-300 group-hover:scale-105"
                   data-ai-hint={image.imageHint}
               />
+              {image.variations && (
+                <div className="absolute top-2 right-2 bg-black/60 text-white p-1.5 rounded-md z-20">
+                  <Layers className="w-4 h-4" />
+                </div>
+              )}
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="bg-white/80 backdrop-blur-sm rounded-full p-3">
                   <Eye className="w-6 h-6 text-[#AE5A32]" />
@@ -123,20 +151,48 @@ export function Gallery() {
           </TabsContent>
         </Tabs>
         
-        {selectedImage && (
-          <Dialog open={!!selectedImage} onOpenChange={(isOpen) => !isOpen && setSelectedImage(null)}>
+        {selectedImageData && (
+          <Dialog open={!!selectedImageId} onOpenChange={(isOpen) => !isOpen && setSelectedImageId(null)}>
             <DialogContent className="max-w-3xl p-4 sm:p-6 border-0">
                <DialogTitle className="sr-only">Visualização da imagem da bolsa de crochê</DialogTitle>
-               <DialogDescription className="text-center text-foreground/80 -mb-2 sm:mb-0">
-                Um dos mais de 67 padrões exclusivos que você vai aprender no curso.
+               <DialogDescription className="text-center text-foreground/80 -mb-2 sm:mb-4">
+                {selectedImageData.variations 
+                  ? "Arraste para o lado para ver as variações de cores deste modelo exclusivo."
+                  : "Um dos mais de 67 padrões exclusivos que você vai aprender no curso."
+                }
                </DialogDescription>
-              <Image 
-                src={selectedImage}
-                alt="Visualização da bolsa de crochê"
-                width={800}
-                height={800}
-                className="object-contain w-full h-full rounded-md"
-              />
+              
+              {selectedImageData.variations ? (
+                <Carousel className="w-full">
+                  <CarouselContent>
+                    {selectedImageData.variations.map((url, index) => (
+                      <CarouselItem key={index}>
+                        <div className="flex justify-center items-center">
+                          <Image 
+                            src={url}
+                            alt={`Variação ${index + 1} da bolsa`}
+                            width={800}
+                            height={800}
+                            className="object-contain w-full h-auto max-h-[70vh] rounded-md"
+                          />
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="left-2 bg-white/80 hover:bg-white" />
+                  <CarouselNext className="right-2 bg-white/80 hover:bg-white" />
+                </Carousel>
+              ) : (
+                <div className="flex justify-center items-center">
+                  <Image 
+                    src={selectedImageData.imageUrl}
+                    alt="Visualização da bolsa de crochê"
+                    width={800}
+                    height={800}
+                    className="object-contain w-full h-auto max-h-[70vh] rounded-md"
+                  />
+                </div>
+              )}
             </DialogContent>
           </Dialog>
         )}
