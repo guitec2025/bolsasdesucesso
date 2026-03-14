@@ -24,7 +24,12 @@ export function Footer({ hideCTA = false }: FooterProps) {
               <>
                 <h3 className="text-2xl sm:text-3xl font-bold font-headline text-[#4D4237]"><b>Pronta para Criar Bolsas de Crochê Incríveis?</b></h3>
                 <p className="mt-2 text-foreground max-w-xl"><b>Não perca a chance de transformar simples fios em um negócio lucrativo e prazeroso.</b> Inscreva-se agora e comece a criar suas próprias bolsas!</p>
-                <Button size="lg" className="mt-6 h-14 text-lg bg-primary hover:bg-primary/90 text-primary-foreground font-medium" asChild>
+                <Button
+                  size="lg"
+                  className="mt-6 h-14 text-lg border-0 hover:opacity-90 font-medium"
+                  style={{ backgroundColor: '#f6aa28', color: '#312a23' }}
+                  asChild
+                >
                   <a href="#pricing" rel="noopener noreferrer">
                     QUERO ME INSCREVER
                   </a>

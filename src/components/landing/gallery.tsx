@@ -58,11 +58,11 @@ const allImages: GalleryImage[] = [
   { id: 'crochet-bag-1', imageUrl: `https://i.imgur.com/r76j16N.jpeg`, description: `Bolsa de crochê 1`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: false },
   { id: 'crochet-bag-2', imageUrl: `https://i.imgur.com/ON1Tyqp.jpeg`, description: `Bolsa de crochê 2`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: true },
   { id: 'crochet-bag-3', imageUrl: `https://i.imgur.com/ftp5Wn6.jpeg`, description: `Bolsa de crochê 3`, imageHint: 'crochet bag', category: 'bolsas' },
-  { id: 'crochet-bag-4', imageUrl: `https://i.imgur.com/Kc3jGcW.jpeg`, description: `Bolsa de crochê 4`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-4', imageUrl: `https://i.imgur.com/Kc3jGcW.jpeg`, description: `Bolsa de crochê 4`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: true },
   { id: 'crochet-bag-5', imageUrl: `https://i.imgur.com/7HMTFU7.jpeg`, description: `Bolsa de crochê 5`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: true },
   { id: 'crochet-bag-6', imageUrl: `https://i.imgur.com/7xmWbQN.jpeg`, description: `Bolsa de crochê 6`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: true },
-  { id: 'crochet-bag-7', imageUrl: `https://i.imgur.com/tgEESxy.png`, description: `Bolsa de crochê 7`, imageHint: 'crochet bag', category: 'bolsas' },
-  { id: 'crochet-bag-8', imageUrl: `https://i.imgur.com/LBRCsGE.jpeg`, description: `Bolsa de crochê 8`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-7', imageUrl: `https://i.imgur.com/tgEESxy.png`, description: `Bolsa de crochê 7`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: true },
+  { id: 'crochet-bag-8', imageUrl: `https://i.imgur.com/LBRCsGE.jpeg`, description: `Bolsa de crochê 8`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: true },
   { id: 'crochet-bag-9', imageUrl: `https://i.imgur.com/OviKXmZ.png`, description: `Bolsa de crochê 9`, imageHint: 'crochet bag', category: 'bolsas' },
   { id: 'crochet-bag-10', imageUrl: `https://i.imgur.com/euJlX0g.png`, description: `Bolsa de crochê 10`, imageHint: 'crochet bag', category: 'bolsas' },
   { id: 'crochet-bag-11', imageUrl: `https://i.imgur.com/I7tSjwc.jpeg`, description: `Bolsa de crochê 11`, imageHint: 'crochet bag', category: 'bolsas' },
@@ -214,7 +214,12 @@ export function Gallery() {
         )}
 
         <p className="mt-12 text-foreground text-lg">Clique no botão abaixo para garantir sua vaga e ter acesso à coleção completa.</p>
-        <Button size="lg" className="mt-4 h-14 text-lg bg-primary hover:bg-primary/90 text-primary-foreground font-medium" asChild>
+        <Button
+          size="lg"
+          className="mt-4 h-14 text-lg border-0 hover:opacity-90 text-white font-medium"
+          style={{ backgroundColor: '#f6aa28', color: '#312a23' }}
+          asChild
+        >
           <a href="#pricing">
             QUERO A COLEÇÃO COMPLETA
           </a>

@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from '../ui/button';
@@ -50,7 +49,8 @@ export function Hero() {
           <Button
             asChild
             size="lg"
-            className="mt-8 h-14 text-lg font-body font-medium"
+            className="mt-8 h-14 text-lg font-body font-medium border-0 hover:opacity-90"
+            style={{ backgroundColor: '#f6aa28', color: '#312a23' }}
           >
             <a href="#pricing">
               QUERO ME INSCREVER NO CURSO
@@ -93,7 +93,8 @@ export function Hero() {
               <Button
                   asChild
                   size="lg"
-                  className="mt-6 w-full h-14 text-lg font-body font-medium"
+                  className="mt-6 w-full h-14 text-lg font-body font-medium border-0 hover:opacity-90"
+                  style={{ backgroundColor: '#f6aa28', color: '#312a23' }}
               >
                   <a href="#pricing">
                       <Star className="w-4 h-4 mr-2" fill="currentColor" />
