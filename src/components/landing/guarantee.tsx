@@ -9,7 +9,10 @@ export function Guarantee() {
   return (
     <section className="py-12 sm:py-24 bg-background">
       <div className="container mx-auto max-w-3xl px-4">
-        <div className="bg-accent/50 border-2 border-dashed border-primary/50 rounded-lg p-6 sm:p-10 text-center flex flex-col items-center">
+        <div 
+          className="border-2 border-dashed border-primary/50 rounded-lg p-6 sm:p-10 text-center flex flex-col items-center"
+          style={{ backgroundColor: '#E2C1E5' }}
+        >
             <div className="bg-primary rounded-full p-3 mb-4">
                 <ShieldCheck className="h-8 w-8 text-primary-foreground" />
             </div>
