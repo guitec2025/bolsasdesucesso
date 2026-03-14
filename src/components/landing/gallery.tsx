@@ -37,7 +37,8 @@ const allImages: GalleryImage[] = [
       'https://i.imgur.com/mTixFpW.jpeg',
       'https://i.imgur.com/ditKxzZ.jpeg',
       'https://i.imgur.com/6kaz2tp.jpeg',
-      'https://i.imgur.com/0qiHfCY.jpeg'
+      'https://i.imgur.com/0qiHfCY.jpeg',
+      'https://i.imgur.com/Nj9QKWX.jpeg'
     ]
   },
   { 
@@ -51,7 +52,8 @@ const allImages: GalleryImage[] = [
       'https://i.imgur.com/2h8DPj5.png',
       'https://i.imgur.com/bZpLS7K.png',
       'https://i.imgur.com/vB5dLcH.jpeg',
-      'https://i.imgur.com/q2JJ27F.png'
+      'https://i.imgur.com/q2JJ27F.png',
+      'https://i.imgur.com/bqAc3iB.jpeg'
     ]
   },
   { id: 'crochet-bag-1', imageUrl: `https://i.imgur.com/r76j16N.jpeg`, description: `Bolsa de crochê 1`, imageHint: 'crochet bag', category: 'bolsas' },
