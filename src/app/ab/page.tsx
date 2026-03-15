@@ -44,7 +44,7 @@ const componentConfig = [
     Component: dynamic(() => import('@/components/landing/pricing').then(mod => {
       const Pricing = mod.Pricing;
       return function PricingAB() {
-        return <Pricing priceWhole="27" priceCents="90" />;
+        return <Pricing priceWhole="27" priceCents="90" checkoutUrl="https://checkout.bolsasdesucesso.com/VCCL1O8SCVDK" />;
       };
     })) 
   },
