@@ -75,7 +75,7 @@ export function Pricing({
             <CardTitle className="font-bold font-headline text-primary">Plano Completo</CardTitle>
             <CardDescription className="text-base text-center max-w-xs text-foreground">Aproveite <b>acesso total e para sempre</b> a todas as aulas, bônus e atualizações!</CardDescription>
             <div className="mt-4 text-center">
-                <p className="text-base text-black">💰De <span className="line-through">R${originalPrice}</span> por</p>
+                <p className="text-base text-black">💰De <span className="line-through">R$97</span> por</p>
                 <div className="flex items-baseline justify-center gap-1">
                     <span className="text-5xl font-extrabold text-black"><b>R${priceWhole}</b></span>
                     <span className="text-3xl font-extrabold text-black"><b>,{priceCents}</b></span>
