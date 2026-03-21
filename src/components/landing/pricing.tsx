@@ -1,23 +1,15 @@
-
 'use client';
 
-import { Check, Star } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card';
 import Image from 'next/image';
-import { useCallback } from 'react';
 
 interface PricingProps {
   priceWhole?: string;
   priceCents?: string;
   originalPrice?: string;
   checkoutUrl?: string;
-}
-
-declare global {
-  interface Window {
-    fbq: any;
-  }
 }
 
 export function Pricing({ 
@@ -27,21 +19,6 @@ export function Pricing({
   checkoutUrl = "https://checkout.bolsasdesucesso.com/VCCL1O8SCPBX"
 }: PricingProps) {
   
-  const handleCheckout = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const targetUrl = e.currentTarget.href;
-
-    // Dispara o evento InitiateCheckout se o fbq estiver disponível
-    if (typeof window !== 'undefined' && window.fbq) {
-      window.fbq('track', 'InitiateCheckout');
-    }
-
-    // Aguarda 500ms antes de redirecionar para garantir o envio do evento
-    setTimeout(() => {
-      window.location.href = targetUrl;
-    }, 500);
-  }, []);
-
   const features = [
     { icon: '✅', text: '<b>Acesso vitalício</b> às aulas + atualizações futuras' },
     { icon: '👗', text: 'Mais de <b>67 modelos de bolsas</b> de crochê lucrativas e exclusivas' },
@@ -54,7 +31,6 @@ export function Pricing({
   ];
   
   const bonusFeature = { icon: '🎁', text: 'Ganhe <b>R$300 em bônus</b> para alavancar seu aprendizado e faturar com o que você ama!' };
-
 
   return (
     <section id="pricing" className="py-12 sm:py-24 bg-background">
@@ -75,7 +51,7 @@ export function Pricing({
             <CardTitle className="font-bold font-headline text-primary">Plano Completo</CardTitle>
             <CardDescription className="text-base text-center max-w-xs text-foreground">Aproveite <b>acesso total e para sempre</b> a todas as aulas, bônus e atualizações!</CardDescription>
             <div className="mt-4 text-center">
-                <p className="text-base text-black">💰De <span className="line-through">R$97</span> por</p>
+                <p className="text-base text-black">💰De <span className="line-through">R${originalPrice}</span> por</p>
                 <div className="flex items-baseline justify-center gap-1">
                     <span className="text-5xl font-extrabold text-black"><b>R${priceWhole}</b></span>
                     <span className="text-3xl font-extrabold text-black"><b>,{priceCents}</b></span>
@@ -100,7 +76,7 @@ export function Pricing({
                 </ul>
                 <div className="text-left mt-4 bg-primary/10 p-4 rounded-md flex items-start gap-3">
                   <span className="text-xl">{bonusFeature.icon}</span>
-                  <p className="font-bold text-black mt-px" dangerouslySetInnerHTML={{ __html: `Ganhe <b>R$300 em bônus</b> para alavancar seu aprendizado e faturar com o que você ama!` }}></p>
+                  <p className="font-bold text-black mt-px" dangerouslySetInnerHTML={{ __html: bonusFeature.text }}></p>
                 </div>
             </div>
             <Button
@@ -109,8 +85,7 @@ export function Pricing({
               className='w-full h-14 text-lg font-medium text-white'
               style={{ backgroundColor: '#478552' }}
             >
-              <a href={checkoutUrl} onClick={handleCheckout}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-sparkles mr-2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+              <a href={checkoutUrl}>
                 QUERO ACESSO VITALÍCIO
               </a>
             </Button>
