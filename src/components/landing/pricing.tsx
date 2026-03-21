@@ -5,6 +5,7 @@ import { Check, Star } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card';
 import Image from 'next/image';
+import { useCallback } from 'react';
 
 interface PricingProps {
   priceWhole?: string;
@@ -13,12 +14,34 @@ interface PricingProps {
   checkoutUrl?: string;
 }
 
+declare global {
+  interface Window {
+    fbq: any;
+  }
+}
+
 export function Pricing({ 
   priceWhole = "37", 
   priceCents = "90", 
   originalPrice = "97",
   checkoutUrl = "https://checkout.bolsasdesucesso.com/VCCL1O8SCPBX"
 }: PricingProps) {
+  
+  const handleCheckout = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const targetUrl = e.currentTarget.href;
+
+    // Dispara o evento InitiateCheckout se o fbq estiver disponível
+    if (typeof window !== 'undefined' && window.fbq) {
+      window.fbq('track', 'InitiateCheckout');
+    }
+
+    // Aguarda 500ms antes de redirecionar para garantir o envio do evento
+    setTimeout(() => {
+      window.location.href = targetUrl;
+    }, 500);
+  }, []);
+
   const features = [
     { icon: '✅', text: '<b>Acesso vitalício</b> às aulas + atualizações futuras' },
     { icon: '👗', text: 'Mais de <b>67 modelos de bolsas</b> de crochê lucrativas e exclusivas' },
@@ -86,7 +109,7 @@ export function Pricing({
               className='w-full h-14 text-lg font-medium text-white'
               style={{ backgroundColor: '#478552' }}
             >
-              <a href={checkoutUrl}>
+              <a href={checkoutUrl} onClick={handleCheckout}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-sparkles mr-2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
                 QUERO ACESSO VITALÍCIO
               </a>
