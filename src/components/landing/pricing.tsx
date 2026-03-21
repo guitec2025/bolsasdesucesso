@@ -86,12 +86,7 @@ export function Pricing({
               className='w-full h-14 text-lg font-medium text-white'
               style={{ backgroundColor: '#478552' }}
             >
-              <a 
-                href={checkoutUrl}
-                onClick={(e) => {
-                  (e.currentTarget as HTMLElement).style.pointerEvents = 'none';
-                }}
-              >
+              <a href={checkoutUrl}>
                 QUERO ACESSO VITALÍCIO
               </a>
             </Button>

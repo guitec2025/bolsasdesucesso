@@ -194,12 +194,7 @@ export function BrickcakeFeatures() {
 
             <div className="flex flex-col items-center gap-4 w-full">
               <Button asChild size="lg" className="h-16 w-full text-xl font-bold bg-green-600 hover:bg-green-700 animate-pulse">
-                <Link 
-                  href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/JG2bv732rP?accepted=yes"
-                  onClick={(e) => {
-                    (e.currentTarget as HTMLElement).style.pointerEvents = 'none';
-                  }}
-                >
+                <Link href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/JG2bv732rP?accepted=yes">
                   Sim, Quero aproveitar a RECEITA SEGRETA!
                 </Link>
               </Button>
