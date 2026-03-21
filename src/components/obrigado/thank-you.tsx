@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
@@ -261,7 +262,12 @@ export function ThankYou() {
                     <p className="text-red-600 font-bold text-lg animate-pulse">ESTA OFERTA SUMIRÁ EM BREVE!</p>
                 </div>
                 <Button asChild size="lg" className="h-16 w-full text-lg sm:text-2xl font-black bg-[#16A34A] hover:bg-[#15803D] text-white shadow-xl rounded-xl transition-all active:scale-[0.98]">
-                    <Link href="https://checkout.bolsasdesucesso.com/VCCL1O8SCV0P">
+                    <Link 
+                      href="https://checkout.bolsasdesucesso.com/VCCL1O8SCV0P"
+                      onClick={(e) => {
+                        (e.currentTarget as HTMLElement).style.pointerEvents = 'none';
+                      }}
+                    >
                         <Sparkles className="w-6 h-6 mr-2" />
                         SIM! QUERO MEU PRESENTE MISTERIOSO
                     </Link>

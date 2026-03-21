@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Star } from 'lucide-react';
@@ -85,7 +86,12 @@ export function Pricing({
               className='w-full h-14 text-lg font-medium text-white'
               style={{ backgroundColor: '#478552' }}
             >
-              <a href={checkoutUrl}>
+              <a 
+                href={checkoutUrl}
+                onClick={(e) => {
+                  (e.currentTarget as HTMLElement).style.pointerEvents = 'none';
+                }}
+              >
                 QUERO ACESSO VITALÍCIO
               </a>
             </Button>

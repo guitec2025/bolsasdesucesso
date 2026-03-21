@@ -57,7 +57,7 @@ export function BrickcakeFeatures() {
               Meu nome é Juliane Fiorentelli e, assim como você, comecei minha jornada buscando doces que encantassem e vendessem.
             </p>
             <p className="mt-4 text-xl sm:text-2xl text-foreground/80">
-              E então, navegando por blogs de confeitaria europeus, descobri uma receita nova — <b>que veio da Ásia!</b> Ela já está bombando na Europa e agora no Brasil! Simples de fazer, porém com <b>efeito viral</b>, capaz de transformar qualquer mesa em uma experiência inesquecível.
+              E então, navegando por blogs de confeitaria europeus, descobri uma receita nova — <b>que veio da Ásia!</b> Ela já está bombando na Europa e agora no Brasil! Simples de fazer, porém com <b>efeito viral</b>, capaz de transformar qualquer mesa em uma experiênca inesquecível.
             </p>
             <p className="mt-6 text-xl sm:text-2xl text-foreground/80">
               Olha só isso… e me diz: o que suas clientes vão achar? O vídeo dá água na boca, e <b>você não pode negar isso!</b>
@@ -194,7 +194,12 @@ export function BrickcakeFeatures() {
 
             <div className="flex flex-col items-center gap-4 w-full">
               <Button asChild size="lg" className="h-16 w-full text-xl font-bold bg-green-600 hover:bg-green-700 animate-pulse">
-                <Link href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/JG2bv732rP?accepted=yes">
+                <Link 
+                  href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/JG2bv732rP?accepted=yes"
+                  onClick={(e) => {
+                    (e.currentTarget as HTMLElement).style.pointerEvents = 'none';
+                  }}
+                >
                   Sim, Quero aproveitar a RECEITA SEGRETA!
                 </Link>
               </Button>

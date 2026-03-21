@@ -170,7 +170,12 @@ export function UpsellPage() {
                 size="lg"
                 className="h-14 w-full text-lg font-bold bg-green-600 hover:bg-green-700 animate-pulse"
               >
-                <Link href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/91jv668j5n?accepted=yes">
+                <Link 
+                  href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/91jv668j5n?accepted=yes"
+                  onClick={(e) => {
+                    (e.currentTarget as HTMLElement).style.pointerEvents = 'none';
+                  }}
+                >
                   👉 Adicionar o Método ao meu pedido
                 </Link>
               </Button>
