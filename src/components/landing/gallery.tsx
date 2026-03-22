@@ -55,6 +55,14 @@ const allImages: GalleryImage[] = [
       'https://i.imgur.com/bqAc3iB.jpeg'
     ]
   },
+  { 
+    id: 'new-bag-3', 
+    imageUrl: 'https://i.imgur.com/fNF41Yi.jpeg', 
+    description: 'Bolsa de crochê exclusiva 3', 
+    imageHint: 'crochet bag', 
+    category: 'bolsas',
+    isFavorite: true 
+  },
   { id: 'crochet-bag-1', imageUrl: `https://i.imgur.com/r76j16N.jpeg`, description: `Bolsa de crochê 1`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: false },
   { id: 'crochet-bag-2', imageUrl: `https://i.imgur.com/ON1Tyqp.jpeg`, description: `Bolsa de crochê 2`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: true },
   { id: 'crochet-bag-3', imageUrl: `https://i.imgur.com/ftp5Wn6.jpeg`, description: `Bolsa de crochê 3`, imageHint: 'crochet bag', category: 'bolsas' },
