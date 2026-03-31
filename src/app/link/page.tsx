@@ -46,12 +46,12 @@ export default function LinkPage() {
           transition={{ delay: 0.1 }}
         >
           <Link 
-            href="/"
+            href="https://bolsasdesucesso.com/?utm_source=ig&utm_medium=bio&utm_campaign=perfil&utm_content=bolsas"
             className="block relative overflow-hidden rounded-[2rem] bg-[#537747] h-40 sm:h-52 shadow-2xl hover:scale-[1.02] transition-transform group border-2 border-[#3D5235]/20"
           >
             <div className="absolute left-0 bottom-0 w-[55%] h-full flex items-end">
               <Image 
-                src="https://i.imgur.com/NpWecjw.png" 
+                src="https://i.imgur.com/OmseEOm.png" 
                 alt="Coleção de Bolsas" 
                 width={300} 
                 height={300} 
@@ -81,12 +81,11 @@ export default function LinkPage() {
           >
             <div className="absolute left-0 bottom-0 w-[55%] h-full flex items-end">
               <Image 
-                src="https://picsum.photos/seed/amigurumidolls/400/400" 
+                src="https://i.imgur.com/CTcwM0D.png" 
                 alt="Coleção Amigurumi" 
                 width={400} 
                 height={400} 
                 className="object-contain object-bottom h-[95%] w-full drop-shadow-2xl"
-                data-ai-hint="amigurumi dolls"
               />
             </div>
             <div className="absolute right-4 sm:right-10 top-0 h-full flex flex-col justify-center items-end text-white z-10">
