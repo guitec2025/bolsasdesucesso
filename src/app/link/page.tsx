@@ -9,14 +9,14 @@ export default function LinkPage() {
   const avatarImage = "https://i.imgur.com/7HSLUP4.png";
   
   return (
-    <div className="min-h-screen bg-[#FFFBF9] flex flex-col items-center py-12 px-4 font-body text-[#4D4237]">
+    <div className="min-h-screen bg-[#FFFBF9] flex flex-col items-center py-10 px-4 font-body text-[#4D4237]">
       {/* Seção de Perfil */}
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="flex flex-col items-center mb-10 text-center"
+        className="flex flex-col items-center mb-8 text-center"
       >
-        <div className="relative w-28 h-28 mb-4">
+        <div className="relative w-24 h-24 mb-4">
           <Image
             src={avatarImage}
             alt="Laura Vianel"
@@ -30,89 +30,59 @@ export default function LinkPage() {
           <BadgeCheck className="w-4 h-4 text-[#3B82F6] fill-[#3B82F6] text-white" />
         </div>
         
-        <h1 className="text-xl font-bold">
+        <h1 className="text-lg font-bold">
           Laura Vianel | Crochê Profissional
         </h1>
       </motion.div>
 
       {/* Seção de Banners/Links */}
-      <div className="w-full max-w-2xl space-y-6">
+      <div className="w-full max-w-md space-y-4">
         
         {/* Banner 1: Bolsas de Sucesso */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.1 }}
         >
           <Link 
             href="https://bolsasdesucesso.com/?utm_source=ig&utm_medium=bio&utm_campaign=perfil&utm_content=bolsas"
-            className="block relative overflow-hidden rounded-[2rem] bg-[#537747] h-40 sm:h-52 shadow-2xl hover:scale-[1.01] transition-transform group border-2 border-[#3D5235]/10"
+            className="block relative overflow-hidden rounded-2xl shadow-md hover:scale-[1.02] transition-transform active:scale-95"
           >
-            {/* Imagem do Produto - Alinhada à esquerda */}
-            <div className="absolute left-0 top-0 bottom-0 w-[60%] flex items-center justify-start">
-              <Image 
-                src="https://i.imgur.com/OmseEOm.png" 
-                alt="Coleção de Bolsas" 
-                width={400} 
-                height={400} 
-                className="object-contain object-left h-full w-full"
-                priority
-              />
-            </div>
-            
-            {/* Texto - Alinhado à direita */}
-            <div className="absolute right-6 sm:right-10 top-0 h-full flex flex-col justify-center items-end text-white z-10">
-              <h2 className="text-2xl sm:text-4xl font-black font-headline tracking-tighter leading-[0.85] text-right">
-                BOLSAS<br/>DE SUCESSO
-              </h2>
-              <p className="mt-2 text-sm sm:text-xl font-body italic opacity-90 text-right">
-                Crochê Artesanal
-              </p>
-            </div>
+            <Image 
+              src="https://i.imgur.com/OmseEOm.png" 
+              alt="Bolsas de Sucesso" 
+              width={600} 
+              height={200} 
+              className="w-full h-auto object-cover"
+              priority
+            />
           </Link>
         </motion.div>
 
         {/* Banner 2: Acervo Amigurumi */}
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2 }}
         >
           <Link 
             href="#"
-            className="block relative overflow-hidden rounded-[2rem] bg-[#9056B3] h-40 sm:h-52 shadow-2xl hover:scale-[1.01] transition-transform group border-2 border-[#6A3D8A]/10"
+            className="block relative overflow-hidden rounded-2xl shadow-md hover:scale-[1.02] transition-transform active:scale-95"
           >
-            {/* Imagem do Produto - Alinhada à esquerda */}
-            <div className="absolute left-0 top-0 bottom-0 w-[60%] flex items-center justify-start">
-              <Image 
-                src="https://i.imgur.com/CTcwM0D.png" 
-                alt="Coleção Amigurumi" 
-                width={500} 
-                height={500} 
-                className="object-contain object-left h-full w-full"
-              />
-            </div>
-            
-            {/* Texto - Alinhado à direita */}
-            <div className="absolute right-6 sm:right-10 top-0 h-full flex flex-col justify-center items-end text-white z-10">
-              <div className="flex flex-col items-end">
-                <h2 className="text-lg sm:text-3xl font-bold font-headline tracking-tighter leading-none text-right border-b-2 border-white/40 pb-1 mb-2">
-                  ACERVO <span className="text-[#FBBF24]">COMPLETO</span>
-                </h2>
-                <h2 className="text-2xl sm:text-4xl font-black font-headline tracking-tighter leading-none text-right">
-                  AMIGURUMI
-                </h2>
-              </div>
-            </div>
-            {/* Efeito de brilho sutil ao fundo */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none"></div>
+            <Image 
+              src="https://i.imgur.com/CTcwM0D.png" 
+              alt="Coleção Amigurumi" 
+              width={600} 
+              height={200} 
+              className="w-full h-auto object-cover"
+            />
           </Link>
         </motion.div>
 
       </div>
 
       {/* Rodapé sutil */}
-      <footer className="mt-auto pt-12 opacity-40 text-xs">
+      <footer className="mt-auto pt-10 opacity-40 text-[10px] uppercase tracking-widest">
         &copy; Escola de Crochê – Laura Vianel
       </footer>
     </div>
