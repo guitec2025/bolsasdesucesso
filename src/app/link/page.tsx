@@ -16,7 +16,7 @@ export default function LinkPage() {
         animate={{ opacity: 1, y: 0 }}
         className="flex flex-col items-center mb-8 text-center"
       >
-        <div className="relative w-24 h-24 mb-4">
+        <div className="relative w-28 h-28 mb-4">
           <Image
             src={avatarImage}
             alt="Laura Vianel"
@@ -30,13 +30,13 @@ export default function LinkPage() {
           <BadgeCheck className="w-4 h-4 text-[#3B82F6] fill-[#3B82F6] text-white" />
         </div>
         
-        <h1 className="text-lg font-bold">
+        <h1 className="text-xl font-bold">
           Laura Vianel | Crochê Profissional
         </h1>
       </motion.div>
 
       {/* Seção de Banners/Links */}
-      <div className="w-full max-w-md space-y-4">
+      <div className="w-full max-w-2xl space-y-6">
         
         {/* Banner 1: Bolsas de Sucesso */}
         <motion.div
@@ -46,13 +46,13 @@ export default function LinkPage() {
         >
           <Link 
             href="https://bolsasdesucesso.com/?utm_source=ig&utm_medium=bio&utm_campaign=perfil&utm_content=bolsas"
-            className="block relative overflow-hidden rounded-2xl shadow-md hover:scale-[1.02] transition-transform active:scale-95"
+            className="block relative overflow-hidden rounded-2xl border-4 border-[#D4AF37] shadow-xl hover:scale-[1.02] transition-transform active:scale-95 bg-white"
           >
             <Image 
               src="https://i.imgur.com/OmseEOm.png" 
               alt="Bolsas de Sucesso" 
-              width={600} 
-              height={200} 
+              width={800} 
+              height={260} 
               className="w-full h-auto object-cover"
               priority
             />
@@ -67,13 +67,13 @@ export default function LinkPage() {
         >
           <Link 
             href="#"
-            className="block relative overflow-hidden rounded-2xl shadow-md hover:scale-[1.02] transition-transform active:scale-95"
+            className="block relative overflow-hidden rounded-2xl border-4 border-[#D4AF37] shadow-xl hover:scale-[1.02] transition-transform active:scale-95 bg-white"
           >
             <Image 
               src="https://i.imgur.com/CTcwM0D.png" 
               alt="Coleção Amigurumi" 
-              width={600} 
-              height={200} 
+              width={800} 
+              height={260} 
               className="w-full h-auto object-cover"
             />
           </Link>
