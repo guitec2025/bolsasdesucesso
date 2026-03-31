@@ -19,19 +19,19 @@ export default function LinkPage() {
         <div className="relative w-28 h-28 mb-4">
           <Image
             src={avatarImage}
-            alt="Laura Vianel"
+            alt="Tatiane Barros"
             fill
             className="rounded-full object-cover border-4 border-white shadow-md"
           />
         </div>
         
         <div className="flex items-center gap-1 text-[#4D4237]/60 mb-1">
-          <span className="text-sm font-medium">@artesanatodesucesso.oficial</span>
+          <span className="text-sm font-medium">@tatianebarros.ofc</span>
           <BadgeCheck className="w-4 h-4 text-[#3B82F6] fill-[#3B82F6] text-white" />
         </div>
         
-        <h1 className="text-xl font-bold">
-          Laura Vianel | Crochê Profissional
+        <h1 className="text-xl font-bold text-balance max-w-[280px]">
+          Tatiane Barros | Crochê Profissional
         </h1>
       </motion.div>
 
@@ -66,7 +66,7 @@ export default function LinkPage() {
           transition={{ delay: 0.2 }}
         >
           <Link 
-            href="#"
+            href="https://checkout.bolsasdesucesso.com/VCCL1O8SCRE5/?utm_source=ig&utm_medium=bio&utm_campaign=perfil&utm_content=amigurumi_checkout"
             className="block relative overflow-hidden rounded-2xl border-4 border-[#D4AF37] shadow-xl hover:scale-[1.02] transition-transform active:scale-95 bg-white"
           >
             <Image 
@@ -83,7 +83,7 @@ export default function LinkPage() {
 
       {/* Rodapé sutil */}
       <footer className="mt-auto pt-10 opacity-40 text-[10px] uppercase tracking-widest">
-        &copy; Escola de Crochê – Laura Vianel
+        &copy; Escola de Crochê – Tatiane Barros
       </footer>
     </div>
   );
