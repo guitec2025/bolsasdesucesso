@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -47,22 +46,26 @@ export default function LinkPage() {
         >
           <Link 
             href="https://bolsasdesucesso.com/?utm_source=ig&utm_medium=bio&utm_campaign=perfil&utm_content=bolsas"
-            className="block relative overflow-hidden rounded-[2rem] bg-[#537747] h-40 sm:h-52 shadow-2xl hover:scale-[1.02] transition-transform group border-2 border-[#3D5235]/20"
+            className="block relative overflow-hidden rounded-[2rem] bg-[#537747] h-40 sm:h-52 shadow-2xl hover:scale-[1.01] transition-transform group border-2 border-[#3D5235]/10"
           >
-            <div className="absolute left-0 bottom-0 w-[55%] h-full flex items-end">
+            {/* Imagem do Produto - Alinhada à esquerda */}
+            <div className="absolute left-0 top-0 bottom-0 w-[60%] flex items-center justify-start">
               <Image 
                 src="https://i.imgur.com/OmseEOm.png" 
                 alt="Coleção de Bolsas" 
-                width={300} 
-                height={300} 
-                className="object-contain object-bottom h-[95%] w-full drop-shadow-2xl"
+                width={400} 
+                height={400} 
+                className="object-contain object-left h-full w-full"
+                priority
               />
             </div>
-            <div className="absolute right-4 sm:right-10 top-0 h-full flex flex-col justify-center items-end text-white z-10">
+            
+            {/* Texto - Alinhado à direita */}
+            <div className="absolute right-6 sm:right-10 top-0 h-full flex flex-col justify-center items-end text-white z-10">
               <h2 className="text-2xl sm:text-4xl font-black font-headline tracking-tighter leading-[0.85] text-right">
                 BOLSAS<br/>DE SUCESSO
               </h2>
-              <p className="mt-1 text-sm sm:text-xl font-body italic opacity-90 text-right">
+              <p className="mt-2 text-sm sm:text-xl font-body italic opacity-90 text-right">
                 Crochê Artesanal
               </p>
             </div>
@@ -77,29 +80,31 @@ export default function LinkPage() {
         >
           <Link 
             href="#"
-            className="block relative overflow-hidden rounded-[2rem] bg-[#9056B3] h-40 sm:h-52 shadow-2xl hover:scale-[1.02] transition-transform group border-2 border-[#6A3D8A]/20"
+            className="block relative overflow-hidden rounded-[2rem] bg-[#9056B3] h-40 sm:h-52 shadow-2xl hover:scale-[1.01] transition-transform group border-2 border-[#6A3D8A]/10"
           >
-            <div className="absolute left-0 bottom-0 w-[55%] h-full flex items-end">
+            {/* Imagem do Produto - Alinhada à esquerda */}
+            <div className="absolute left-0 top-0 bottom-0 w-[60%] flex items-center justify-start">
               <Image 
                 src="https://i.imgur.com/CTcwM0D.png" 
                 alt="Coleção Amigurumi" 
-                width={400} 
-                height={400} 
-                className="object-contain object-bottom h-[95%] w-full drop-shadow-2xl"
+                width={500} 
+                height={500} 
+                className="object-contain object-left h-full w-full"
               />
             </div>
-            <div className="absolute right-4 sm:right-10 top-0 h-full flex flex-col justify-center items-end text-white z-10">
+            
+            {/* Texto - Alinhado à direita */}
+            <div className="absolute right-6 sm:right-10 top-0 h-full flex flex-col justify-center items-end text-white z-10">
               <div className="flex flex-col items-end">
-                <h2 className="text-xl sm:text-3xl font-black font-headline tracking-tighter leading-none text-right">
+                <h2 className="text-lg sm:text-3xl font-bold font-headline tracking-tighter leading-none text-right border-b-2 border-white/40 pb-1 mb-2">
                   ACERVO <span className="text-[#FBBF24]">COMPLETO</span>
                 </h2>
-                <div className="w-full h-0.5 bg-white/60 mt-1 mb-2"></div>
                 <h2 className="text-2xl sm:text-4xl font-black font-headline tracking-tighter leading-none text-right">
                   AMIGURUMI
                 </h2>
               </div>
             </div>
-            {/* Efeito de brilho sutil ao fundo do banner roxo */}
+            {/* Efeito de brilho sutil ao fundo */}
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none"></div>
           </Link>
         </motion.div>
