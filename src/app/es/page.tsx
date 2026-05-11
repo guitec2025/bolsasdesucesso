@@ -1,13 +1,14 @@
+
 'use client'
 
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Hero } from '@/components/landing/hero';
-import { Footer } from '@/components/landing/footer';
+import { HeroES } from '@/components/landing-es/hero-es';
+import { FooterES } from '@/components/landing-es/footer-es';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Gallery } from '@/components/landing/gallery';
-import { CountdownHeader } from '@/components/landing/countdown-header';
+import { GalleryES } from '@/components/landing-es/gallery-es';
+import { CountdownHeaderES } from '@/components/landing-es/countdown-header-es';
 
 const SectionSkeleton = () => (
   <div className="container mx-auto py-12 sm:py-24 px-4">
@@ -35,20 +36,20 @@ const AnimatedSection = ({ children, className }: { children: React.ReactNode, c
 };
 
 const componentConfig = [
-  { ref: 'gallery', Component: Gallery },
-  { ref: 'bonuses', Component: dynamic(() => import('@/components/landing/bonuses').then(mod => mod.Bonuses)) },
-  { ref: 'more-testimonials', Component: dynamic(() => import('@/components/landing/more-testimonials').then(mod => mod.MoreTestimonials)) },
-  { ref: 'pricing', Component: dynamic(() => import('@/components/landing/pricing').then(mod => mod.Pricing)) },
-  { ref: 'guarantee', Component: dynamic(() => import('@/components/landing/guarantee').then(mod => mod.Guarantee)) },
-  { ref: 'about', Component: dynamic(() => import('@/components/landing/about').then(mod => mod.About)) },
+  { ref: 'gallery', Component: GalleryES },
+  { ref: 'bonuses', Component: dynamic(() => import('@/components/landing-es/bonuses-es').then(mod => mod.BonusesES)) },
+  { ref: 'more-testimonials', Component: dynamic(() => import('@/components/landing-es/more-testimonials-es').then(mod => mod.MoreTestimonialsES)) },
+  { ref: 'pricing', Component: dynamic(() => import('@/components/landing-es/pricing-es').then(mod => mod.PricingES)) },
+  { ref: 'guarantee', Component: dynamic(() => import('@/components/landing-es/guarantee-es').then(mod => mod.GuaranteeES)) },
+  { ref: 'about', Component: dynamic(() => import('@/components/landing-es/about-es').then(mod => mod.AboutES)) },
 ];
 
 export default function CrochetPageES() {
   return (
-    <div className="bg-background text-[#4D4237]">
-      <CountdownHeader />
+    <div className="bg-background text-[#4D4237]" lang="es">
+      <CountdownHeaderES />
       <main>
-        <Hero />
+        <HeroES />
         {componentConfig.map(({ ref, Component }) => (
           <Suspense key={ref} fallback={<SectionSkeleton />}>
             <AnimatedSection>
@@ -57,7 +58,7 @@ export default function CrochetPageES() {
           </Suspense>
         ))}
       </main>
-      <Footer />
+      <FooterES />
     </div>
   );
 }
