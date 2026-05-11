@@ -19,6 +19,7 @@ interface GalleryImage {
   id: string;
   imageUrl: string;
   description: string;
+  imageHint: string;
   category: 'bolsas' | 'praia';
   variations?: string[];
   isFavorite?: boolean;
@@ -29,6 +30,7 @@ const allImages: GalleryImage[] = [
     id: 'new-bag-1', 
     imageUrl: 'https://i.imgur.com/mTixFpW.jpeg', 
     description: 'Bolso de crochet exclusivo 1', 
+    imageHint: 'crochet bag', 
     category: 'bolsas',
     isFavorite: true,
     variations: [
@@ -43,6 +45,7 @@ const allImages: GalleryImage[] = [
     id: 'new-bag-2', 
     imageUrl: 'https://i.imgur.com/2h8DPj5.png', 
     description: 'Bolso de crochet exclusivo 2', 
+    imageHint: 'crochet bag', 
     category: 'bolsas',
     isFavorite: true,
     variations: [
@@ -53,10 +56,57 @@ const allImages: GalleryImage[] = [
       'https://i.imgur.com/bqAc3iB.jpeg'
     ]
   },
-  { id: 'crochet-bag-4', imageUrl: `https://i.imgur.com/Kc3jGcW.jpeg`, description: `Bolso de crochet 4`, category: 'bolsas', isFavorite: true },
-  { id: 'praia-1', imageUrl: 'https://i.imgur.com/HdDuWFS.png', description: 'Bolso de playa lujo 1', category: 'praia', isFavorite: true },
-  { id: 'praia-2', imageUrl: 'https://i.imgur.com/B1frtB8.png', description: 'Bolso de playa lujo 2', category: 'praia', isFavorite: true },
-  { id: 'praia-21', imageUrl: 'https://i.imgur.com/mRHXLMf.png', description: 'Bono: Bolso caracol', category: 'praia', isFavorite: true },
+  { 
+    id: 'new-bag-3', 
+    imageUrl: 'https://i.imgur.com/fNF41Yi.jpeg', 
+    description: 'Bolso de crochet exclusivo 3', 
+    imageHint: 'crochet bag', 
+    category: 'bolsas',
+    isFavorite: true 
+  },
+  { id: 'crochet-bag-1', imageUrl: `https://i.imgur.com/r76j16N.jpeg`, description: `Bolso de crochet 1`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: false },
+  { id: 'crochet-bag-2', imageUrl: `https://i.imgur.com/ON1Tyqp.jpeg`, description: `Bolso de crochet 2`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: true },
+  { id: 'crochet-bag-3', imageUrl: `https://i.imgur.com/ftp5Wn6.jpeg`, description: `Bolso de crochet 3`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-4', imageUrl: `https://i.imgur.com/Kc3jGcW.jpeg`, description: `Bolso de crochet 4`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: true },
+  { id: 'crochet-bag-5', imageUrl: `https://i.imgur.com/7HMTFU7.jpeg`, description: `Bolso de crochet 5`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: true },
+  { id: 'crochet-bag-6', imageUrl: `https://i.imgur.com/7xmWbQN.jpeg`, description: `Bolso de crochet 6`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: true },
+  { id: 'crochet-bag-7', imageUrl: `https://i.imgur.com/tgEESxy.png`, description: `Bolso de crochet 7`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: false },
+  { id: 'crochet-bag-8', imageUrl: `https://i.imgur.com/LBRCsGE.jpeg`, description: `Bolso de crochet 8`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: false },
+  { id: 'crochet-bag-9', imageUrl: `https://i.imgur.com/OviKXmZ.png`, description: `Bolso de crochet 9`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-10', imageUrl: `https://i.imgur.com/euJlX0g.png`, description: `Bolso de crochet 10`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-11', imageUrl: `https://i.imgur.com/I7tSjwc.jpeg`, description: `Bolso de crochet 11`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-12', imageUrl: `https://i.imgur.com/rZ02jgI.jpeg`, description: `Bolso de crochet 12`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-13', imageUrl: `https://i.imgur.com/ERj3yZh.png`, description: `Bolso de crochet 13`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-14', imageUrl: `https://i.imgur.com/C5JfdZW.png`, description: `Bolso de crochet 14`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'praia-1', imageUrl: 'https://i.imgur.com/HdDuWFS.png', description: 'Bolso de playa lujo 1', imageHint: 'luxury beach bag', category: 'praia', isFavorite: true },
+  { id: 'praia-2', imageUrl: 'https://i.imgur.com/B1frtB8.png', description: 'Bolso de playa lujo 2', imageHint: 'luxury beach bag', category: 'praia', isFavorite: true },
+  { id: 'praia-3', imageUrl: 'https://i.imgur.com/XpiyxqT.png', description: 'Bolso de playa lujo 3', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-4', imageUrl: 'https://i.imgur.com/FGKJCjb.png', description: 'Bolso de playa lujo 4', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-5', imageUrl: 'https://i.imgur.com/HiKYkKT.png', description: 'Bolso de playa lujo 5', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-6', imageUrl: 'https://i.imgur.com/eHTLndj.png', description: 'Bolso de playa lujo 6', imageHint: 'luxury beach bag', category: 'praia', isFavorite: true },
+  { id: 'praia-7', imageUrl: 'https://i.imgur.com/QJyVjxg.png', description: 'Bolso de playa lujo 7', imageHint: 'luxury beach bag', category: 'praia', isFavorite: true },
+  { id: 'praia-8', imageUrl: 'https://i.imgur.com/FthVzjc.png', description: 'Bolso de playa lujo 8', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-9', imageUrl: 'https://i.imgur.com/h4yIdcZ.png', description: 'Bolso de playa lujo 9', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-10', imageUrl: 'https://i.imgur.com/Kt4paxr.png', description: 'Bono: Sombrero de playa', imageHint: 'beach hat', category: 'praia', isFavorite: true },
+  { id: 'praia-11', imageUrl: 'https://i.imgur.com/mbOSpgB.png', description: 'Bolso de playa lujo 11', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-12', imageUrl: 'https://i.imgur.com/ToCsGq3.png', description: 'Bolso de playa lujo 12', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-13', imageUrl: 'https://i.imgur.com/CBY8rMk.png', description: 'Bolso de playa lujo 13', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-14', imageUrl: 'https://i.imgur.com/jgZBtZJ.png', description: 'Bolso de playa lujo 14', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-15', imageUrl: 'https://i.imgur.com/JNoqoy3.png', description: 'Bolso de playa lujo 15', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-16', imageUrl: 'https://i.imgur.com/TcC0oLR.png', description: 'Bolso de playa lujo 16', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-17', imageUrl: 'https://i.imgur.com/cAT2Ix6.png', description: 'Bolso de playa lujo 17', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-18', imageUrl: 'https://i.imgur.com/tj6V9OR.png', description: 'Bolso de playa lujo 18', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-19', imageUrl: 'https://i.imgur.com/WcYVGEZ.png', description: 'Bolso de playa lujo 19', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-20', imageUrl: 'https://i.imgur.com/8RxbMmO.png', description: 'Bolso de playa lujo 20', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-21', imageUrl: 'https://i.imgur.com/mRHXLMf.png', description: 'Bono: Bolso caracol', imageHint: 'seashell bag', category: 'praia', isFavorite: true },
+  { id: 'praia-22', imageUrl: 'https://i.imgur.com/eba8xZZ.png', description: 'Bolso de playa lujo 22', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-23', imageUrl: 'https://i.imgur.com/wxwRmy2.png', description: 'Bolso de playa lujo 23', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-24', imageUrl: 'https://i.imgur.com/sxijJeb.png', description: 'Bolso de playa lujo 24', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-25', imageUrl: 'https://i.imgur.com/0nhsO8g.png', description: 'Bono: Bolso corazón de trapillo', imageHint: 'heart shaped bag', category: 'praia' },
+  { id: 'praia-26', imageUrl: 'https://i.imgur.com/k90JSiI.png', description: 'Bolso de playa lujo 26', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-27', imageUrl: 'https://i.imgur.com/RIeNAKU.png', description: 'Bolso de playa lujo 27', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-28', imageUrl: 'https://i.imgur.com/Yi4paN6.png', description: 'Bolso de playa lujo 28', imageHint: 'luxury beach bag', category: 'praia' },
+  { id: 'praia-29', imageUrl: 'https://i.imgur.com/SPvFhZ9.png', description: 'Bolso de playa lujo 29', imageHint: 'luxury beach bag', category: 'praia' },
 ];
 
 export function GalleryES() {
@@ -79,6 +129,7 @@ export function GalleryES() {
                   width={300}
                   height={300}
                   className="object-cover w-full h-full aspect-square transition-transform duration-300 group-hover:scale-105"
+                  data-ai-hint={image.imageHint}
               />
               {image.isFavorite && (
                 <div className="absolute top-2 right-2 bg-black/60 text-white p-1.5 rounded-md z-20">
