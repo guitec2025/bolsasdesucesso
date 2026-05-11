@@ -14,24 +14,24 @@ interface PricingProps {
 }
 
 export function PricingES({ 
-  priceWhole = "37", 
-  priceCents = "90", 
-  originalPrice = "97",
-  checkoutUrl = "https://checkout.bolsasdesucesso.com/VCCL1O8SCPBX"
+  priceWhole = "6", 
+  priceCents = "99", 
+  originalPrice = "49,99",
+  checkoutUrl = "https://pay.hotmart.com/C105777260S"
 }: PricingProps) {
   
   const features = [
     { icon: '✅', text: '<b>Acceso de por vida</b> a las clases + futuras actualizaciones' },
-    { icon: '👗', text: 'Más de <b>67 modelos de bolsos</b> de crochet lucrativos y exclusivos' },
+    { icon: '👗', text: 'Más de <b>67 modelos de bolsos</b> de crochet lucrativos e exclusivos' },
     { icon: '🎥', text: '<b>Paso a Paso</b> para ver cuándo y cuántas veces quieras' },
     { icon: '📚', text: '<b>PDFs completos</b> con todas las recetas' },
-    { icon: '💬', text: '<b>Soporte conmigo 24h/día</b>' },
+    { icon: '💬', text: '<b>Soporte conmigo 24h/dia</b>' },
     { icon: '💬', text: '<b>Comunidad exclusiva</b> para resolver dudas' },
     { icon: '💃', text: '<b>Nuevas colecciones gratis</b> cada vez que salgan' },
     { icon: '🔧', text: '<b>Soporte de por vida</b> garantizado' },
   ];
   
-  const bonusFeature = { icon: '🎁', text: '¡Gana <b>R$300 en bonos</b> para impulsar tu aprendizaje y facturar con lo que amas!' };
+  const bonusFeature = { icon: '🎁', text: '¡Gana <b>$300 en bonos</b> para impulsar tu aprendizaje y facturar con lo que amas!' };
 
   return (
     <section id="pricing" className="py-12 sm:py-24 bg-background">
@@ -52,13 +52,13 @@ export function PricingES({
             <CardTitle className="font-bold font-headline text-primary">Plan Completo</CardTitle>
             <CardDescription className="text-base text-center max-w-xs text-foreground">¡Aprovecha <b>acceso total y para siempre</b> a todas las clases, bonos y actualizaciones!</CardDescription>
             <div className="mt-4 text-center">
-                <p className="text-base text-black">💰De <span className="line-through">R${originalPrice}</span> por</p>
+                <p className="text-base text-black">💰De <span className="line-through">${originalPrice}</span> por</p>
                 <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-5xl font-extrabold text-black"><b>R${priceWhole}</b></span>
+                    <span className="text-5xl font-extrabold text-black"><b>${priceWhole}</b></span>
                     <span className="text-3xl font-extrabold text-black"><b>,{priceCents}</b></span>
                 </div>
                  <p className="text-sm text-black flex items-center gap-2 justify-center mt-2 font-bold">
-                    <b>¡Oferta exclusiva por tiempo limitado!</b>
+                    <b>¡Oferta exclusiva por tempo limitado!</b>
                 </p>
             </div>
           </CardHeader>
@@ -92,7 +92,7 @@ export function PricingES({
           <CardFooter className="flex-col gap-2 px-6 pb-6">
             <Image
               src="https://i.imgur.com/YH11xZr.png"
-              alt="Compra segura y garantía"
+              alt="Compra segura e garantia"
               width={300}
               height={46}
               className="mt-4"
