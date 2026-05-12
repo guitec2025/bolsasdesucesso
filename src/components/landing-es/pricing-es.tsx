@@ -17,7 +17,7 @@ export function PricingES({
   priceWhole = "6", 
   priceCents = "99", 
   originalPrice = "49,99",
-  checkoutUrl = "https://pay.hotmart.com/C105777260S"
+  checkoutUrl = "https://pay.hotmart.com/C105777260S?checkoutMode=10"
 }: PricingProps) {
   
   const features = [
