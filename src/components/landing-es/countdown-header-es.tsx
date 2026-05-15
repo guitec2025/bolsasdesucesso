@@ -22,12 +22,12 @@ export function CountdownHeaderES() {
   useEffect(() => {
     const now = new Date();
     let targetYear = now.getFullYear();
-    const targetDateForCurrentYear = new Date(targetYear, 4, 15);
+    const targetDateForCurrentYear = new Date(targetYear, 4, 16);
 
     if (now > targetDateForCurrentYear) {
       targetYear += 1;
     }
-    const targetDate = new Date(targetYear, 4, 15);
+    const targetDate = new Date(targetYear, 4, 16);
 
     const interval = setInterval(() => {
       const now = new Date();
@@ -52,7 +52,7 @@ export function CountdownHeaderES() {
     <div className="bg-background py-3 border-b border-border/10">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 px-4">
         <p className="text-foreground/90 font-body text-lg">
-          Inscripciones abiertas hasta el 15 de mayo
+          Inscripciones abiertas hasta el 16 de mayo
         </p>
         <div className="flex items-center gap-3">
           <CountdownUnit value={timeLeft.days} label="Días" />
