@@ -2,75 +2,387 @@
   "placeholderImages": [
     {
       "id": "logo",
-      "description": "Logo do Fioleta Crochê, uma planta de crochê num vaso",
-      "imageUrl": "https://images.unsplash.com/photo-1756361771435-b60616ef968c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjcm9jaGV0JTIwbG9nb3xlbnwwfHx8fDE3NjY3MjI1NjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Logo Escola de Crochê",
+      "imageUrl": "https://i.imgur.com/KMVNvbf.png",
       "imageHint": "crochet logo"
     },
     {
-      "id": "hero-crochet-flowers",
-      "description": "Flores de crochê (tulipas) em vasos, com um fundo desfocado",
-      "imageUrl": "https://images.unsplash.com/photo-1700170447159-9d2d0da133a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjcm9jaGV0JTIwZmxvd2Vyc3xlbnwwfHx8fDE3NjY3MjI1NjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "crochet flowers"
+      "id": "hero-main",
+      "description": "Bolsa de crochê em destaque no Hero",
+      "imageUrl": "https://i.imgur.com/NpWecjw.png",
+      "imageHint": "crochet bag hero"
     },
     {
-      "id": "crochet-flower-1",
-      "description": "Vaso com flor de crochê roxa",
-      "imageUrl": "https://images.unsplash.com/photo-1700171518313-5dd219beaaa6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjcm9jaGV0JTIwZmxvd2VyfGVufDB8fHx8MTc2NjcyMTMwNHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "crochet flower"
+      "id": "mentor-avatar",
+      "description": "Avatar de Tatiane Barros",
+      "imageUrl": "https://i.imgur.com/7HSLUP4.png",
+      "imageHint": "woman portrait"
     },
     {
-      "id": "crochet-flower-2",
-      "description": "Vaso com flor de crochê laranja",
-      "imageUrl": "https://images.unsplash.com/photo-1700170447159-9d2d0da133a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjcm9jaGV0JTIwZmxvd2VyfGVufDB8fHx8MTc2NjcyMTMwNHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "crochet flower"
+      "id": "mentor-about",
+      "description": "Tatiane Barros seção sobre",
+      "imageUrl": "https://i.imgur.com/OjoRTG0.png",
+      "imageHint": "woman portrait"
     },
     {
-      "id": "crochet-flower-3",
-      "description": "Vaso com flor de crochê branca",
-      "imageUrl": "https://images.unsplash.com/photo-1700170447159-9d2d0da133a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjcm9jaGV0JTIwZmxvd2VyfGVufDB8fHx8MTc2NjcyMTMwNHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "crochet flower"
+      "id": "payment-methods",
+      "description": "Bandeiras de cartões e pix",
+      "imageUrl": "https://i.imgur.com/afQUr6D.png",
+      "imageHint": "payment methods"
     },
     {
-      "id": "crochet-flower-4",
-      "description": "Vaso com flor de crochê vermelha",
-      "imageUrl": "https://images.unsplash.com/photo-1700161093261-e059af3897c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y3JvY2hldCUyMGZsb3dlcnxlbnwwfHx8fDE3NjY3MjEzMDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "crochet flower"
+      "id": "secure-badges",
+      "description": "Selo de checkout seguro",
+      "imageUrl": "https://i.imgur.com/YH11xZr.png",
+      "imageHint": "secure checkout"
     },
     {
-      "id": "crochet-flower-5",
-      "description": "Vaso com flor de crochê rosa",
-      "imageUrl": "https://images.unsplash.com/photo-1700171394718-2457b1190444?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjcm9jaGV0JTIwZmxvd2VyfGVufDB8fHx8MTc2NjcyMTMwNHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "crochet flower"
+      "id": "testimonial-social",
+      "description": "Print de depoimento de aluna",
+      "imageUrl": "https://i.imgur.com/xdQUoaZ.png",
+      "imageHint": "social proof"
     },
     {
-      "id": "crochet-flower-6",
-      "description": "Vaso com flor de crochê margarida",
-      "imageUrl": "https://images.unsplash.com/photo-1700171518313-5dd219beaaa6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjcm9jaGV0JTIwZmxvd2VyfGVufDB8fHx8MTc2NjcyMTMwNHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "crochet flower"
+      "id": "special-offer-obrigado",
+      "description": "Imagem da oferta especial na página de obrigado",
+      "imageUrl": "https://i.imgur.com/zZZZJPO.jpeg",
+      "imageHint": "special offer"
     },
     {
-      "id": "crochet-flower-7",
-      "description": "Vaso com flor de crochê azul",
-      "imageUrl": "https://images.unsplash.com/photo-1700171458554-46cfd3f2a87a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjcm9jaGV0JTIwZmxvd2VyfGVufDB8fHx8MTc2NjcyMTMwNHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "crochet flower"
+      "id": "banner-bolsas",
+      "description": "Banner Linktree Bolsas de Sucesso",
+      "imageUrl": "https://i.imgur.com/OmseEOm.png",
+      "imageHint": "banner"
     },
     {
-      "id": "crochet-flower-8",
-      "description": "Vaso com flores de crochê coloridas",
-      "imageUrl": "https://images.unsplash.com/photo-1752755098269-58113eb87d61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjcm9jaGV0JTIwZmxvd2VyfGVufDB8fHx8MTc2NjcyMTMwNHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "crochet flower"
+      "id": "banner-amigurumi",
+      "description": "Banner Linktree Amigurumi",
+      "imageUrl": "https://i.imgur.com/CTcwM0D.png",
+      "imageHint": "banner"
     },
     {
-      "id": "crochet-flower-9",
-      "description": "Vaso com flor de crochê rosa claro",
-      "imageUrl": "https://images.unsplash.com/photo-1752755098269-58113eb87d61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjcm9jaGV0JTIwZmxvd2VyfGVufDB8fHx8MTc2NjcyMTMwNHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "crochet flower"
+      "id": "bag-1",
+      "imageUrl": "https://i.imgur.com/mTixFpW.jpeg",
+      "description": "Bolsa 1",
+      "imageHint": "crochet bag"
     },
     {
-      "id": "crochet-flower-10",
-      "description": "Vaso com flor de crochê cacto",
-      "imageUrl": "https://images.unsplash.com/photo-1570321427645-80ff2e10908b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjcm9jaGV0JTIwY2FjdHVzfGVufDB8fHx8MTc2NjcyMjU2Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "crochet cactus"
+      "id": "bag-1-v1",
+      "imageUrl": "https://i.imgur.com/ditKxzZ.jpeg",
+      "description": "Bolsa 1 var 1",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-1-v2",
+      "imageUrl": "https://i.imgur.com/6kaz2tp.jpeg",
+      "description": "Bolsa 1 var 2",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-1-v3",
+      "imageUrl": "https://i.imgur.com/0qiHfCY.jpeg",
+      "description": "Bolsa 1 var 3",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-1-v4",
+      "imageUrl": "https://i.imgur.com/Nj9QKWX.jpeg",
+      "description": "Bolsa 1 var 4",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-2",
+      "imageUrl": "https://i.imgur.com/2h8DPj5.png",
+      "description": "Bolsa 2",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-2-v1",
+      "imageUrl": "https://i.imgur.com/bZpLS7K.png",
+      "description": "Bolsa 2 var 1",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-2-v2",
+      "imageUrl": "https://i.imgur.com/vB5dLcH.jpeg",
+      "description": "Bolsa 2 var 2",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-2-v3",
+      "imageUrl": "https://i.imgur.com/q2JJ27F.png",
+      "description": "Bolsa 2 var 3",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-2-v4",
+      "imageUrl": "https://i.imgur.com/bqAc3iB.jpeg",
+      "description": "Bolsa 2 var 4",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-3",
+      "imageUrl": "https://i.imgur.com/fNF41Yi.jpeg",
+      "description": "Bolsa 3",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-4",
+      "imageUrl": "https://i.imgur.com/r76j16N.jpeg",
+      "description": "Bolsa 4",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-5",
+      "imageUrl": "https://i.imgur.com/ON1Tyqp.jpeg",
+      "description": "Bolsa 5",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-6",
+      "imageUrl": "https://i.imgur.com/ftp5Wn6.jpeg",
+      "description": "Bolsa 6",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-7",
+      "imageUrl": "https://i.imgur.com/Kc3jGcW.jpeg",
+      "description": "Bolsa 7",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-8",
+      "imageUrl": "https://i.imgur.com/7HMTFU7.jpeg",
+      "description": "Bolsa 8",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-9",
+      "imageUrl": "https://i.imgur.com/7xmWbQN.jpeg",
+      "description": "Bolsa 9",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-10",
+      "imageUrl": "https://i.imgur.com/tgEESxy.png",
+      "description": "Bolsa 10",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-11",
+      "imageUrl": "https://i.imgur.com/LBRCsGE.jpeg",
+      "description": "Bolsa 11",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-12",
+      "imageUrl": "https://i.imgur.com/OviKXmZ.png",
+      "description": "Bolsa 12",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-13",
+      "imageUrl": "https://i.imgur.com/euJlX0g.png",
+      "description": "Bolsa 13",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-14",
+      "imageUrl": "https://i.imgur.com/I7tSjwc.jpeg",
+      "description": "Bolsa 14",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-15",
+      "imageUrl": "https://i.imgur.com/rZ02jgI.jpeg",
+      "description": "Bolsa 15",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-16",
+      "imageUrl": "https://i.imgur.com/ERj3yZh.png",
+      "description": "Bolsa 16",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "bag-17",
+      "imageUrl": "https://i.imgur.com/C5JfdZW.png",
+      "description": "Bolsa 17",
+      "imageHint": "crochet bag"
+    },
+    {
+      "id": "beach-1",
+      "imageUrl": "https://i.imgur.com/HdDuWFS.png",
+      "description": "Praia 1",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-2",
+      "imageUrl": "https://i.imgur.com/B1frtB8.png",
+      "description": "Praia 2",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-3",
+      "imageUrl": "https://i.imgur.com/XpiyxqT.png",
+      "description": "Praia 3",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-4",
+      "imageUrl": "https://i.imgur.com/FGKJCjb.png",
+      "description": "Praia 4",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-5",
+      "imageUrl": "https://i.imgur.com/HiKYkKT.png",
+      "description": "Praia 5",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-6",
+      "imageUrl": "https://i.imgur.com/eHTLndj.png",
+      "description": "Praia 6",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-7",
+      "imageUrl": "https://i.imgur.com/QJyVjxg.png",
+      "description": "Praia 7",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-8",
+      "imageUrl": "https://i.imgur.com/FthVzjc.png",
+      "description": "Praia 8",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-9",
+      "imageUrl": "https://i.imgur.com/h4yIdcZ.png",
+      "description": "Praia 9",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-10",
+      "imageUrl": "https://i.imgur.com/Kt4paxr.png",
+      "description": "Praia 10",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-11",
+      "imageUrl": "https://i.imgur.com/mbOSpgB.png",
+      "description": "Praia 11",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-12",
+      "imageUrl": "https://i.imgur.com/ToCsGq3.png",
+      "description": "Praia 12",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-13",
+      "imageUrl": "https://i.imgur.com/CBY8rMk.png",
+      "description": "Praia 13",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-14",
+      "imageUrl": "https://i.imgur.com/jgZBtZJ.png",
+      "description": "Praia 14",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-15",
+      "imageUrl": "https://i.imgur.com/JNoqoy3.png",
+      "description": "Praia 15",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-16",
+      "imageUrl": "https://i.imgur.com/TcC0oLR.png",
+      "description": "Praia 16",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-17",
+      "imageUrl": "https://i.imgur.com/cAT2Ix6.png",
+      "description": "Praia 17",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-18",
+      "imageUrl": "https://i.imgur.com/tj6V9OR.png",
+      "description": "Praia 18",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-19",
+      "imageUrl": "https://i.imgur.com/WcYVGEZ.png",
+      "description": "Praia 19",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-20",
+      "imageUrl": "https://i.imgur.com/8RxbMmO.png",
+      "description": "Praia 20",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-21",
+      "imageUrl": "https://i.imgur.com/mRHXLMf.png",
+      "description": "Praia 21",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-22",
+      "imageUrl": "https://i.imgur.com/eba8xZZ.png",
+      "description": "Praia 22",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-23",
+      "imageUrl": "https://i.imgur.com/wxwRmy2.png",
+      "description": "Praia 23",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-24",
+      "imageUrl": "https://i.imgur.com/sxijJeb.png",
+      "description": "Praia 24",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-25",
+      "imageUrl": "https://i.imgur.com/0nhsO8g.png",
+      "description": "Praia 25",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-26",
+      "imageUrl": "https://i.imgur.com/k90JSiI.png",
+      "description": "Praia 26",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-27",
+      "imageUrl": "https://i.imgur.com/RIeNAKU.png",
+      "description": "Praia 27",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-28",
+      "imageUrl": "https://i.imgur.com/Yi4paN6.png",
+      "description": "Praia 28",
+      "imageHint": "beach bag"
+    },
+    {
+      "id": "beach-29",
+      "imageUrl": "https://i.imgur.com/SPvFhZ9.png",
+      "description": "Praia 29",
+      "imageHint": "beach bag"
     }
   ]
 }
