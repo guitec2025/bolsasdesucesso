@@ -1,10 +1,11 @@
+
 'use client';
 
 import Image from 'next/image';
 import { Button } from '../ui/button';
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { Eye, Layers, Star } from 'lucide-react';
+import { Eye, Star } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   Carousel,
@@ -129,6 +130,7 @@ export function Gallery() {
                   alt={image.description}
                   width={300}
                   height={300}
+                  loading="lazy"
                   className="object-cover w-full h-full aspect-square transition-transform duration-300 group-hover:scale-105"
                   data-ai-hint={image.imageHint}
               />
@@ -197,6 +199,7 @@ export function Gallery() {
                             alt={`Variação ${index + 1} da bolsa`}
                             width={800}
                             height={800}
+                            priority
                             className="object-contain w-full h-auto max-h-[70vh] rounded-md"
                           />
                         </div>
@@ -213,6 +216,7 @@ export function Gallery() {
                     alt="Visualização da bolsa de crochê"
                     width={800}
                     height={800}
+                    priority
                     className="object-contain w-full h-auto max-h-[70vh] rounded-md"
                   />
                 </div>

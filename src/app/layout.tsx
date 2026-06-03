@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const belleza = Belleza({
   subsets: ['latin'],
-  weight: ['400'], // Belleza only supports 400 weight
+  weight: ['400'], 
   variable: '--font-belleza',
   display: 'swap',
 });
@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <head>
-        {/* Google Tag Manager - Prioritized for conversion tracking */}
+        {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -44,9 +44,8 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-5TX8TDBS');
           `}
         </Script>
-        {/* End Google Tag Manager */}
 
-        {/* Microsoft Clarity - Delayed for performance */}
+        {/* Microsoft Clarity */}
         <Script id="microsoft-clarity" strategy="lazyOnload">
           {`
             (function(c,l,a,r,i,t,y){
@@ -56,35 +55,30 @@ export default function RootLayout({
             })(window, document, "clarity", "script", "wq6jprb9q0");
           `}
         </Script>
-        {/* End Microsoft Clarity */}
       </head>
       <body className={cn("font-body antialiased", alegreya.variable, belleza.variable)}>
         {/* Google Tag Manager (noscript) */}
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5TX8TDBS"
         height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
-        {/* End Google Tag Manager (noscript) */}
         
         {children}
         
         <Toaster />
         
-        {/* Utmify Scripts - Delayed for performance */}
+        {/* Utmify Scripts */}
         <Script
           src="https://cdn.utmify.com.br/scripts/utms/latest.js"
           data-utmify-prevent-xcod-sck
           data-utmify-prevent-subids
           strategy="lazyOnload"
         />
-        <Script id="utmify-pixel" strategy="lazyOnload">
-          {`
-            window.pixelId = "69ac892bcb4572594d7a7f5e";
-            var a = document.createElement("script");
-            a.setAttribute("async", "");
-            a.setAttribute("defer", "");
-            a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-            document.head.appendChild(a);
-          `}
+        <Script id="utmify-pixel-config" strategy="lazyOnload">
+          {`window.pixelId = "69ac892bcb4572594d7a7f5e";`}
         </Script>
+        <Script
+          src="https://cdn.utmify.com.br/scripts/pixel/pixel.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );

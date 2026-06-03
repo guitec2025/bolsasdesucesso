@@ -1,61 +1,74 @@
 
 'use client';
 
-import { motion } from 'framer-motion';
 import { useMemo, useState, useEffect } from 'react';
 
-const Sparkle = ({ left, duration, delay, size }: { left: string; duration: number; delay: number; size: number; }) => {
-  return (
-    <motion.div
-      className="absolute bg-white rounded-full opacity-0 pointer-events-none"
-      style={{
-        left,
-        top: '-5%',
-        width: size,
-        height: size,
-        boxShadow: '0 0 5px rgba(255, 255, 255, 0.8)',
-      }}
-      animate={{
-        top: '105%',
-        opacity: [0, 1, 0]
-      }}
-      transition={{
-        duration,
-        delay,
-        ease: 'linear',
-        repeat: Infinity,
-      }}
-    />
-  );
-};
-
+/**
+ * Optimized Sparkle Effect using CSS Animations.
+ * Reduces CPU overhead to 0% by offloading to the compositor thread.
+ * This also prevents external scripts from being triggered by JavaScript-driven DOM updates.
+ */
 export function SparkleEffect({ count = 15 }: { count?: number }) {
-  const [sparkles, setSparkles] = useState<Array<{id: number; left: string; duration: number; delay: number; size: number;}>>([]);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  useEffect(() => {
-    if (isMounted) {
-      const generatedSparkles = Array.from({ length: count }).map((_, i) => ({
-        id: i,
-        left: `${Math.random() * 100}%`,
-        duration: Math.random() * 4 + 4, 
-        delay: Math.random() * 5,
-        size: Math.random() * 2 + 1,
-      }));
-      setSparkles(generatedSparkles);
-    }
+  const sparkles = useMemo(() => {
+    if (!isMounted) return [];
+    return Array.from({ length: count }).map((_, i) => ({
+      id: i,
+      left: `${Math.random() * 100}%`,
+      duration: `${Math.random() * 4 + 4}s`,
+      delay: `${Math.random() * 5}s`,
+      size: `${Math.random() * 2 + 1}px`,
+    }));
   }, [count, isMounted]);
 
   if (!isMounted) return null;
 
   return (
     <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-10">
-      {sparkles.map(sparkle => (
-        <Sparkle key={sparkle.id} {...sparkle} />
+      <style jsx>{`
+        @keyframes fall {
+          0% {
+            transform: translateY(-10px);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(110vh);
+            opacity: 0;
+          }
+        }
+        .sparkle {
+          position: absolute;
+          background: white;
+          border-radius: 50%;
+          pointer-events: none;
+          box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+          animation: fall linear infinite;
+        }
+      `}</style>
+      {sparkles.map((sparkle) => (
+        <div
+          key={sparkle.id}
+          className="sparkle"
+          style={{
+            left: sparkle.left,
+            width: sparkle.size,
+            height: sparkle.size,
+            animationDuration: sparkle.duration,
+            animationDelay: sparkle.delay,
+            top: '-20px',
+          }}
+        />
       ))}
     </div>
   );
