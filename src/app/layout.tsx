@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <head>
-        {/* Google Tag Manager */}
+        {/* Google Tag Manager - Prioritized for conversion tracking */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -46,8 +46,8 @@ export default function RootLayout({
         </Script>
         {/* End Google Tag Manager */}
 
-        {/* Microsoft Clarity */}
-        <Script id="microsoft-clarity" strategy="afterInteractive">
+        {/* Microsoft Clarity - Delayed for performance */}
+        <Script id="microsoft-clarity" strategy="lazyOnload">
           {`
             (function(c,l,a,r,i,t,y){
                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -63,17 +63,19 @@ export default function RootLayout({
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5TX8TDBS"
         height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
         {/* End Google Tag Manager (noscript) */}
+        
         {children}
+        
         <Toaster />
         
-        {/* Utmify Scripts */}
+        {/* Utmify Scripts - Delayed for performance */}
         <Script
           src="https://cdn.utmify.com.br/scripts/utms/latest.js"
           data-utmify-prevent-xcod-sck
           data-utmify-prevent-subids
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="utmify-pixel" strategy="afterInteractive">
+        <Script id="utmify-pixel" strategy="lazyOnload">
           {`
             window.pixelId = "69ac892bcb4572594d7a7f5e";
             var a = document.createElement("script");
