@@ -20,31 +20,35 @@ export function CountdownHeader() {
   });
 
   useEffect(() => {
-    // Set target date to May 12th of the current or next year
-    const now = new Date();
-    let targetYear = now.getFullYear();
-    const targetDateForCurrentYear = new Date(targetYear, 4, 12); // Month is 0-indexed (4 = May), Day is 12
-
-    if (now > targetDateForCurrentYear) {
-      targetYear += 1;
-    }
-    const targetDate = new Date(targetYear, 4, 12);
-
-    const interval = setInterval(() => {
+    // Define a data alvo para 12 de maio às 23:59:59
+    const calculateTimeLeft = () => {
       const now = new Date();
+      let targetYear = now.getFullYear();
+      // Maio é mês 4 (0-indexado), dia 12, às 23:59:59
+      let targetDate = new Date(targetYear, 4, 12, 23, 59, 59);
+
+      // Se a data já passou este ano, define para o próximo ano
+      if (now > targetDate) {
+        targetYear += 1;
+        targetDate = new Date(targetYear, 4, 12, 23, 59, 59);
+      }
+
       const difference = targetDate.getTime() - now.getTime();
 
       if (difference > 0) {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((difference / 1000 / 60) % 60);
-        const seconds = Math.floor((difference / 1000) % 60);
-        setTimeLeft({ days, hours, minutes, seconds });
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+        });
       } else {
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-        clearInterval(interval);
       }
-    }, 1000);
+    };
+
+    calculateTimeLeft();
+    const interval = setInterval(calculateTimeLeft, 1000);
 
     return () => clearInterval(interval);
   }, []);

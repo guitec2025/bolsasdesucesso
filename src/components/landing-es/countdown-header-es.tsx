@@ -20,30 +20,33 @@ export function CountdownHeaderES() {
   });
 
   useEffect(() => {
-    const now = new Date();
-    let targetYear = now.getFullYear();
-    const targetDateForCurrentYear = new Date(targetYear, 4, 12); // Mayo 12
-
-    if (now > targetDateForCurrentYear) {
-      targetYear += 1;
-    }
-    const targetDate = new Date(targetYear, 4, 12);
-
-    const interval = setInterval(() => {
+    const calculateTimeLeft = () => {
       const now = new Date();
+      let targetYear = now.getFullYear();
+      // Mayo es mes 4 (0-indexado), día 12, a las 23:59:59
+      let targetDate = new Date(targetYear, 4, 12, 23, 59, 59);
+
+      if (now > targetDate) {
+        targetYear += 1;
+        targetDate = new Date(targetYear, 4, 12, 23, 59, 59);
+      }
+
       const difference = targetDate.getTime() - now.getTime();
 
       if (difference > 0) {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((difference / 1000 / 60) % 60);
-        const seconds = Math.floor((difference / 1000) % 60);
-        setTimeLeft({ days, hours, minutes, seconds });
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+        });
       } else {
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-        clearInterval(interval);
       }
-    }, 1000);
+    };
+
+    calculateTimeLeft();
+    const interval = setInterval(calculateTimeLeft, 1000);
 
     return () => clearInterval(interval);
   }, []);
