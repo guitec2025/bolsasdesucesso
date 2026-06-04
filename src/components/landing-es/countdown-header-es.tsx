@@ -25,8 +25,8 @@ export function CountdownHeaderES() {
   useEffect(() => {
     const calculateTimeLeft = () => {
       const now = new Date();
-      // Ajustado para 12 de mayo de 2024
-      const targetDate = new Date(2024, 4, 12, 23, 59, 59);
+      // Ajustado para 12 de junio de 2024 (Mês 5 no JS é Junho)
+      const targetDate = new Date(2024, 5, 12, 23, 59, 59);
       const difference = targetDate.getTime() - now.getTime();
 
       if (difference > 0) {
@@ -51,7 +51,7 @@ export function CountdownHeaderES() {
     <div className="bg-background py-3 border-b border-border/10">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 px-4">
         <p className="text-foreground/90 font-body text-base sm:text-lg text-center md:text-left">
-          Inscripciones abiertas hasta el <b>12 de mayo</b>
+          Inscripciones abiertas hasta el <b>12 de junio</b>
         </p>
         <div className="flex items-center gap-2 sm:gap-3">
           <CountdownUnit value={timeLeft.days} label="Días" />
