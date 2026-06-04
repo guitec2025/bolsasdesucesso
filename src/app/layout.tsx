@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <head>
-        {/* Google Tag Manager - Moved to lazyOnload for performance */}
+        {/* Google Tag Manager - Carregamento diferido para não travar a renderização inicial */}
         <Script id="google-tag-manager" strategy="lazyOnload">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -64,7 +64,7 @@ export default function RootLayout({
         
         <Toaster />
         
-        {/* Utmify Scripts - All moved to lazyOnload to prioritize page render */}
+        {/* Utmify Scripts - Carregamento ultra-atrasado para priorizar o LCP e evitar eventos de scroll duplicados */}
         <Script
           src="https://cdn.utmify.com.br/scripts/utms/latest.js"
           data-utmify-prevent-xcod-sck

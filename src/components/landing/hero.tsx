@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from '../ui/button';
@@ -13,15 +14,17 @@ export function Hero() {
   };
 
   return (
-    <section className="relative bg-gray-100 sm:flex sm:items-center sm:justify-center">
-       {/* Desktop View Image - For sm and up */}
+    <section className="relative bg-gray-100 sm:flex sm:items-center sm:justify-center overflow-hidden">
+       {/* Desktop View Image - Prioridade Máxima para o LCP */}
        <Image
           src={heroImage.imageUrl}
           alt={heroImage.description}
           fill
           className="object-cover hidden sm:block"
           priority
+          fetchPriority="high"
           data-ai-hint={heroImage.imageHint}
+          sizes="100vw"
         />
         <SparkleEffect />
       
@@ -36,8 +39,8 @@ export function Hero() {
               alt="Logo Escola de Crochê"
               width={210}
               height={70}
-              data-ai-hint="crochet logo"
-              className=''
+              priority
+              className='h-auto'
             />
           </div>
           <h1 className="text-4xl lg:text-5xl font-headline font-bold leading-tight max-w-3xl text-[#563209]" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.2)' }}>
@@ -60,7 +63,7 @@ export function Hero() {
 
         {/* Mobile View with Overlap Effect */}
         <div className="sm:hidden flex flex-col">
-          {/* 1. Background Image */}
+          {/* 1. Background Image - Prioridade Máxima para LCP no Mobile */}
           <div className="relative w-full aspect-[9/10]">
               <Image
                   src={heroImage.imageUrl}
@@ -68,7 +71,8 @@ export function Hero() {
                   fill
                   className="object-cover object-center"
                   priority
-                  data-ai-hint={heroImage.imageHint}
+                  fetchPriority="high"
+                  sizes="100vw"
               />
               <SparkleEffect />
           </div>
@@ -81,7 +85,8 @@ export function Hero() {
                   alt="Logo Escola de Crochê"
                   width={180}
                   height={60}
-                  data-ai-hint="crochet logo"
+                  priority
+                  className="h-auto"
                   />
               </div>
               <h1 className="text-3xl font-headline font-bold leading-tight text-[#563209]">
