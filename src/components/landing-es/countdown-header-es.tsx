@@ -25,7 +25,7 @@ export function CountdownHeaderES() {
   useEffect(() => {
     const calculateTimeLeft = () => {
       const now = new Date();
-      // Ajustado para 12 de junio de 2025 (Mes 5 no JS es Junio)
+      // Mes 5 en JavaScript es Junio (0-indexed: 0=Jan, 5=Jun)
       const targetDate = new Date(2025, 5, 12, 23, 59, 59);
       const difference = targetDate.getTime() - now.getTime();
 
