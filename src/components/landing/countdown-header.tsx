@@ -25,8 +25,8 @@ export function CountdownHeader() {
   useEffect(() => {
     const calculateTimeLeft = () => {
       const now = new Date();
-      // Ajustado para 12 de junho de 2024 (Mês 5 no JS é Junho)
-      const targetDate = new Date(2024, 5, 12, 23, 59, 59);
+      // Ajustado para 12 de junho de 2025 (Mês 5 no JS é Junho)
+      const targetDate = new Date(2025, 5, 12, 23, 59, 59);
       const difference = targetDate.getTime() - now.getTime();
 
       if (difference > 0) {
