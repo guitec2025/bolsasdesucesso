@@ -5,7 +5,6 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import Script from 'next/script';
-import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Escola de Crochê',
@@ -34,8 +33,8 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <head>
-        {/* Google Tag Manager */}
-        <Script id="google-tag-manager" strategy="afterInteractive">
+        {/* Google Tag Manager - Moved to lazyOnload for performance */}
+        <Script id="google-tag-manager" strategy="lazyOnload">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -45,7 +44,7 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Microsoft Clarity */}
+        {/* Microsoft Clarity - lazyOnload */}
         <Script id="microsoft-clarity" strategy="lazyOnload">
           {`
             (function(c,l,a,r,i,t,y){
@@ -65,7 +64,7 @@ export default function RootLayout({
         
         <Toaster />
         
-        {/* Utmify Scripts */}
+        {/* Utmify Scripts - All moved to lazyOnload to prioritize page render */}
         <Script
           src="https://cdn.utmify.com.br/scripts/utms/latest.js"
           data-utmify-prevent-xcod-sck

@@ -7,8 +7,12 @@ import { useInView } from 'react-intersection-observer';
 import { Hero } from '@/components/landing/hero';
 import { Footer } from '@/components/landing/footer';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Gallery } from '@/components/landing/gallery';
 import { CountdownHeader } from '@/components/landing/countdown-header';
+
+const Gallery = dynamic(() => import('@/components/landing/gallery').then(mod => mod.Gallery), {
+  loading: () => <SectionSkeleton />,
+  ssr: false
+});
 
 const SectionSkeleton = () => (
   <div className="container mx-auto py-12 sm:py-24 px-4">

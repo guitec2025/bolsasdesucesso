@@ -1,10 +1,11 @@
+
 'use client';
 
 import Image from 'next/image';
 import { Button } from '../ui/button';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { Eye, Star } from 'lucide-react';
+import { Eye, Star, ChevronDown } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   Carousel,
@@ -108,17 +109,35 @@ const allImages: GalleryImage[] = [
   { id: 'praia-29', imageUrl: 'https://i.imgur.com/SPvFhZ9.png', description: 'Bolsa de praia luxo 29', imageHint: 'luxury beach bag', category: 'praia' },
 ];
 
+const INITIAL_VISIBLE_COUNT = 8;
 
 export function Gallery() {
   const [selectedImageId, setSelectedImageId] = useState<string | null>(null);
+  const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_COUNT);
+  const [activeTab, setActiveTab] = useState<'bolsas' | 'praia'>('bolsas');
   
-  const selectedImageData = allImages.find(img => img.id === selectedImageId);
+  const selectedImageData = useMemo(() => allImages.find(img => img.id === selectedImageId), [selectedImageId]);
 
-  const renderGalleryGrid = (category: 'bolsas' | 'praia') => {
-    const images = allImages.filter(img => img.category === category);
+  const imagesForCurrentTab = useMemo(() => 
+    allImages.filter(img => img.category === activeTab),
+    [activeTab]
+  );
+
+  const visibleImages = useMemo(() => 
+    imagesForCurrentTab.slice(0, visibleCount),
+    [imagesForCurrentTab, visibleCount]
+  );
+
+  const hasMore = visibleCount < imagesForCurrentTab.length;
+
+  const handleShowMore = () => {
+    setVisibleCount(prev => prev + 12);
+  };
+
+  const renderGalleryGrid = () => {
     return (
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 mt-8">
-        {images.map((image) => (
+        {visibleImages.map((image) => (
             <div 
               key={image.id} 
               className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 group bg-card cursor-pointer"
@@ -149,7 +168,6 @@ export function Gallery() {
     );
   };
 
-
   return (
     <section id="gallery" className="py-12 sm:py-24 bg-background">
       <div className="container mx-auto text-center px-4">
@@ -163,18 +181,35 @@ export function Gallery() {
           Todos os modelos foram desenhados para serem <b>lindos, vendáveis</b> e perfeitos para quem ama artesanato.
         </p>
 
-        <Tabs defaultValue="bolsas" className="w-full max-w-sm mx-auto mt-8">
+        <Tabs defaultValue="bolsas" className="w-full max-w-sm mx-auto mt-8" onValueChange={(v) => {
+          setActiveTab(v as any);
+          setVisibleCount(INITIAL_VISIBLE_COUNT);
+        }}>
           <TabsList className="grid w-full grid-cols-2 h-auto p-2">
             <TabsTrigger value="bolsas" className="text-base">Bolsas</TabsTrigger>
             <TabsTrigger value="praia" className="text-base">Bolsas Praia Luxo</TabsTrigger>
           </TabsList>
           <TabsContent value="bolsas">
-            {renderGalleryGrid('bolsas')}
+            {renderGalleryGrid()}
           </TabsContent>
           <TabsContent value="praia">
-            {renderGalleryGrid('praia')}
+            {renderGalleryGrid()}
           </TabsContent>
         </Tabs>
+
+        {hasMore && (
+          <div className="mt-12">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              onClick={handleShowMore}
+              className="group border-primary/20 text-[#563209] hover:bg-primary/10 transition-colors"
+            >
+              <ChevronDown className="mr-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
+              Ver mais modelos exclusivos
+            </Button>
+          </div>
+        )}
         
         {selectedImageData && (
           <Dialog open={!!selectedImageId} onOpenChange={(isOpen) => !isOpen && setSelectedImageId(null)}>
