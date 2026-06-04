@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -20,18 +21,11 @@ export function CountdownHeader() {
   });
 
   useEffect(() => {
-    // Define a data alvo para 12 de maio às 23:59:59
     const calculateTimeLeft = () => {
       const now = new Date();
-      let targetYear = now.getFullYear();
-      // Maio é mês 4 (0-indexado), dia 12, às 23:59:59
-      let targetDate = new Date(targetYear, 4, 12, 23, 59, 59);
-
-      // Se a data já passou este ano, define para o próximo ano
-      if (now > targetDate) {
-        targetYear += 1;
-        targetDate = new Date(targetYear, 4, 12, 23, 59, 59);
-      }
+      // Define a data alvo fixa para 12 de maio de 2025 às 23:59:59
+      // Maio é mês 4 (0-indexado)
+      const targetDate = new Date(2025, 4, 12, 23, 59, 59);
 
       const difference = targetDate.getTime() - now.getTime();
 

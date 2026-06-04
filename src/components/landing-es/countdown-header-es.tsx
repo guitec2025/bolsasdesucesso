@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -22,14 +23,8 @@ export function CountdownHeaderES() {
   useEffect(() => {
     const calculateTimeLeft = () => {
       const now = new Date();
-      let targetYear = now.getFullYear();
-      // Mayo es mes 4 (0-indexado), día 12, a las 23:59:59
-      let targetDate = new Date(targetYear, 4, 12, 23, 59, 59);
-
-      if (now > targetDate) {
-        targetYear += 1;
-        targetDate = new Date(targetYear, 4, 12, 23, 59, 59);
-      }
+      // Define la fecha objetivo fija para el 12 de mayo de 2025 a las 23:59:59
+      const targetDate = new Date(2025, 4, 12, 23, 59, 59);
 
       const difference = targetDate.getTime() - now.getTime();
 
