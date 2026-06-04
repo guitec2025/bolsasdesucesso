@@ -2,25 +2,15 @@
 'use client'
 
 import dynamic from 'next/dynamic';
-import { Suspense, memo } from 'react';
+import { memo } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Hero } from '@/components/landing/hero';
 import { Footer } from '@/components/landing/footer';
 import { Skeleton } from '@/components/ui/skeleton';
 import { CountdownHeader } from '@/components/landing/countdown-header';
+import { cn } from '@/lib/utils';
 
-// Importações Dinâmicas para reduzir o chunk inicial de JS
-const Gallery = dynamic(() => import('@/components/landing/gallery').then(mod => mod.Gallery), {
-  loading: () => <SectionSkeleton />,
-  ssr: false
-});
-
-const Bonuses = dynamic(() => import('@/components/landing/bonuses').then(mod => mod.Bonuses), { ssr: false });
-const MoreTestimonials = dynamic(() => import('@/components/landing/more-testimonials').then(mod => mod.MoreTestimonials), { ssr: false });
-const Pricing = dynamic(() => import('@/components/landing/pricing').then(mod => mod.Pricing), { ssr: false });
-const Guarantee = dynamic(() => import('@/components/landing/guarantee').then(mod => mod.Guarantee), { ssr: false });
-const About = dynamic(() => import('@/components/landing/about').then(mod => mod.About), { ssr: false });
-
+// Esqueleto de carregamento padronizado
 const SectionSkeleton = () => (
   <div className="container mx-auto py-12 sm:py-24 px-4">
     <Skeleton className="h-12 w-1/2 mx-auto" />
@@ -33,20 +23,51 @@ const SectionSkeleton = () => (
   </div>
 );
 
-// AnimatedSection otimizado para evitar re-renderizações do pai
+// Importações Dinâmicas com fallback integrado
+const Gallery = dynamic(() => import('@/components/landing/gallery').then(mod => mod.Gallery), {
+  loading: () => <SectionSkeleton />,
+  ssr: false
+});
+
+const Bonuses = dynamic(() => import('@/components/landing/bonuses').then(mod => mod.Bonuses), { 
+  loading: () => <SectionSkeleton />,
+  ssr: false 
+});
+
+const MoreTestimonials = dynamic(() => import('@/components/landing/more-testimonials').then(mod => mod.MoreTestimonials), { 
+  loading: () => <SectionSkeleton />,
+  ssr: false 
+});
+
+const Pricing = dynamic(() => import('@/components/landing/pricing').then(mod => mod.Pricing), { 
+  loading: () => <SectionSkeleton />,
+  ssr: false 
+});
+
+const Guarantee = dynamic(() => import('@/components/landing/guarantee').then(mod => mod.Guarantee), { 
+  loading: () => <SectionSkeleton />,
+  ssr: false 
+});
+
+const About = dynamic(() => import('@/components/landing/about').then(mod => mod.About), { 
+  loading: () => <SectionSkeleton />,
+  ssr: false 
+});
+
+// Componente de Animação simplificado para garantir visibilidade
 const AnimatedSection = memo(({ children, className }: { children: React.ReactNode, className?: string }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.1,
-    rootMargin: '50px 0px', // Inicia a animação um pouco antes de entrar na tela
+    threshold: 0.05,
+    rootMargin: '100px 0px',
   });
 
   return (
     <div 
       ref={ref} 
       className={cn(
-        "fade-in-section transition-all duration-700 ease-out", 
-        inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8',
+        "transition-all duration-1000 ease-out", 
+        inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
         className
       )}
     >
@@ -61,51 +82,34 @@ export default function CrochetPage() {
     <div className="bg-background text-[#4D4237]">
       <CountdownHeader />
       <main>
-        {/* Hero é o LCP, então carregamos direto sem animações complexas que travam a CPU */}
+        {/* Hero é renderizado imediatamente (LCP) */}
         <Hero />
         
-        <Suspense fallback={<SectionSkeleton />}>
-          <AnimatedSection>
-            <Gallery />
-          </AnimatedSection>
-        </Suspense>
+        <AnimatedSection>
+          <Gallery />
+        </AnimatedSection>
 
-        <Suspense fallback={<SectionSkeleton />}>
-          <AnimatedSection>
-            <Bonuses />
-          </AnimatedSection>
-        </Suspense>
+        <AnimatedSection>
+          <Bonuses />
+        </AnimatedSection>
 
-        <Suspense fallback={<SectionSkeleton />}>
-          <AnimatedSection>
-            <MoreTestimonials />
-          </AnimatedSection>
-        </Suspense>
+        <AnimatedSection>
+          <MoreTestimonials />
+        </AnimatedSection>
 
-        <Suspense fallback={<SectionSkeleton />}>
-          <AnimatedSection>
-            <Pricing />
-          </AnimatedSection>
-        </Suspense>
+        <AnimatedSection>
+          <Pricing />
+        </AnimatedSection>
 
-        <Suspense fallback={<SectionSkeleton />}>
-          <AnimatedSection>
-            <Guarantee />
-          </AnimatedSection>
-        </Suspense>
+        <AnimatedSection>
+          <Guarantee />
+        </AnimatedSection>
 
-        <Suspense fallback={<SectionSkeleton />}>
-          <AnimatedSection>
-            <About />
-          </AnimatedSection>
-        </Suspense>
+        <AnimatedSection>
+          <About />
+        </AnimatedSection>
       </main>
       <Footer />
     </div>
   );
-}
-
-// Helper para classes condicionais sem depender de bibliotecas pesadas se não necessário
-function cn(...classes: (string | boolean | undefined)[]) {
-  return classes.filter(Boolean).join(' ');
 }
