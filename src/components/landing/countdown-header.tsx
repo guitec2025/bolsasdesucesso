@@ -26,7 +26,8 @@ export function CountdownHeader() {
     const calculateTimeLeft = () => {
       const now = new Date();
       // Mês 5 no JavaScript é Junho (0-indexed: 0=Jan, 5=Jun)
-      const targetDate = new Date(2025, 5, 12, 23, 59, 59);
+      // Definido para 12 de Junho de 2026
+      const targetDate = new Date(2026, 5, 12, 23, 59, 59);
       const difference = targetDate.getTime() - now.getTime();
 
       if (difference > 0) {
