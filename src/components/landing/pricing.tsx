@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Star } from 'lucide-react';
@@ -93,7 +92,7 @@ export function Pricing({
           </CardContent>
           <CardFooter className="flex-col gap-2 px-6 pb-6">
             <Image
-              src="https://i.imgur.com/YH11xZr.png"
+              src="https://i.ibb.co/WvsKkQDc/selo-checkout-seguro.webp"
               alt="Compra segura e garantia"
               width={300}
               height={46}

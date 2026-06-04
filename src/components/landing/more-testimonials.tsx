@@ -1,11 +1,10 @@
-
 'use client';
 
 import Image from 'next/image';
 
 export function MoreTestimonials() {
   const testimonialImages = [
-    { src: "https://i.imgur.com/xdQUoaZ.png", alt: "Depoimento de aluna 1", hint: "social testimonial" },
+    { src: "https://i.ibb.co/GQZhL81v/print-depoimento.webp", alt: "Depoimento de aluna 1", hint: "social testimonial" },
   ];
 
   return (

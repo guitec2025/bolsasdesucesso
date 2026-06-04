@@ -3,43 +3,43 @@
     {
       "id": "logo",
       "description": "Logo Escola de Crochê",
-      "imageUrl": "https://i.imgur.com/KMVNvbf.png",
+      "imageUrl": "https://i.ibb.co/8DmJrrVg/logo.webp",
       "imageHint": "crochet logo"
     },
     {
       "id": "hero-main",
       "description": "Bolsa de crochê em destaque no Hero",
-      "imageUrl": "https://i.imgur.com/NpWecjw.png",
+      "imageUrl": "https://i.ibb.co/Z6jtHkJk/imagem-hero.webp",
       "imageHint": "crochet bag hero"
     },
     {
       "id": "mentor-avatar",
       "description": "Avatar de Tatiane Barros",
-      "imageUrl": "https://i.imgur.com/7HSLUP4.png",
+      "imageUrl": "https://i.ibb.co/cVBHynm/avatar-tatiane.webp",
       "imageHint": "woman portrait"
     },
     {
       "id": "mentor-about",
       "description": "Tatiane Barros seção sobre",
-      "imageUrl": "https://i.imgur.com/OjoRTG0.png",
+      "imageUrl": "https://i.ibb.co/cVBHynm/avatar-tatiane.webp",
       "imageHint": "woman portrait"
     },
     {
       "id": "payment-methods",
       "description": "Bandeiras de cartões e pix",
-      "imageUrl": "https://i.imgur.com/afQUr6D.png",
+      "imageUrl": "https://i.ibb.co/DHYhsYP7/pagamento-seguro.webp",
       "imageHint": "payment methods"
     },
     {
       "id": "secure-badges",
       "description": "Selo de checkout seguro",
-      "imageUrl": "https://i.imgur.com/YH11xZr.png",
+      "imageUrl": "https://i.ibb.co/WvsKkQDc/selo-checkout-seguro.webp",
       "imageHint": "secure checkout"
     },
     {
       "id": "testimonial-social",
       "description": "Print de depoimento de aluna",
-      "imageUrl": "https://i.imgur.com/xdQUoaZ.png",
+      "imageUrl": "https://i.ibb.co/GQZhL81v/print-depoimento.webp",
       "imageHint": "social proof"
     },
     {
@@ -62,327 +62,105 @@
     },
     {
       "id": "bag-1",
-      "imageUrl": "https://i.imgur.com/mTixFpW.jpeg",
+      "imageUrl": "https://i.ibb.co/SwdWTLjP/bolsa1.webp",
       "description": "Bolsa 1",
       "imageHint": "crochet bag"
     },
     {
-      "id": "bag-1-v1",
-      "imageUrl": "https://i.imgur.com/ditKxzZ.jpeg",
-      "description": "Bolsa 1 var 1",
-      "imageHint": "crochet bag"
-    },
-    {
-      "id": "bag-1-v2",
-      "imageUrl": "https://i.imgur.com/6kaz2tp.jpeg",
-      "description": "Bolsa 1 var 2",
-      "imageHint": "crochet bag"
-    },
-    {
-      "id": "bag-1-v3",
-      "imageUrl": "https://i.imgur.com/0qiHfCY.jpeg",
-      "description": "Bolsa 1 var 3",
-      "imageHint": "crochet bag"
-    },
-    {
-      "id": "bag-1-v4",
-      "imageUrl": "https://i.imgur.com/Nj9QKWX.jpeg",
-      "description": "Bolsa 1 var 4",
-      "imageHint": "crochet bag"
-    },
-    {
       "id": "bag-2",
-      "imageUrl": "https://i.imgur.com/2h8DPj5.png",
+      "imageUrl": "https://i.ibb.co/JFWkZxgG/bolsa2.webp",
       "description": "Bolsa 2",
       "imageHint": "crochet bag"
     },
     {
-      "id": "bag-2-v1",
-      "imageUrl": "https://i.imgur.com/bZpLS7K.png",
-      "description": "Bolsa 2 var 1",
-      "imageHint": "crochet bag"
-    },
-    {
-      "id": "bag-2-v2",
-      "imageUrl": "https://i.imgur.com/vB5dLcH.jpeg",
-      "description": "Bolsa 2 var 2",
-      "imageHint": "crochet bag"
-    },
-    {
-      "id": "bag-2-v3",
-      "imageUrl": "https://i.imgur.com/q2JJ27F.png",
-      "description": "Bolsa 2 var 3",
-      "imageHint": "crochet bag"
-    },
-    {
-      "id": "bag-2-v4",
-      "imageUrl": "https://i.imgur.com/bqAc3iB.jpeg",
-      "description": "Bolsa 2 var 4",
-      "imageHint": "crochet bag"
-    },
-    {
       "id": "bag-3",
-      "imageUrl": "https://i.imgur.com/fNF41Yi.jpeg",
+      "imageUrl": "https://i.ibb.co/Csb0Jqxk/bolsa3.webp",
       "description": "Bolsa 3",
       "imageHint": "crochet bag"
     },
     {
       "id": "bag-4",
-      "imageUrl": "https://i.imgur.com/r76j16N.jpeg",
+      "imageUrl": "https://i.ibb.co/DgC9jWC5/bolsa4.webp",
       "description": "Bolsa 4",
       "imageHint": "crochet bag"
     },
     {
       "id": "bag-5",
-      "imageUrl": "https://i.imgur.com/ON1Tyqp.jpeg",
+      "imageUrl": "https://i.ibb.co/0p1VcgxZ/bolsa5.webp",
       "description": "Bolsa 5",
       "imageHint": "crochet bag"
     },
     {
       "id": "bag-6",
-      "imageUrl": "https://i.imgur.com/ftp5Wn6.jpeg",
+      "imageUrl": "https://i.ibb.co/Zp6QvTm5/bolsa6.webp",
       "description": "Bolsa 6",
       "imageHint": "crochet bag"
     },
     {
       "id": "bag-7",
-      "imageUrl": "https://i.imgur.com/Kc3jGcW.jpeg",
+      "imageUrl": "https://i.ibb.co/CKdccnrJ/bolsa7.webp",
       "description": "Bolsa 7",
       "imageHint": "crochet bag"
     },
     {
       "id": "bag-8",
-      "imageUrl": "https://i.imgur.com/7HMTFU7.jpeg",
+      "imageUrl": "https://i.ibb.co/20Wg09pd/bolsa8.webp",
       "description": "Bolsa 8",
       "imageHint": "crochet bag"
     },
     {
       "id": "bag-9",
-      "imageUrl": "https://i.imgur.com/7xmWbQN.jpeg",
+      "imageUrl": "https://i.ibb.co/chDPqSTH/bolsa9.webp",
       "description": "Bolsa 9",
       "imageHint": "crochet bag"
     },
     {
       "id": "bag-10",
-      "imageUrl": "https://i.imgur.com/tgEESxy.png",
+      "imageUrl": "https://i.ibb.co/9k4J1Bts/bolsa10.webp",
       "description": "Bolsa 10",
       "imageHint": "crochet bag"
     },
     {
       "id": "bag-11",
-      "imageUrl": "https://i.imgur.com/LBRCsGE.jpeg",
+      "imageUrl": "https://i.ibb.co/JR1x6VKs/bolsa11.webp",
       "description": "Bolsa 11",
       "imageHint": "crochet bag"
     },
     {
       "id": "bag-12",
-      "imageUrl": "https://i.imgur.com/OviKXmZ.png",
+      "imageUrl": "https://i.ibb.co/4wJpYcDZ/bolsa12.webp",
       "description": "Bolsa 12",
       "imageHint": "crochet bag"
     },
     {
       "id": "bag-13",
-      "imageUrl": "https://i.imgur.com/euJlX0g.png",
+      "imageUrl": "https://i.ibb.co/nM8RGwFq/bolsa13.webp",
       "description": "Bolsa 13",
       "imageHint": "crochet bag"
     },
     {
       "id": "bag-14",
-      "imageUrl": "https://i.imgur.com/I7tSjwc.jpeg",
+      "imageUrl": "https://i.ibb.co/tp7wrnxc/bolsa14.webp",
       "description": "Bolsa 14",
       "imageHint": "crochet bag"
     },
     {
       "id": "bag-15",
-      "imageUrl": "https://i.imgur.com/rZ02jgI.jpeg",
+      "imageUrl": "https://i.ibb.co/fz3z3xXj/bolsa15.webp",
       "description": "Bolsa 15",
       "imageHint": "crochet bag"
     },
     {
       "id": "bag-16",
-      "imageUrl": "https://i.imgur.com/ERj3yZh.png",
+      "imageUrl": "https://i.ibb.co/Y44HwfhT/bolsa16.webp",
       "description": "Bolsa 16",
       "imageHint": "crochet bag"
     },
     {
       "id": "bag-17",
-      "imageUrl": "https://i.imgur.com/C5JfdZW.png",
+      "imageUrl": "https://i.ibb.co/1Jf6k8Ln/bolsa17.webp",
       "description": "Bolsa 17",
       "imageHint": "crochet bag"
-    },
-    {
-      "id": "beach-1",
-      "imageUrl": "https://i.imgur.com/HdDuWFS.png",
-      "description": "Praia 1",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-2",
-      "imageUrl": "https://i.imgur.com/B1frtB8.png",
-      "description": "Praia 2",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-3",
-      "imageUrl": "https://i.imgur.com/XpiyxqT.png",
-      "description": "Praia 3",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-4",
-      "imageUrl": "https://i.imgur.com/FGKJCjb.png",
-      "description": "Praia 4",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-5",
-      "imageUrl": "https://i.imgur.com/HiKYkKT.png",
-      "description": "Praia 5",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-6",
-      "imageUrl": "https://i.imgur.com/eHTLndj.png",
-      "description": "Praia 6",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-7",
-      "imageUrl": "https://i.imgur.com/QJyVjxg.png",
-      "description": "Praia 7",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-8",
-      "imageUrl": "https://i.imgur.com/FthVzjc.png",
-      "description": "Praia 8",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-9",
-      "imageUrl": "https://i.imgur.com/h4yIdcZ.png",
-      "description": "Praia 9",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-10",
-      "imageUrl": "https://i.imgur.com/Kt4paxr.png",
-      "description": "Praia 10",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-11",
-      "imageUrl": "https://i.imgur.com/mbOSpgB.png",
-      "description": "Praia 11",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-12",
-      "imageUrl": "https://i.imgur.com/ToCsGq3.png",
-      "description": "Praia 12",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-13",
-      "imageUrl": "https://i.imgur.com/CBY8rMk.png",
-      "description": "Praia 13",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-14",
-      "imageUrl": "https://i.imgur.com/jgZBtZJ.png",
-      "description": "Praia 14",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-15",
-      "imageUrl": "https://i.imgur.com/JNoqoy3.png",
-      "description": "Praia 15",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-16",
-      "imageUrl": "https://i.imgur.com/TcC0oLR.png",
-      "description": "Praia 16",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-17",
-      "imageUrl": "https://i.imgur.com/cAT2Ix6.png",
-      "description": "Praia 17",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-18",
-      "imageUrl": "https://i.imgur.com/tj6V9OR.png",
-      "description": "Praia 18",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-19",
-      "imageUrl": "https://i.imgur.com/WcYVGEZ.png",
-      "description": "Praia 19",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-20",
-      "imageUrl": "https://i.imgur.com/8RxbMmO.png",
-      "description": "Praia 20",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-21",
-      "imageUrl": "https://i.imgur.com/mRHXLMf.png",
-      "description": "Praia 21",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-22",
-      "imageUrl": "https://i.imgur.com/eba8xZZ.png",
-      "description": "Praia 22",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-23",
-      "imageUrl": "https://i.imgur.com/wxwRmy2.png",
-      "description": "Praia 23",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-24",
-      "imageUrl": "https://i.imgur.com/sxijJeb.png",
-      "description": "Praia 24",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-25",
-      "imageUrl": "https://i.imgur.com/0nhsO8g.png",
-      "description": "Praia 25",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-26",
-      "imageUrl": "https://i.imgur.com/k90JSiI.png",
-      "description": "Praia 26",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-27",
-      "imageUrl": "https://i.imgur.com/RIeNAKU.png",
-      "description": "Praia 27",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-28",
-      "imageUrl": "https://i.imgur.com/Yi4paN6.png",
-      "description": "Praia 28",
-      "imageHint": "beach bag"
-    },
-    {
-      "id": "beach-29",
-      "imageUrl": "https://i.imgur.com/SPvFhZ9.png",
-      "description": "Praia 29",
-      "imageHint": "beach bag"
     }
   ]
 }

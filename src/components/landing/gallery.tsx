@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -28,7 +27,7 @@ interface GalleryImage {
 const allImages: GalleryImage[] = [
   { 
     id: 'new-bag-1', 
-    imageUrl: 'https://i.imgur.com/mTixFpW.jpeg', 
+    imageUrl: 'https://i.ibb.co/SwdWTLjP/bolsa1.webp', 
     description: 'Bolsa de crochê exclusiva 1', 
     imageHint: 'crochet bag', 
     category: 'bolsas',
@@ -43,7 +42,7 @@ const allImages: GalleryImage[] = [
   },
   { 
     id: 'new-bag-2', 
-    imageUrl: 'https://i.imgur.com/2h8DPj5.png', 
+    imageUrl: 'https://i.ibb.co/JFWkZxgG/bolsa2.webp', 
     description: 'Bolsa de crochê exclusiva 2', 
     imageHint: 'crochet bag', 
     category: 'bolsas',
@@ -58,26 +57,26 @@ const allImages: GalleryImage[] = [
   },
   { 
     id: 'new-bag-3', 
-    imageUrl: 'https://i.imgur.com/fNF41Yi.jpeg', 
+    imageUrl: 'https://i.ibb.co/Csb0Jqxk/bolsa3.webp', 
     description: 'Bolsa de crochê exclusiva 3', 
     imageHint: 'crochet bag', 
     category: 'bolsas',
     isFavorite: true 
   },
-  { id: 'crochet-bag-1', imageUrl: `https://i.imgur.com/r76j16N.jpeg`, description: `Bolsa de crochê 1`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: false },
-  { id: 'crochet-bag-2', imageUrl: `https://i.imgur.com/ON1Tyqp.jpeg`, description: `Bolsa de crochê 2`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: true },
-  { id: 'crochet-bag-3', imageUrl: `https://i.imgur.com/ftp5Wn6.jpeg`, description: `Bolsa de crochê 3`, imageHint: 'crochet bag', category: 'bolsas' },
-  { id: 'crochet-bag-4', imageUrl: `https://i.imgur.com/Kc3jGcW.jpeg`, description: `Bolsa de crochê 4`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: true },
-  { id: 'crochet-bag-5', imageUrl: `https://i.imgur.com/7HMTFU7.jpeg`, description: `Bolsa de crochê 5`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: true },
-  { id: 'crochet-bag-6', imageUrl: `https://i.imgur.com/7xmWbQN.jpeg`, description: `Bolsa de crochê 6`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: true },
-  { id: 'crochet-bag-7', imageUrl: `https://i.imgur.com/tgEESxy.png`, description: `Bolsa de crochê 7`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: false },
-  { id: 'crochet-bag-8', imageUrl: `https://i.imgur.com/LBRCsGE.jpeg`, description: `Bolsa de crochê 8`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: false },
-  { id: 'crochet-bag-9', imageUrl: `https://i.imgur.com/OviKXmZ.png`, description: `Bolsa de crochê 9`, imageHint: 'crochet bag', category: 'bolsas' },
-  { id: 'crochet-bag-10', imageUrl: `https://i.imgur.com/euJlX0g.png`, description: `Bolsa de crochê 10`, imageHint: 'crochet bag', category: 'bolsas' },
-  { id: 'crochet-bag-11', imageUrl: `https://i.imgur.com/I7tSjwc.jpeg`, description: `Bolsa de crochê 11`, imageHint: 'crochet bag', category: 'bolsas' },
-  { id: 'crochet-bag-12', imageUrl: `https://i.imgur.com/rZ02jgI.jpeg`, description: `Bolsa de crochê 12`, imageHint: 'crochet bag', category: 'bolsas' },
-  { id: 'crochet-bag-13', imageUrl: `https://i.imgur.com/ERj3yZh.png`, description: `Bolsa de crochê 13`, imageHint: 'crochet bag', category: 'bolsas' },
-  { id: 'crochet-bag-14', imageUrl: `https://i.imgur.com/C5JfdZW.png`, description: `Bolsa de crochê 14`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-1', imageUrl: `https://i.ibb.co/DgC9jWC5/bolsa4.webp`, description: `Bolsa de crochê 1`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: false },
+  { id: 'crochet-bag-2', imageUrl: `https://i.ibb.co/0p1VcgxZ/bolsa5.webp`, description: `Bolsa de crochê 2`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: true },
+  { id: 'crochet-bag-3', imageUrl: `https://i.ibb.co/Zp6QvTm5/bolsa6.webp`, description: `Bolsa de crochê 3`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-4', imageUrl: `https://i.ibb.co/CKdccnrJ/bolsa7.webp`, description: `Bolsa de crochê 4`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: true },
+  { id: 'crochet-bag-5', imageUrl: `https://i.ibb.co/20Wg09pd/bolsa8.webp`, description: `Bolsa de crochê 5`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: true },
+  { id: 'crochet-bag-6', imageUrl: `https://i.ibb.co/chDPqSTH/bolsa9.webp`, description: `Bolsa de crochê 6`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: true },
+  { id: 'crochet-bag-7', imageUrl: `https://i.ibb.co/9k4J1Bts/bolsa10.webp`, description: `Bolsa de crochê 7`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: false },
+  { id: 'crochet-bag-8', imageUrl: `https://i.ibb.co/JR1x6VKs/bolsa11.webp`, description: `Bolsa de crochê 8`, imageHint: 'crochet bag', category: 'bolsas', isFavorite: false },
+  { id: 'crochet-bag-9', imageUrl: `https://i.ibb.co/4wJpYcDZ/bolsa12.webp`, description: `Bolsa de crochê 9`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-10', imageUrl: `https://i.ibb.co/nM8RGwFq/bolsa13.webp`, description: `Bolsa de crochê 10`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-11', imageUrl: `https://i.ibb.co/tp7wrnxc/bolsa14.webp`, description: `Bolsa de crochê 11`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-12', imageUrl: `https://i.ibb.co/fz3z3xXj/bolsa15.webp`, description: `Bolsa de crochê 12`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-13', imageUrl: `https://i.ibb.co/Y44HwfhT/bolsa16.webp`, description: `Bolsa de crochê 13`, imageHint: 'crochet bag', category: 'bolsas' },
+  { id: 'crochet-bag-14', imageUrl: `https://i.ibb.co/1Jf6k8Ln/bolsa17.webp`, description: `Bolsa de crochê 14`, imageHint: 'crochet bag', category: 'bolsas' },
   { id: 'praia-1', imageUrl: 'https://i.imgur.com/HdDuWFS.png', description: 'Bolsa de praia luxo 1', imageHint: 'luxury beach bag', category: 'praia', isFavorite: true },
   { id: 'praia-2', imageUrl: 'https://i.imgur.com/B1frtB8.png', description: 'Bolsa de praia luxo 2', imageHint: 'luxury beach bag', category: 'praia', isFavorite: true },
   { id: 'praia-3', imageUrl: 'https://i.imgur.com/XpiyxqT.png', description: 'Bolsa de praia luxo 3', imageHint: 'luxury beach bag', category: 'praia' },

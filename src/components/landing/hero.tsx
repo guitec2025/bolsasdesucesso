@@ -7,7 +7,7 @@ import { SparkleEffect } from './sparkle-effect';
 
 export function Hero() {
   const heroImage = {
-    imageUrl: 'https://i.imgur.com/NpWecjw.png',
+    imageUrl: 'https://i.ibb.co/Z6jtHkJk/imagem-hero.webp',
     description: 'Bolsa de crochê em destaque',
     imageHint: 'crochet bag'
   };
@@ -32,7 +32,7 @@ export function Hero() {
         <div className="hidden sm:flex flex-col items-start text-left py-24">
           <div className="flex items-center justify-start gap-2 mb-4">
             <Image
-              src={"https://i.imgur.com/KMVNvbf.png"}
+              src={"https://i.ibb.co/8DmJrrVg/logo.webp"}
               alt="Logo Escola de Crochê"
               width={210}
               height={70}
@@ -77,7 +77,7 @@ export function Hero() {
           <div className="bg-white p-6 relative z-10 flex flex-col items-center text-center mt-[-100px] mx-4 rounded-t-xl rounded-b-md shadow-2xl">
               <div className="flex items-center justify-center mb-4">
                   <Image
-                  src={"https://i.imgur.com/KMVNvbf.png"}
+                  src={"https://i.ibb.co/8DmJrrVg/logo.webp"}
                   alt="Logo Escola de Crochê"
                   width={180}
                   height={60}

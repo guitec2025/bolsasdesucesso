@@ -35,7 +35,7 @@ export function Footer({ hideCTA = false }: FooterProps) {
                   </a>
                 </Button>
                 <Image
-                    src="https://i.imgur.com/afQUr6D.png"
+                    src="https://i.ibb.co/DHYhsYP7/pagamento-seguro.webp"
                     alt="Formas de pagamento"
                     width={250}
                     height={45}

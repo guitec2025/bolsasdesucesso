@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 
 export function About() {
@@ -27,7 +26,7 @@ export function About() {
           </div>
           <div className="md:w-1/2 flex justify-center">
             <Image
-              src="https://i.imgur.com/OjoRTG0.png"
+              src="https://i.ibb.co/cVBHynm/avatar-tatiane.webp"
               alt="Tatiane Barros, mentora do curso"
               width={300}
               height={300}
