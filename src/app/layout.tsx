@@ -64,7 +64,7 @@ export default function RootLayout({
         
         <Toaster />
         
-        {/* Utmify Scripts - Carregamento ultra-atrasado para priorizar o LCP */}
+        {/* Utmify Scripts - Carregamento otimizado para manter performance */}
         <Script
           src="https://cdn.utmify.com.br/scripts/utms/latest.js"
           data-utmify-prevent-xcod-sck
@@ -72,7 +72,7 @@ export default function RootLayout({
           strategy="lazyOnload"
         />
         <Script id="utmify-pixel-config" strategy="lazyOnload">
-          {`window.pixelId = "69ac892bcb4572594d7a7f5e";`}
+          {`window.pixelId = "6a20db85b9e90c7383e6c23b";`}
         </Script>
         <Script
           src="https://cdn.utmify.com.br/scripts/pixel/pixel.js"
