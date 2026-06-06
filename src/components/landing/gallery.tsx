@@ -186,8 +186,14 @@ export function Gallery() {
           setVisibleCount(INITIAL_VISIBLE_COUNT);
         }}>
           <TabsList className="grid w-full grid-cols-2 h-auto p-2">
-            <TabsTrigger value="bolsas" className="text-base">Bolsas</TabsTrigger>
-            <TabsTrigger value="praia" className="text-base">Bolsas Praia Luxo</TabsTrigger>
+            <TabsTrigger value="bolsas" className="text-base relative overflow-visible">
+              <span className="absolute -top-2 -left-2 text-xl pointer-events-none">🧶</span>
+              Bolsas
+            </TabsTrigger>
+            <TabsTrigger value="praia" className="text-base relative overflow-visible">
+              Bolsas Praia Luxo
+              <span className="absolute -top-2 -right-2 text-xl pointer-events-none">🏖️</span>
+            </TabsTrigger>
           </TabsList>
           <TabsContent value="bolsas">
             {renderGalleryGrid()}

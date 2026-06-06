@@ -157,13 +157,19 @@ export function GalleryES() {
           +de 67 Colecciones Increíbles
         </h2>
         <p className="mt-4 max-w-2xl mx-auto text-foreground text-lg">
-          Todos los modelos fueron diseñados para ser <b>hermosos, vendibles</b> e ideales para quienes aman las artesanías.
+          Todos os modelos foram desenhados para serem <b>lindos, vendáveis</b> e perfeitos para quem ama artesanato.
         </p>
 
         <Tabs defaultValue="bolsas" className="w-full max-w-sm mx-auto mt-8">
           <TabsList className="grid w-full grid-cols-2 h-auto p-2">
-            <TabsTrigger value="bolsas" className="text-base">Bolsos</TabsTrigger>
-            <TabsTrigger value="praia" className="text-base">Bolsos Playa Lujo</TabsTrigger>
+            <TabsTrigger value="bolsas" className="text-base relative overflow-visible">
+              <span className="absolute -top-2 -left-2 text-xl pointer-events-none">🧶</span>
+              Bolsas
+            </TabsTrigger>
+            <TabsTrigger value="praia" className="text-base relative overflow-visible">
+              Bolsas Playa Lujo
+              <span className="absolute -top-2 -right-2 text-xl pointer-events-none">🏖️</span>
+            </TabsTrigger>
           </TabsList>
           <TabsContent value="bolsas">
             {renderGalleryGrid('bolsas')}
