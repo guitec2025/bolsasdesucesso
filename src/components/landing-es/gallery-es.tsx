@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -78,7 +77,10 @@ const allImages: GalleryImage[] = [
   { id: 'crochet-bag-12', imageUrl: `https://i.imgur.com/rZ02jgI.jpeg`, description: `Bolso de crochet 12`, imageHint: 'crochet bag', category: 'bolsas' },
   { id: 'crochet-bag-13', imageUrl: `https://i.imgur.com/ERj3yZh.png`, description: `Bolso de crochet 13`, imageHint: 'crochet bag', category: 'bolsas' },
   { id: 'crochet-bag-14', imageUrl: `https://i.imgur.com/C5JfdZW.png`, description: `Bolso de crochet 14`, imageHint: 'crochet bag', category: 'bolsas' },
+  
+  /* Categoria Praia */
   { id: 'praia-1', imageUrl: 'https://i.imgur.com/HdDuWFS.png', description: 'Bolso de playa lujo 1', imageHint: 'luxury beach bag', category: 'praia', isFavorite: true },
+  { id: 'praia-21', imageUrl: 'https://i.imgur.com/mRHXLMf.png', description: 'Bono: Bolso caracol', imageHint: 'seashell bag', category: 'praia', isFavorite: true },
   { id: 'praia-2', imageUrl: 'https://i.imgur.com/B1frtB8.png', description: 'Bolso de playa lujo 2', imageHint: 'luxury beach bag', category: 'praia', isFavorite: true },
   { id: 'praia-3', imageUrl: 'https://i.imgur.com/XpiyxqT.png', description: 'Bolso de playa lujo 3', imageHint: 'luxury beach bag', category: 'praia' },
   { id: 'praia-4', imageUrl: 'https://i.imgur.com/FGKJCjb.png', description: 'Bolso de playa lujo 4', imageHint: 'luxury beach bag', category: 'praia' },
@@ -98,7 +100,6 @@ const allImages: GalleryImage[] = [
   { id: 'praia-18', imageUrl: 'https://i.imgur.com/tj6V9OR.png', description: 'Bolso de playa lujo 18', imageHint: 'luxury beach bag', category: 'praia' },
   { id: 'praia-19', imageUrl: 'https://i.imgur.com/WcYVGEZ.png', description: 'Bolso de playa lujo 19', imageHint: 'luxury beach bag', category: 'praia' },
   { id: 'praia-20', imageUrl: 'https://i.imgur.com/8RxbMmO.png', description: 'Bolso de playa lujo 20', imageHint: 'luxury beach bag', category: 'praia' },
-  { id: 'praia-21', imageUrl: 'https://i.imgur.com/mRHXLMf.png', description: 'Bono: Bolso caracol', imageHint: 'seashell bag', category: 'praia', isFavorite: true },
   { id: 'praia-22', imageUrl: 'https://i.imgur.com/eba8xZZ.png', description: 'Bolso de playa lujo 22', imageHint: 'luxury beach bag', category: 'praia' },
   { id: 'praia-23', imageUrl: 'https://i.imgur.com/wxwRmy2.png', description: 'Bolso de playa lujo 23', imageHint: 'luxury beach bag', category: 'praia' },
   { id: 'praia-24', imageUrl: 'https://i.imgur.com/sxijJeb.png', description: 'Bolso de playa lujo 24', imageHint: 'luxury beach bag', category: 'praia' },
@@ -154,7 +155,7 @@ export function GalleryES() {
           Galería de Bolsos
         </div>
         <h2 className="text-3xl sm:text-4xl font-bold font-headline mt-4 text-[#563209]">
-          +de 67 Colecciones Increíbles
+          +de 67 Coleções Increíbles
         </h2>
         <p className="mt-4 max-w-2xl mx-auto text-foreground text-lg">
           Todos os modelos foram desenhados para serem <b>lindos, vendáveis</b> e perfeitos para quem ama artesanato.
