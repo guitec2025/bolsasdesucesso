@@ -80,7 +80,21 @@ const allImages: GalleryImage[] = [
   
   /* Categoria Praia */
   { id: 'praia-1', imageUrl: 'https://i.imgur.com/HdDuWFS.png', description: 'Bolso de playa lujo 1', imageHint: 'luxury beach bag', category: 'praia', isFavorite: true },
-  { id: 'praia-21', imageUrl: 'https://i.imgur.com/mRHXLMf.png', description: 'Bono: Bolso caracol', imageHint: 'seashell bag', category: 'praia', isFavorite: true },
+  { 
+    id: 'praia-21', 
+    imageUrl: 'https://i.ibb.co/NgGypTVm/carracol-white-convertido-de-png.webp', 
+    description: 'Bono: Bolso caracol', 
+    imageHint: 'seashell bag', 
+    category: 'praia', 
+    isFavorite: true,
+    variations: [
+      'https://i.ibb.co/NgGypTVm/carracol-white-convertido-de-png.webp',
+      'https://i.ibb.co/dnTbTMZ/carracol-Green-convertido-de-png.webp',
+      'https://i.ibb.co/wfyCWhK/carracol-Brow-convertido-de-png.webp',
+      'https://i.ibb.co/nxCWBMp/carracol-pink-convertido-de-png.webp',
+      'https://i.ibb.co/99H7RKHQ/carracol-red-convertido-de-png.webp'
+    ]
+  },
   { id: 'praia-2', imageUrl: 'https://i.imgur.com/B1frtB8.png', description: 'Bolso de playa lujo 2', imageHint: 'luxury beach bag', category: 'praia', isFavorite: true },
   { id: 'praia-3', imageUrl: 'https://i.imgur.com/XpiyxqT.png', description: 'Bolso de playa lujo 3', imageHint: 'luxury beach bag', category: 'praia' },
   { id: 'praia-4', imageUrl: 'https://i.imgur.com/FGKJCjb.png', description: 'Bolso de playa lujo 4', imageHint: 'luxury beach bag', category: 'praia' },
