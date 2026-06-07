@@ -175,15 +175,21 @@ export function GalleryES() {
           Todos os modelos foram desenhados para serem <b>lindos, vendáveis</b> e perfeitos para quem ama artesanato.
         </p>
 
-        <Tabs defaultValue="bolsas" className="w-full max-w-sm mx-auto mt-8">
-          <TabsList className="grid w-full grid-cols-2 h-auto p-2">
-            <TabsTrigger value="bolsas" className="text-base relative overflow-visible">
-              <span className="absolute -top-2 -left-2 text-xl pointer-events-none">🧶</span>
+        <Tabs defaultValue="bolsas" className="w-full max-w-lg mx-auto mt-10">
+          <TabsList className="grid w-full grid-cols-2 h-auto p-2 bg-[#F3EBE3] border-2 border-[#D2B48C]/30 rounded-2xl shadow-sm gap-2">
+            <TabsTrigger 
+              value="bolsas" 
+              className="text-base font-bold py-3 px-4 rounded-xl transition-all duration-300 data-[state=active]:bg-[#563209] data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:hover:bg-black/5 relative overflow-visible"
+            >
+              <span className="absolute -top-3 -left-3 text-2xl animate-pulse pointer-events-none">🧶</span>
               Bolsas
             </TabsTrigger>
-            <TabsTrigger value="praia" className="text-base relative overflow-visible">
+            <TabsTrigger 
+              value="praia" 
+              className="text-base font-bold py-3 px-4 rounded-xl transition-all duration-300 data-[state=active]:bg-[#563209] data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:hover:bg-black/5 relative overflow-visible"
+            >
               Bolsas Playa Lujo
-              <span className="absolute -top-2 -right-2 text-xl pointer-events-none">🏖️</span>
+              <span className="absolute -top-3 -right-3 text-2xl animate-pulse pointer-events-none">🏖️</span>
             </TabsTrigger>
           </TabsList>
           <TabsContent value="bolsas">
