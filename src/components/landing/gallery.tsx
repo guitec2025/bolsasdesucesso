@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -83,15 +82,15 @@ const allImages: GalleryImage[] = [
   { id: 'praia-1', imageUrl: 'https://i.imgur.com/HdDuWFS.png', description: 'Bolsa de praia luxo 1', imageHint: 'luxury beach bag', category: 'praia', isFavorite: true },
   { 
     id: 'praia-21', 
-    imageUrl: 'https://i.ibb.co/dnTbTMZ/carracol-Green-convertido-de-png.webp', 
+    imageUrl: 'https://i.ibb.co/NgGypTVm/carracol-white-convertido-de-png.webp', 
     description: 'Bônus: Bolsa caracol', 
     imageHint: 'seashell bag', 
     category: 'praia', 
     isFavorite: true,
     variations: [
-      'https://i.ibb.co/dnTbTMZ/carracol-Green-convertido-de-png.webp',
       'https://i.ibb.co/NgGypTVm/carracol-white-convertido-de-png.webp',
       'https://i.ibb.co/wfyCWhK/carracol-Brow-convertido-de-png.webp',
+      'https://i.ibb.co/dnTbTMZ/carracol-Green-convertido-de-png.webp',
       'https://i.ibb.co/nxCWBMp/carracol-pink-convertido-de-png.webp',
       'https://i.ibb.co/99H7RKHQ/carracol-red-convertido-de-png.webp'
     ]
