@@ -1,10 +1,11 @@
+
 'use client';
 
 import Image from 'next/image';
 
 export function MoreTestimonials() {
   const testimonialImages = [
-    { src: "https://i.ibb.co/GQZhL81v/print-depoimento.webp", alt: "Depoimento de aluna 1", hint: "social testimonial" },
+    { src: "https://i.ibb.co/Ng0vM9zD/depoimentos-novos-2026.webp", alt: "Depoimentos Escola de Crochê 2026", hint: "social testimonial" },
   ];
 
   return (
@@ -17,7 +18,7 @@ export function MoreTestimonials() {
                 src={image.src}
                 alt={image.alt}
                 width={600}
-                height={400}
+                height={600}
                 className="rounded-lg shadow-md object-contain w-full"
                 data-ai-hint={image.hint}
                 />

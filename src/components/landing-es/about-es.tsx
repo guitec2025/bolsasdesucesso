@@ -23,17 +23,17 @@ export function AboutES() {
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-primary font-bold">✓</span>
-                <p className="text-foreground"><b>Productividad:</b> Técnicas para producir más en menos tiempo, sin perder la calidad artesanal.</p>
+                <p className="text-foreground"><b>Productividad:</b> Técnicas para producir más en menos tiempo, sem perder la qualidade artesanal.</p>
               </div>
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center">
             <Image
-              src="https://i.imgur.com/OjoRTG0.png"
+              src="https://i.ibb.co/fG1p4m5s/foto-perfil-novo-tati.webp"
               alt="Tatiane Barros"
               width={300}
               height={300}
-              className="rounded-full shadow-lg"
+              className="rounded-full shadow-lg object-cover aspect-square"
             />
           </div>
         </div>

@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 
 export function About() {
@@ -26,11 +27,11 @@ export function About() {
           </div>
           <div className="md:w-1/2 flex justify-center">
             <Image
-              src="https://i.ibb.co/cVBHynm/avatar-tatiane.webp"
+              src="https://i.ibb.co/fG1p4m5s/foto-perfil-novo-tati.webp"
               alt="Tatiane Barros, mentora do curso"
               width={300}
               height={300}
-              className="rounded-full shadow-lg"
+              className="rounded-full shadow-lg object-cover aspect-square"
               data-ai-hint="woman portrait"
             />
           </div>

@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import Image from 'next/image';
 
-const MENTOR_AVATAR = "https://i.imgur.com/7HSLUP4.png";
+const MENTOR_AVATAR = "https://i.ibb.co/fG1p4m5s/foto-perfil-novo-tati.webp";
 const AUDIO_URL = "https://files.catbox.moe/ef4ovv.MP3";
 const OFFER_IMAGE = "https://i.imgur.com/zZZZJPO.jpeg";
 

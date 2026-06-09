@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -6,7 +7,7 @@ import { BadgeCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function LinkPage() {
-  const avatarImage = "https://i.imgur.com/7HSLUP4.png";
+  const avatarImage = "https://i.ibb.co/fG1p4m5s/foto-perfil-novo-tati.webp";
   
   return (
     <div className="min-h-screen bg-[#FFFBF9] flex flex-col items-center py-10 px-4 font-body text-[#4D4237]">
