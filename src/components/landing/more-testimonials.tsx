@@ -5,7 +5,11 @@ import Image from 'next/image';
 
 export function MoreTestimonials() {
   const testimonialImages = [
-    { src: "https://i.ibb.co/Ng0vM9zD/depoimentos-novos-2026.webp", alt: "Depoimentos Escola de Crochê 2026", hint: "social testimonial" },
+    { 
+      src: "https://i.ibb.co/gMXpmy7Z/depoimento-corrijido-completo-webp.webp", 
+      alt: "Depoimentos Escola de Crochê Corrigidos", 
+      hint: "social testimonial" 
+    },
   ];
 
   return (
