@@ -9,7 +9,7 @@ export function MoreTestimonials() {
   ];
 
   return (
-    <section className="py-6 sm:py-10 bg-background">
+    <section className="py-2 sm:py-4 bg-background">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center">
           {testimonialImages.map((image, index) => (
@@ -18,7 +18,7 @@ export function MoreTestimonials() {
                 src={image.src}
                 alt={image.alt}
                 width={800}
-                height={1200}
+                height={2000}
                 className="rounded-xl shadow-sm object-contain w-full h-auto"
                 data-ai-hint={image.hint}
                 priority
