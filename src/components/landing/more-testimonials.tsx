@@ -9,18 +9,19 @@ export function MoreTestimonials() {
   ];
 
   return (
-    <section className="py-12 sm:py-16 bg-background">
+    <section className="py-6 sm:py-10 bg-background">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center gap-6">
+        <div className="flex flex-col items-center">
           {testimonialImages.map((image, index) => (
-            <div key={index} className="w-full max-w-xl">
+            <div key={index} className="w-full max-w-2xl">
                 <Image
                 src={image.src}
                 alt={image.alt}
-                width={600}
-                height={600}
-                className="rounded-lg shadow-md object-contain w-full"
+                width={800}
+                height={1200}
+                className="rounded-xl shadow-sm object-contain w-full h-auto"
                 data-ai-hint={image.hint}
+                priority
                 />
             </div>
           ))}
