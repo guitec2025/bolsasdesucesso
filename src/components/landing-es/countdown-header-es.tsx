@@ -14,6 +14,7 @@ const CountdownUnit = ({ value, label }: { value: number; label: string }) => (
 );
 
 export function CountdownHeaderES() {
+  const [isMounted, setIsMounted] = useState(false);
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -22,6 +23,7 @@ export function CountdownHeaderES() {
   });
 
   useEffect(() => {
+    setIsMounted(true);
     const calculateTimeLeft = () => {
       const now = new Date();
       // Mês 6 no JavaScript é Julho (0-indexed: 0=Jan, 6=Jul)
@@ -46,6 +48,16 @@ export function CountdownHeaderES() {
 
     return () => clearInterval(interval);
   }, []);
+
+  if (!isMounted) {
+    return (
+      <div className="bg-background py-3 border-b border-border/10 min-h-[80px]">
+        <div className="container mx-auto flex items-center justify-center px-4">
+           <p className="text-foreground/90 font-body text-base sm:text-lg">Cargando...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-background py-3 border-b border-border/10">
