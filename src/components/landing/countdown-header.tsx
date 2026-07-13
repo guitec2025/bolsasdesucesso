@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -25,9 +24,9 @@ export function CountdownHeader() {
   useEffect(() => {
     const calculateTimeLeft = () => {
       const now = new Date();
-      // Mês 5 no JavaScript é Junho (0-indexed: 0=Jan, 5=Jun)
-      // Definido para 12 de Junho de 2026
-      const targetDate = new Date(2026, 5, 12, 23, 59, 59);
+      // Mês 6 no JavaScript é Julho (0-indexed: 0=Jan, 6=Jul)
+      // Definido para 18 de Julho de 2026
+      const targetDate = new Date(2026, 6, 18, 23, 59, 59);
       const difference = targetDate.getTime() - now.getTime();
 
       if (difference > 0) {
@@ -52,7 +51,7 @@ export function CountdownHeader() {
     <div className="bg-background py-3 border-b border-border/10">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 px-4">
         <p className="text-foreground/90 font-body text-base sm:text-lg text-center md:text-left">
-          Inscrições abertas até dia <b>12 de junho</b>
+          Inscrições abertas até dia <b>18 de julho</b>
         </p>
         <div className="flex items-center gap-2 sm:gap-3">
           <CountdownUnit value={timeLeft.days} label="Dias" />
