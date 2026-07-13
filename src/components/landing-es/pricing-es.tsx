@@ -111,6 +111,6 @@ export function PricingES({
           </CardFooter>
         </Card>
       </div>
-    </Card>
+    </section>
   );
 }

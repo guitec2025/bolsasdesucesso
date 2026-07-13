@@ -27,7 +27,7 @@ export function CountdownHeader() {
     setIsMounted(true);
     const calculateTimeLeft = () => {
       const now = new Date();
-      // Mês 6 no JavaScript é Julho (0-indexed: 0=Jan, 6=Jul)
+      // Mês 6 no JavaScript é Julho (0=Jan, 6=Jul)
       // Definido para 18 de Julho de 2026
       const targetDate = new Date(2026, 6, 18, 23, 59, 59);
       const difference = targetDate.getTime() - now.getTime();
