@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <head>
-        {/* Google Tag Manager - Inserção nativa no Head para evitar disparos duplicados */}
+        {/* Google Tag Manager - Inserção nativa e única no Head */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -58,7 +58,7 @@ export default function RootLayout({
         
         <Toaster />
         
-        {/* Utmify Scripts */}
+        {/* Utmify Scripts - Carregamento otimizado */}
         <Script
           src="https://cdn.utmify.com.br/scripts/utms/latest.js"
           data-utmify-prevent-xcod-sck
