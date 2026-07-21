@@ -33,14 +33,14 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <head>
-        {/* Google Tag Manager */}
+        {/* Google Tag Manager - Posicionado no Header conforme solicitado */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src="https://load.gtm.bolsasdesucesso.com/8869ynhvgdkz.js?"+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','6aihgb4=Ew9ZICIlQ0wuM1wzMio9XwxWVklHTgoXRwkLCwUJHR0fGBEEExsdFlQICwo%3D');
           `}
         </Script>
 
-        {/* Microsoft Clarity - lazyOnload para não pesar o LCP */}
+        {/* Microsoft Clarity */}
         <Script id="microsoft-clarity" strategy="lazyOnload">
           {`
             (function(c,l,a,r,i,t,y){
@@ -56,7 +56,7 @@ export default function RootLayout({
         
         <Toaster />
         
-        {/* Utmify Scripts - Carregamento otimizado para manter performance */}
+        {/* Utmify Scripts */}
         <Script
           src="https://cdn.utmify.com.br/scripts/utms/latest.js"
           data-utmify-prevent-xcod-sck
