@@ -23,7 +23,7 @@ const SectionSkeleton = () => (
   </div>
 );
 
-// Importações Dinâmicas com fallback integrado
+// Importações Dinâmicas
 const Gallery = dynamic(() => import('@/components/landing/gallery').then(mod => mod.Gallery), {
   loading: () => <SectionSkeleton />,
   ssr: false
@@ -54,20 +54,20 @@ const About = dynamic(() => import('@/components/landing/about').then(mod => mod
   ssr: false 
 });
 
-// Componente de Animação simplificado para garantir visibilidade
+// Componente de Animação Otimizado para evitar re-renderizações e múltiplos disparos de visibilidade
 const AnimatedSection = memo(({ children, className }: { children: React.ReactNode, className?: string }) => {
   const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.05,
-    rootMargin: '100px 0px',
+    triggerOnce: true, // Crucial para evitar disparos repetidos ao scrollar para cima/baixo
+    threshold: 0.15, // Threshold maior para evitar disparos em scrolls rápidos/acidentais
+    rootMargin: '50px 0px',
   });
 
   return (
     <div 
       ref={ref} 
       className={cn(
-        "transition-all duration-1000 ease-out", 
-        inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+        "transition-all duration-700 ease-out", 
+        inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8',
         className
       )}
     >
@@ -82,7 +82,6 @@ export default function CrochetPage() {
     <div className="bg-background text-[#4D4237]">
       <CountdownHeader />
       <main>
-        {/* Hero é renderizado imediatamente (LCP) */}
         <Hero />
         
         <AnimatedSection>

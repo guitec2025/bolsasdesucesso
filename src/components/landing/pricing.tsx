@@ -82,22 +82,25 @@ export function Pricing({
                 ))}
                 </ul>
                 
-                {/* Box de Bônus */}
                 <div className="text-left mt-6 bg-[#FFF8EC] border border-primary/20 p-4 rounded-xl flex items-start gap-3 shadow-sm">
                   <span className="text-2xl shrink-0">🎁</span>
                   <p className="font-bold text-black text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: bonusFeature.text }}></p>
                 </div>
             </div>
 
-            <Button
-              asChild
-              size="lg"
-              className="w-full h-16 text-xl font-black text-white shadow-lg animate-pulse hover:animate-none transition-all active:scale-95 bg-[#478552] hover:bg-[#3d7246]"
+            {/* Link de Checkout Simplificado para evitar múltiplos gatilhos de clique no GTM */}
+            <a 
+              href={checkoutUrl} 
+              className="w-full"
+              data-tracking-id="checkout-main"
             >
-              <a href={checkoutUrl}>
+              <Button
+                size="lg"
+                className="w-full h-16 text-xl font-black text-white shadow-lg animate-pulse hover:animate-none transition-all active:scale-95 bg-[#478552] hover:bg-[#3d7246] flex items-center justify-center gap-2 pointer-events-none"
+              >
                 QUERO ACESSO VITALÍCIO
-              </a>
-            </Button>
+              </Button>
+            </a>
           </CardContent>
 
           <CardFooter className="flex-col gap-2 px-6 pb-8">
