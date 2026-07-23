@@ -88,15 +88,15 @@ export function Pricing({
                 </div>
             </div>
 
-            {/* Link de Checkout Simplificado para evitar múltiplos gatilhos de clique no GTM */}
+            {/* Link de Checkout Protegido contra modificações de scripts externos */}
             <a 
               href={checkoutUrl} 
               className="w-full"
-              data-tracking-id="checkout-main"
+              data-utmify-ignore="true"
             >
               <Button
                 size="lg"
-                className="w-full h-16 text-xl font-black text-white shadow-lg animate-pulse hover:animate-none transition-all active:scale-95 bg-[#478552] hover:bg-[#3d7246] flex items-center justify-center gap-2 pointer-events-none"
+                className="w-full h-16 text-xl font-black text-white shadow-lg animate-pulse hover:animate-none transition-all active:scale-95 bg-[#478552] hover:bg-[#3d7246] flex items-center justify-center gap-2"
               >
                 QUERO ACESSO VITALÍCIO
               </Button>
