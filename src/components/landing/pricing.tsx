@@ -42,7 +42,7 @@ export function Pricing({
         </div>
         <h2 className="text-3xl sm:text-5xl font-bold font-headline mt-4 text-[#4D4237]">Garanta Sua Vaga</h2>
         
-        <Card className="max-w-md mt-16 w-full shadow-[0_20px_50px_rgba(246,170,40,0.2)] border-2 border-primary bg-card relative overflow-visible">
+        <Card className="max-w-md mt-16 w-full shadow-[0_20px_50px_rgba(246,170,40,0.2)] border-2 border-primary bg-card relative overflow-visible shadow-golden">
           {/* Badge Superior */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex justify-center z-20">
             <div className="bg-primary text-primary-foreground rounded-full px-6 py-2 text-sm font-bold whitespace-nowrap flex items-center gap-2 shadow-md">
@@ -96,7 +96,7 @@ export function Pricing({
             >
               <Button
                 size="lg"
-                className="w-full h-16 text-xl font-black text-white shadow-lg animate-pulse hover:animate-none transition-all active:scale-95 bg-[#478552] hover:bg-[#3d7246] flex items-center justify-center gap-2"
+                className="w-full h-16 text-xl font-black text-white shadow-lg animate-pulse-strong hover:animate-none transition-all active:scale-95 bg-[#478552] hover:bg-[#3d7246] flex items-center justify-center gap-2"
               >
                 QUERO ACESSO VITALÍCIO
               </Button>
@@ -122,6 +122,9 @@ export function Pricing({
         }
         .animate-pulse-strong {
           animation: custom-pulse 2s infinite ease-in-out;
+        }
+        .shadow-golden {
+          box-shadow: 0 20px 50px -12px rgba(212, 175, 55, 0.3);
         }
       `}</style>
     </section>

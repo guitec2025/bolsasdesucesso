@@ -33,34 +33,34 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <head>
-        {/* Google Tag Manager - Implementação Blindada contra Dupla Inicialização e Perda de SCR */}
-        <Script id="gtm-init" strategy="afterInteractive">
+        {/* Inicialização Única e Estável do Rastreamento */}
+        <Script id="tracking-core" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = window.gtag || function() { window.dataLayer.push(arguments); };
+            
+            // Função para captura segura de cookies
+            function getCookie(name) {
+              var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+              return v ? v[2] : null;
+            }
+
+            // Captura o SCR (index) e define como parâmetro global de configuração
+            var scrValue = getCookie('index') || new URLSearchParams(window.location.search).get('scr') || '';
+            if (scrValue) {
+              window.gtag('set', { 'scr': scrValue });
+            }
+          `}
+        </Script>
+
+        {/* Google Tag Manager - Carregamento via Custom Loader */}
+        <Script id="gtm-loader" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){
-              // Bloqueio Global para evitar múltiplas instâncias no window
-              if (w['GTM_INITIALIZED']) return;
+              if(w['GTM_INITIALIZED']) return;
               w['GTM_INITIALIZED'] = true;
-
-              w[l] = w[l] || [];
-
-              // Função para pegar cookie (usado para o SCR)
-              function getCookie(name) {
-                var value = "; " + document.cookie;
-                var parts = value.split("; " + name + "=");
-                if (parts.length === 2) return parts.pop().split(";").shift();
-              }
-
-              // Captura o SCR do cookie ou da URL antes de qualquer disparo
-              var scrValue = getCookie('index') || new URLSearchParams(window.location.search).get('scr') || '';
-
-              // Empurra parâmetros de configuração global ANTES do gtm.js
-              w[l].push({
-                'gtm.start': new Date().getTime(),
-                'event': 'gtm.js',
-                'scr': scrValue,
-                'page_type': 'landing_page'
-              });
-
+              
+              w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
               var f=d.getElementsByTagName(s)[0],j=d.createElement(s);
               j.async=true;
               j.src="https://load.gtm.bolsasdesucesso.com/8869ynhvgdkz.js?"+i;
@@ -85,7 +85,7 @@ export default function RootLayout({
         
         <Toaster />
         
-        {/* Utmify Scripts */}
+        {/* Utmify Scripts - Carregamento isolado para evitar interceptação de pacotes GA4 */}
         <Script
           id="utmify-main-script"
           src="https://cdn.utmify.com.br/scripts/utms/latest.js"
