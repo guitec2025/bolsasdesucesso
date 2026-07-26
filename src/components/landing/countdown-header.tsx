@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 const CountdownUnit = ({ value, label }: { value: number; label: string }) => (
   <div className="flex flex-col items-center">
@@ -15,6 +15,8 @@ const CountdownUnit = ({ value, label }: { value: number; label: string }) => (
 
 export function CountdownHeader() {
   const [isMounted, setIsMounted] = useState(false);
+  const targetDate = useMemo(() => new Date(2026, 6, 29, 23, 59, 59), []);
+  
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -26,9 +28,6 @@ export function CountdownHeader() {
     setIsMounted(true);
     const calculateTimeLeft = () => {
       const now = new Date();
-      // Mês 6 no JavaScript é Julho (0=Jan, 6=Jul)
-      // Definido para 29 de Julho de 2026
-      const targetDate = new Date(2026, 6, 29, 23, 59, 59);
       const difference = targetDate.getTime() - now.getTime();
 
       if (difference > 0) {
@@ -47,7 +46,7 @@ export function CountdownHeader() {
     const interval = setInterval(calculateTimeLeft, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [targetDate]);
 
   if (!isMounted) {
     return (

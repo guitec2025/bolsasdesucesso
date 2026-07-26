@@ -32,17 +32,16 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <head>
-        {/* Google Tag Manager - Unified Initialization */}
         <Script id="gtm-unified" strategy="beforeInteractive">
           {`
             (function(w,d,s,l,i){
               if(w['GTM_STARTED']) return;
               w[l]=w[l]||[];
               
-              function gtag(){w[l].push(arguments);}
-              w.gtag = gtag;
+              if(!w.gtag) {
+                w.gtag = function(){w[l].push(arguments);};
+              }
 
-              // Capture SCR cookie value
               var name = "index=";
               var decodedCookie = decodeURIComponent(d.cookie);
               var ca = decodedCookie.split(';');
@@ -53,10 +52,8 @@ export default function RootLayout({
                 if (c.indexOf(name) == 0) { scrValue = c.substring(name.length, c.length); }
               }
 
-              // Set SCR as a parameter in dataLayer before the loader fires gtm.js
               w[l].push({ 'scr': scrValue });
 
-              // Stape Custom Loader handles its own gtm.js push internally
               var f=d.getElementsByTagName(s)[0],
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
               j.async=true;
