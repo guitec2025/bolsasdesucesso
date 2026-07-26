@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -45,6 +46,7 @@ export function BrickcakeFeatures() {
   ];
 
   useEffect(() => {
+    // Inicializa a lógica de checkout apenas se a lib estiver carregada e não inicializada nesta montagem
     const initOcu = () => {
       if (typeof (window as any).OcuExternal !== 'undefined' && !(window as any).ocuInitialized) {
         new (window as any).OcuExternal();
@@ -52,7 +54,7 @@ export function BrickcakeFeatures() {
       }
     };
 
-    const timer = setTimeout(initOcu, 800);
+    const timer = setTimeout(initOcu, 1000);
     return () => clearTimeout(timer);
   }, []);
   
@@ -74,8 +76,9 @@ export function BrickcakeFeatures() {
               Olha só isso… e me diz: o que suas clientes vão achar? O vídeo dá água na boca, e <b>você não pode negar isso!</b>
             </p>
             <div className="w-full max-w-xs sm:max-w-md mt-8 mx-auto">
-              <Script src="https://fast.wistia.com/player.js" async />
+              <Script id="wistia-player-lib" src="https://fast.wistia.com/player.js" async />
               <Script
+                id="wistia-video-1"
                 src="https://fast.wistia.com/embed/2i7mrfg97j.js"
                 async
                 type="module"
@@ -114,8 +117,8 @@ export function BrickcakeFeatures() {
               confeitaria.
             </p>
             <div className="w-full max-w-xs sm:max-w-md mt-8 mx-auto">
-              <Script src="https://fast.wistia.com/player.js" async />
               <Script
+                id="wistia-video-2"
                 src="https://fast.wistia.com/embed/smwfwzqx39.js"
                 async
                 type="module"
@@ -226,7 +229,6 @@ export function BrickcakeFeatures() {
           </div>
         </div>
       </section>
-      <Script src="https://assets.mycartpanda.com/cartx-ecomm-ui-assets/js/libs/ocu-external.js" strategy="afterInteractive" />
     </>
   );
 }

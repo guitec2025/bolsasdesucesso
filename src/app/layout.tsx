@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import { Belleza, Alegreya } from 'next/font/google';
 import './globals.css';
@@ -32,40 +33,46 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <head>
-        <Script id="gtm-unified" strategy="beforeInteractive">
+        {/* Core Tracking Initialization - Executa apenas uma vez */}
+        <Script id="tracking-core" strategy="beforeInteractive">
           {`
-            (function(w,d,s,l,i){
-              if(w['GTM_INITIALIZED']) return;
-              w[l]=w[l]||[];
-              
-              if(!w.gtag) {
-                w.gtag = function(){w[l].push(arguments);};
-              }
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = window.gtag || function(){dataLayer.push(arguments);};
+            
+            if (!window['TRACKING_BOOTSTRAPPED']) {
+              window.gtag('js', new Date());
 
-              w.gtag('js', new Date());
-
+              // Captura o cookie index (scr) de forma segura
               var name = "index=";
-              var decodedCookie = decodeURIComponent(d.cookie);
+              var decodedCookie = decodeURIComponent(document.cookie);
               var ca = decodedCookie.split(';');
               var scrValue = "";
-              for(var idx = 0; idx < ca.length; idx++) {
-                var c = ca[idx];
+              for(var i = 0; i < ca.length; i++) {
+                var c = ca[i];
                 while (c.charAt(0) == ' ') { c = c.substring(1); }
                 if (c.indexOf(name) == 0) { scrValue = c.substring(name.length, c.length); }
               }
 
-              // Define o parâmetro scr globalmente antes do boot para evitar erros no Server GTM
-              w.gtag('set', { 'scr': scrValue });
-
-              var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-              j.async=true;
-              j.src='https://load.gtm.bolsasdesucesso.com/8869ynhvgdkz.js?'+i+dl;
-              f.parentNode.insertBefore(j,f);
-              w['GTM_INITIALIZED'] = true;
-            })(window,document,'script','dataLayer','6aihgb4=Ew9ZICIlQ0wuM1wzMio9XwxWVklHTgoXRwkLCwUJHR0fGBEEExsdFlQICwo%3D');
+              // Define o parâmetro scr globalmente para todos os eventos GA4 (incluindo page_view)
+              window.gtag('set', { 'scr': scrValue });
+              window['TRACKING_BOOTSTRAPPED'] = true;
+            }
           `}
         </Script>
+
+        {/* Stape GTM Loader - Carregado uma única vez com ID estável */}
+        <Script 
+          id="gtm-loader" 
+          strategy="afterInteractive" 
+          src="https://load.gtm.bolsasdesucesso.com/8869ynhvgdkz.js?id=6aihgb4=Ew9ZICIlQ0wuM1wzMio9XwxWVklHTgoXRwkLCwUJHR0fGBEEExsdFlQICwo%3D" 
+        />
+
+        {/* CartPanda OcuExternal - Carregado globalmente para evitar reinicializações em cada página */}
+        <Script 
+          id="ocu-external-lib"
+          src="https://assets.mycartpanda.com/cartx-ecomm-ui-assets/js/libs/ocu-external.js" 
+          strategy="lazyOnload" 
+        />
       </head>
       <body className={cn("font-body antialiased", alegreya.variable, beleza.variable)}>
         {children}

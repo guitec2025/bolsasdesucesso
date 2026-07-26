@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -16,7 +17,7 @@ export function DownsellOffer() {
       }
     };
 
-    const timer = setTimeout(initOcu, 800);
+    const timer = setTimeout(initOcu, 1000);
     return () => {
       clearTimeout(timer);
     };
@@ -105,7 +106,6 @@ export function DownsellOffer() {
           </div>
         </div>
       </section>
-      <Script src="https://assets.mycartpanda.com/cartx-ecomm-ui-assets/js/libs/ocu-external.js" strategy="afterInteractive" />
     </>
   );
 }
