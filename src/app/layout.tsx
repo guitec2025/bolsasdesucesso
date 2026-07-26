@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import { Belleza, Alegreya } from 'next/font/google';
 import './globals.css';
@@ -33,13 +32,36 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <head>
-        {/* Google Tag Manager - Unificado e Único */}
-        <Script id="gtm-main" strategy="beforeInteractive">
+        {/* Google Tag Manager - Unificado e Protegido contra Duplicação */}
+        <Script id="gtm-unified" strategy="beforeInteractive">
           {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://load.gtm.bolsasdesucesso.com/8869ynhvgdkz.js?'+i+dl;f.parentNode.insertBefore(j,f);
+            (function(w,d,s,l,i){
+              if(w['GTM_STARTED']) return;
+              w[l]=w[l]||[];
+              
+              // Captura o cookie index para o parâmetro scr
+              var name = "index=";
+              var decodedCookie = decodeURIComponent(d.cookie);
+              var ca = decodedCookie.split(';');
+              var scrValue = "";
+              for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') { c = c.substring(1); }
+                if (c.indexOf(name) == 0) { scrValue = c.substring(name.length, c.length); }
+              }
+
+              w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js',
+                'scr': scrValue
+              });
+              
+              var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+              j.async=true;
+              j.src='https://load.gtm.bolsasdesucesso.com/8869ynhvgdkz.js?'+i+dl;
+              f.parentNode.insertBefore(j,f);
+              w['GTM_STARTED'] = true;
             })(window,document,'script','dataLayer','6aihgb4=Ew9ZICIlQ0wuM1wzMio9XwxWVklHTgoXRwkLCwUJHR0fGBEEExsdFlQICwo%3D');
           `}
         </Script>
@@ -49,5 +71,5 @@ export default function RootLayout({
         <Toaster />
       </body>
     </html>
-  );
+  )
 }

@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -191,8 +190,9 @@ export function UpsellPage() {
       <Script src="https://assets.mycartpanda.com/cartx-ecomm-ui-assets/js/libs/ocu-external.js" strategy="afterInteractive" />
       <Script id="mycartpanda-ocu-init" strategy="afterInteractive">
         {`
-          if (typeof OcuExternal !== 'undefined') {
+          if (typeof OcuExternal !== 'undefined' && !window.ocuInitialized) {
             new OcuExternal();
+            window.ocuInitialized = true;
           }
         `}
       </Script>
