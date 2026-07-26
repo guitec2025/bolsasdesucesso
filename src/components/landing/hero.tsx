@@ -15,7 +15,6 @@ export function Hero() {
 
   return (
     <section className="relative bg-gray-100 sm:flex sm:items-center sm:justify-center overflow-hidden">
-       {/* Desktop View Image - Prioridade Máxima para o LCP */}
        <Image
           src={heroImage.imageUrl}
           alt={heroImage.description}
@@ -28,10 +27,7 @@ export function Hero() {
         />
         <SparkleEffect />
       
-      {/* Container for both Mobile and Desktop content */}
       <div className="container mx-auto px-4 relative z-10">
-        
-        {/* Desktop Content - Aligned left */}
         <div className="hidden sm:flex flex-col items-start text-left py-24">
           <div className="flex items-center justify-start gap-2 mb-4">
             <Image
@@ -49,21 +45,17 @@ export function Hero() {
           <p className="mt-6 text-xl max-w-2xl font-body text-foreground" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.2)' }}>
             As inscrições estão abertas para o curso onde você vai aprender a criar do zero uma <span className="font-bold">coleção exclusiva com mais de 67 modelos de bolsas em crochê, perfeitas pra vender, decorar ou montar kits irresistíveis!</span>
           </p>
-          <Button
-            asChild
-            size="lg"
-            className="mt-8 h-14 text-lg font-body font-medium border-0 hover:opacity-90"
+          <a 
+            href="#pricing" 
+            id="btn-hero-cta-desktop"
+            className="mt-8 inline-flex items-center justify-center h-14 px-8 text-lg font-body font-medium transition-opacity hover:opacity-90 rounded-md decoration-0"
             style={{ backgroundColor: '#f6aa28', color: '#312a23' }}
           >
-            <a href="#pricing">
-              QUERO ME INSCREVER NO CURSO
-            </a>
-          </Button>
+            QUERO ME INSCREVER NO CURSO
+          </a>
         </div>
 
-        {/* Mobile View with Overlap Effect */}
         <div className="sm:hidden flex flex-col">
-          {/* 1. Background Image - Prioridade Máxima para LCP no Mobile */}
           <div className="relative w-full aspect-[9/10]">
               <Image
                   src={heroImage.imageUrl}
@@ -77,7 +69,6 @@ export function Hero() {
               <SparkleEffect />
           </div>
 
-          {/* 2. Overlapping Content Block */}
           <div className="bg-white p-6 relative z-10 flex flex-col items-center text-center mt-[-100px] mx-4 rounded-t-xl rounded-b-md shadow-2xl">
               <div className="flex items-center justify-center mb-4">
                   <Image
@@ -95,17 +86,15 @@ export function Hero() {
               <p className="mt-4 text-lg font-body text-foreground">
                   As inscrições estão abertas para o curso onde você vai aprender a criar do zero uma <span className="font-bold">coleção exclusiva com mais de 67 modelos de bolsas em crochê!</span>
               </p>
-              <Button
-                  asChild
-                  size="lg"
-                  className="mt-6 w-full h-14 text-lg font-body font-medium border-0 hover:opacity-90"
-                  style={{ backgroundColor: '#f6aa28', color: '#312a23' }}
+              <a 
+                href="#pricing" 
+                id="btn-hero-cta-mobile"
+                className="mt-6 inline-flex items-center justify-center w-full h-14 text-lg font-body font-medium transition-opacity hover:opacity-90 rounded-md gap-2 decoration-0"
+                style={{ backgroundColor: '#f6aa28', color: '#312a23' }}
               >
-                  <a href="#pricing">
-                      <Star className="w-4 h-4 mr-2" fill="currentColor" />
-                      QUERO ME INSCREVER NO CURSO
-                  </a>
-              </Button>
+                  <Star className="w-4 h-4" fill="currentColor" />
+                  QUERO ME INSCREVER NO CURSO
+              </a>
           </div>
         </div>
       </div>

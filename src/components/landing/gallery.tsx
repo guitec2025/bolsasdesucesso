@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -291,16 +292,14 @@ export function Gallery() {
         )}
 
         <p className="mt-12 text-foreground text-lg">Clique no botão abaixo para garantir sua vaga e ter acesso à coleção completa.</p>
-        <Button
-          size="lg"
-          className="mt-4 h-14 text-lg border-0 hover:opacity-90 text-white font-medium"
+        <a 
+          href="#pricing" 
+          id="btn-gallery-cta"
+          className="mt-4 inline-flex items-center justify-center h-14 px-8 text-lg border-0 hover:opacity-90 text-white font-medium rounded-md decoration-0"
           style={{ backgroundColor: '#f6aa28', color: '#312a23' }}
-          asChild
         >
-          <a href="#pricing">
-            QUERO A COLEÇÃO COMPLETA
-          </a>
-        </Button>
+          QUERO A COLEÇÃO COMPLETA
+        </a>
       </div>
     </section>
   );

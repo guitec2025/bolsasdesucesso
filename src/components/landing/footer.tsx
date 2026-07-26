@@ -1,6 +1,6 @@
+
 'use client';
 
-import { Button } from "../ui/button";
 import Image from 'next/image';
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -24,16 +24,14 @@ export function Footer({ hideCTA = false }: FooterProps) {
               <>
                 <h3 className="text-2xl sm:text-3xl font-bold font-headline text-[#4D4237]"><b>Pronta para Criar Bolsas de Crochê Incríveis?</b></h3>
                 <p className="mt-2 text-foreground max-w-xl"><b>Não perca a chance de transformar simples fios em um negócio lucrativo e prazeroso.</b> Inscreva-se agora e comece a criar suas próprias bolsas!</p>
-                <Button
-                  size="lg"
-                  className="mt-6 h-14 text-lg border-0 hover:opacity-90 font-medium"
+                <a 
+                  href="#pricing" 
+                  id="btn-footer-cta"
+                  className="mt-6 inline-flex items-center justify-center h-14 px-8 text-lg hover:opacity-90 font-medium rounded-md decoration-0"
                   style={{ backgroundColor: '#f6aa28', color: '#312a23' }}
-                  asChild
                 >
-                  <a href="#pricing" rel="noopener noreferrer">
-                    QUERO ME INSCREVER
-                  </a>
-                </Button>
+                  QUERO ME INSCREVER
+                </a>
                 <Image
                     src="https://i.ibb.co/DHYhsYP7/pagamento-seguro.webp"
                     alt="Formas de pagamento"

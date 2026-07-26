@@ -43,7 +43,6 @@ export function Pricing({
         <h2 className="text-3xl sm:text-5xl font-bold font-headline mt-4 text-[#4D4237]">Garanta Sua Vaga</h2>
         
         <Card className="max-w-md mt-16 w-full shadow-[0_20px_50px_rgba(246,170,40,0.2)] border-2 border-primary bg-card relative overflow-visible shadow-golden">
-          {/* Badge Superior */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex justify-center z-20">
             <div className="bg-primary text-primary-foreground rounded-full px-6 py-2 text-sm font-bold whitespace-nowrap flex items-center gap-2 shadow-md">
                 <Star className="w-4 h-4 fill-current" />
@@ -88,18 +87,12 @@ export function Pricing({
                 </div>
             </div>
 
-            {/* Link de Checkout Protegido contra modificações de scripts externos */}
             <a 
               href={checkoutUrl} 
-              className="w-full"
-              data-utmify-ignore="true"
+              id="btn-pricing-checkout"
+              className="inline-flex items-center justify-center w-full h-16 text-xl font-black text-white shadow-lg animate-pulse-strong hover:animate-none transition-all active:scale-95 bg-[#478552] hover:bg-[#3d7246] rounded-md gap-2 decoration-0"
             >
-              <Button
-                size="lg"
-                className="w-full h-16 text-xl font-black text-white shadow-lg animate-pulse-strong hover:animate-none transition-all active:scale-95 bg-[#478552] hover:bg-[#3d7246] flex items-center justify-center gap-2"
-              >
-                QUERO ACESSO VITALÍCIO
-              </Button>
+              QUERO ACESSO VITALÍCIO
             </a>
           </CardContent>
 
