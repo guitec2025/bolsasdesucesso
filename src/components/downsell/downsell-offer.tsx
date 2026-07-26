@@ -61,13 +61,13 @@ export function DownsellOffer() {
             </p>
 
             <div className="mt-8">
-              <Button asChild size="lg" className="h-auto py-3 w-full text-base sm:text-xl font-bold bg-green-600 hover:bg-green-700 animate-pulse">
+              <Button asChild id="btn-downsell-accept" size="lg" className="h-auto py-3 w-full text-base sm:text-xl font-bold bg-green-600 hover:bg-green-700 animate-pulse">
                 <Link href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/JG2bv732rP?accepted=yes&variant_id=204188261">
                   👉 Aproveite agora e garanta seu acesso com 30% OFF!
                 </Link>
               </Button>
               <p className="mt-4">
-                  <Link href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/JG2bv732rP?accepted=no" className="text-sm text-gray-500 hover:underline">
+                  <Link id="btn-downsell-decline" href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/JG2bv732rP?accepted=no" className="text-sm text-gray-500 hover:underline">
                       Não, obrigado. Eu realmente quero perder essa chance.
                   </Link>
               </p>

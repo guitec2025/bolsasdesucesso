@@ -166,6 +166,7 @@ export function UpsellPage() {
               
               <Button
                 asChild
+                id="btn-upsell-accept"
                 size="lg"
                 className="h-14 w-full text-lg font-bold bg-green-600 hover:bg-green-700 animate-pulse"
               >
@@ -177,8 +178,8 @@ export function UpsellPage() {
                 Melhor saber seus números do que continuar no achismo.
               </p>
               
-              <p className="mt-4 text-center">
-                  <Link href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/91jv668j5n?accepted=no" className="text-sm text-red-600 hover:underline">
+              <p className="text-center mt-4">
+                  <Link id="btn-upsell-decline" href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/91jv668j5n?accepted=no" className="text-sm text-red-600 hover:underline">
                       Não, obrigado. Quero continuar sem saber meu lucro real.
                   </Link>
               </p>
