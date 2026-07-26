@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'Aprenda a criar bolsas lindas e lucrativas em crochê.',
 };
 
-const belleza = Belleza({
+const beleza = Belleza({
   subsets: ['latin'],
   weight: ['400'], 
   variable: '--font-belleza',
@@ -35,12 +35,14 @@ export default function RootLayout({
         <Script id="gtm-unified" strategy="beforeInteractive">
           {`
             (function(w,d,s,l,i){
-              if(w['GTM_STARTED']) return;
+              if(w['GTM_INITIALIZED']) return;
               w[l]=w[l]||[];
               
               if(!w.gtag) {
                 w.gtag = function(){w[l].push(arguments);};
               }
+
+              w.gtag('js', new Date());
 
               var name = "index=";
               var decodedCookie = decodeURIComponent(d.cookie);
@@ -52,19 +54,20 @@ export default function RootLayout({
                 if (c.indexOf(name) == 0) { scrValue = c.substring(name.length, c.length); }
               }
 
-              w[l].push({ 'scr': scrValue });
+              // Define o parâmetro scr globalmente antes do boot para evitar erros no Server GTM
+              w.gtag('set', { 'scr': scrValue });
 
               var f=d.getElementsByTagName(s)[0],
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
               j.async=true;
               j.src='https://load.gtm.bolsasdesucesso.com/8869ynhvgdkz.js?'+i+dl;
               f.parentNode.insertBefore(j,f);
-              w['GTM_STARTED'] = true;
+              w['GTM_INITIALIZED'] = true;
             })(window,document,'script','dataLayer','6aihgb4=Ew9ZICIlQ0wuM1wzMio9XwxWVklHTgoXRwkLCwUJHR0fGBEEExsdFlQICwo%3D');
           `}
         </Script>
       </head>
-      <body className={cn("font-body antialiased", alegreya.variable, belleza.variable)}>
+      <body className={cn("font-body antialiased", alegreya.variable, beleza.variable)}>
         {children}
         <Toaster />
       </body>
