@@ -1,0 +1,6 @@
+{
+  "apphosting": {
+    "backendId": "bolsas-de-sucesso",
+    "rootDir": "./"
+  }
+}
