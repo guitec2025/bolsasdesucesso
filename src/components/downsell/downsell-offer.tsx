@@ -10,6 +10,7 @@ import React, { useEffect } from 'react';
 export function DownsellOffer() {
   useEffect(() => {
     const initOcu = () => {
+      // Prevents multiple initializations on the same page view
       if (typeof (window as any).OcuExternal !== 'undefined' && !(window as any).ocuInitialized) {
         new (window as any).OcuExternal();
         (window as any).ocuInitialized = true;
@@ -19,7 +20,7 @@ export function DownsellOffer() {
     const timer = setTimeout(initOcu, 800);
     return () => {
       clearTimeout(timer);
-      (window as any).ocuInitialized = false;
+      (window as any).ocuInitialized = false; // Reset on unmount to allow re-init on funnel navigation
     };
   }, []);
 

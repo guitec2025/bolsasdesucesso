@@ -53,14 +53,10 @@ export default function RootLayout({
                 if (c.indexOf(name) == 0) { scrValue = c.substring(name.length, c.length); }
               }
 
-              // Set SCR as a global configuration parameter before GTM boot
-              gtag('set', { 'scr': scrValue });
+              // Set SCR as a parameter in dataLayer before the loader fires gtm.js
+              w[l].push({ 'scr': scrValue });
 
-              w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-              });
-              
+              // Stape Custom Loader handles its own gtm.js push internally
               var f=d.getElementsByTagName(s)[0],
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
               j.async=true;
