@@ -5,8 +5,21 @@ import Link from 'next/link';
 import { AlertTriangle } from 'lucide-react';
 import Image from 'next/image';
 import Script from 'next/script';
+import React, { useEffect } from 'react';
 
 export function DownsellOffer() {
+  // Inicializa o OcuExternal apenas uma vez por montagem deste componente (página)
+  useEffect(() => {
+    const initOcu = () => {
+      if (typeof (window as any).OcuExternal !== 'undefined') {
+        new (window as any).OcuExternal();
+      }
+    };
+
+    const timer = setTimeout(initOcu, 800);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <section className="py-12 sm:py-24 bg-gray-50">
@@ -61,15 +74,21 @@ export function DownsellOffer() {
             </p>
 
             <div className="mt-8">
-              <Button asChild id="btn-downsell-accept" size="lg" className="h-auto py-3 w-full text-base sm:text-xl font-bold bg-green-600 hover:bg-green-700 animate-pulse">
-                <Link href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/JG2bv732rP?accepted=yes&variant_id=204188261">
-                  👉 Aproveite agora e garanta seu acesso com 30% OFF!
-                </Link>
-              </Button>
+              <a 
+                href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/JG2bv732rP?accepted=yes&variant_id=204188261"
+                id="btn-downsell-accept" 
+                className="inline-flex items-center justify-center h-16 w-full text-base sm:text-xl font-bold bg-green-600 hover:bg-green-700 text-white rounded-md animate-pulse decoration-0"
+              >
+                👉 Aproveite agora e garanta seu acesso com 30% OFF!
+              </a>
               <p className="mt-4">
-                  <Link id="btn-downsell-decline" href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/JG2bv732rP?accepted=no" className="text-sm text-gray-500 hover:underline">
+                  <a 
+                    href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/JG2bv732rP?accepted=no"
+                    id="btn-downsell-decline" 
+                    className="text-sm text-gray-500 hover:underline"
+                  >
                       Não, obrigado. Eu realmente quero perder essa chance.
-                  </Link>
+                  </a>
               </p>
             </div>
             
@@ -85,14 +104,6 @@ export function DownsellOffer() {
         </div>
       </section>
       <Script src="https://assets.mycartpanda.com/cartx-ecomm-ui-assets/js/libs/ocu-external.js" strategy="afterInteractive" />
-      <Script id="mycartpanda-ocu-init" strategy="afterInteractive">
-        {`
-          if (typeof OcuExternal !== 'undefined' && !window.ocuInitialized) {
-            new OcuExternal();
-            window.ocuInitialized = true;
-          }
-        `}
-      </Script>
     </>
   );
 }

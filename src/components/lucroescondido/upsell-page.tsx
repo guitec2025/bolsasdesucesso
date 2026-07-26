@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import Script from 'next/script';
+import React, { useEffect } from 'react';
 
 export function UpsellPage() {
   const painPoints = [
@@ -40,6 +41,18 @@ export function UpsellPage() {
     },
   ];
 
+  // Inicializa o OcuExternal apenas uma vez por montagem deste componente (página)
+  useEffect(() => {
+    const initOcu = () => {
+      if (typeof (window as any).OcuExternal !== 'undefined') {
+        new (window as any).OcuExternal();
+      }
+    };
+
+    const timer = setTimeout(initOcu, 800);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <section className="py-12 sm:py-16 bg-gray-50 font-montserrat">
@@ -53,9 +66,9 @@ export function UpsellPage() {
                 <br/>
                 <span className="text-foreground">Precisa parar de perder dinheiro escondido.</span>
               </h1>
-              <p className="text-lg sm:text-xl text-foreground/80 max-w-xl">
+              <h2 className="text-lg sm:text-xl text-foreground/80 max-w-xl">
                 O Método Lucro Escondido revela o custo real e o lucro verdadeiro de cada cookie que você vende.
-              </p>
+              </h2>
               <div className="mt-2">
                 <Image 
                   src="https://picsum.photos/seed/lucro1/500/300"
@@ -63,6 +76,7 @@ export function UpsellPage() {
                   width={500}
                   height={300}
                   className="rounded-lg shadow-xl"
+                  data-ai-hint="finance spreadsheet"
                 />
               </div>
             </div>
@@ -82,7 +96,7 @@ export function UpsellPage() {
             {/* Block 3: Method Presentation */}
             <div className="w-full flex flex-col items-center gap-8">
               <div className="max-w-xl">
-                <h2 className="text-2xl sm:text-3xl font-bold text-primary">O processo prático de 3 passos</h2>
+                <h3 className="text-2xl sm:text-3xl font-bold text-primary">O processo prático de 3 passos</h3>
                 <p className="mt-2 text-lg sm:text-xl text-foreground/80">
                   Criado para revendedoras que querem vender com clareza e segurança.
                 </p>
@@ -90,17 +104,17 @@ export function UpsellPage() {
               <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
                 <div className="bg-white p-5 rounded-lg border">
                   <span className="font-bold text-primary">Passo 1</span>
-                  <h3 className="text-lg font-semibold mt-1">Clareza de custos</h3>
+                  <h4 className="text-lg font-semibold mt-1">Clareza de custos</h4>
                   <p className="text-foreground/70 mt-1 text-sm">Entenda os custos invisíveis da sua receita com o ebook prático.</p>
                 </div>
                 <div className="bg-white p-5 rounded-lg border">
                   <span className="font-bold text-primary">Passo 2</span>
-                  <h3 className="text-lg font-semibold mt-1">Cálculo do custo real</h3>
+                  <h4 className="text-lg font-semibold mt-1">Cálculo do custo real</h4>
                   <p className="text-foreground/70 mt-1 text-sm">Aplique os números na planilha e descubra o custo por unidade.</p>
                 </div>
                 <div className="bg-white p-5 rounded-lg border">
                   <span className="font-bold text-primary">Passo 3</span>
-                  <h3 className="text-lg font-semibold mt-1">Precificação segura</h3>
+                  <h4 className="text-lg font-semibold mt-1">Precificação segura</h4>
                   <p className="text-foreground/70 mt-1 text-sm">Defina o preço certo e enxergue o lucro antes de vender.</p>
                 </div>
               </div>
@@ -141,9 +155,9 @@ export function UpsellPage() {
 
             {/* Block 6 & 7: Offer & CTA */}
             <div className="mt-4 w-full max-w-lg bg-white p-6 sm:p-8 rounded-2xl shadow-2xl border-2 border-green-500">
-              <h3 className="text-xl sm:text-2xl font-bold text-center text-secondary">
+              <h5 className="text-xl sm:text-2xl font-bold text-center text-secondary">
                 Oferta Especial (Apenas Agora)
-              </h3>
+              </h5>
               <p className="mt-3 text-center text-foreground/80">
                 Este método está disponível somente agora, com valor especial, para quem deseja vender com mais lucro e menos insegurança.
               </p>
@@ -164,24 +178,25 @@ export function UpsellPage() {
                 </p>
               </div>
               
-              <Button
-                asChild
-                id="btn-upsell-accept"
-                size="lg"
-                className="h-14 w-full text-lg font-bold bg-green-600 hover:bg-green-700 animate-pulse"
+              <a 
+                href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/91jv668j5n?accepted=yes"
+                id="btn-upsell-accept" 
+                className="inline-flex items-center justify-center h-14 w-full text-lg font-bold bg-green-600 hover:bg-green-700 text-white rounded-md animate-pulse decoration-0"
               >
-                <Link href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/91jv668j5n?accepted=yes">
-                  👉 Adicionar o Método ao meu pedido
-                </Link>
-              </Button>
+                👉 Adicionar o Método ao meu pedido
+              </a>
               <p className="text-xs text-center mt-2 text-foreground/60">
                 Melhor saber seus números do que continuar no achismo.
               </p>
               
               <p className="text-center mt-4">
-                  <Link id="btn-upsell-decline" href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/91jv668j5n?accepted=no" className="text-sm text-red-600 hover:underline">
+                  <a 
+                    href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/91jv668j5n?accepted=no"
+                    id="btn-upsell-decline" 
+                    className="text-sm text-red-600 hover:underline"
+                  >
                       Não, obrigado. Quero continuar sem saber meu lucro real.
-                  </Link>
+                  </a>
               </p>
             </div>
 
@@ -189,14 +204,6 @@ export function UpsellPage() {
         </div>
       </section>
       <Script src="https://assets.mycartpanda.com/cartx-ecomm-ui-assets/js/libs/ocu-external.js" strategy="afterInteractive" />
-      <Script id="mycartpanda-ocu-init" strategy="afterInteractive">
-        {`
-          if (typeof OcuExternal !== 'undefined' && !window.ocuInitialized) {
-            new OcuExternal();
-            window.ocuInitialized = true;
-          }
-        `}
-      </Script>
     </>
   );
 }

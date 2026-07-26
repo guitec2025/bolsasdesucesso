@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Script from 'next/script';
 
 export function BrickcakeFeatures() {
@@ -43,6 +43,19 @@ export function BrickcakeFeatures() {
       price: 'R$50',
     },
   ];
+
+  // Inicializa o OcuExternal apenas uma vez por montagem deste componente (página)
+  useEffect(() => {
+    const initOcu = () => {
+      if (typeof (window as any).OcuExternal !== 'undefined') {
+        new (window as any).OcuExternal();
+      }
+    };
+
+    // Pequeno atraso para garantir que o script carregado pelo next/script esteja disponível
+    const timer = setTimeout(initOcu, 800);
+    return () => clearTimeout(timer);
+  }, []);
   
   return (
     <>
@@ -192,14 +205,20 @@ export function BrickcakeFeatures() {
             </div>
 
             <div className="flex flex-col items-center gap-4 w-full">
-              <Button asChild id="btn-brickcake-accept" size="lg" className="h-16 w-full text-xl font-bold bg-green-600 hover:bg-green-700 animate-pulse">
-                <Link href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/JG2bv732rP?accepted=yes">
-                  Sim, Quero aproveitar a RECEITA SEGRETA!
-                </Link>
-              </Button>
-              <Link id="btn-brickcake-decline" href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/JG2bv732rP?accepted=no" className="text-red-600 hover:underline">
+              <a 
+                href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/JG2bv732rP?accepted=yes"
+                id="btn-brickcake-accept" 
+                className="inline-flex items-center justify-center h-16 w-full text-xl font-bold bg-green-600 hover:bg-green-700 text-white rounded-md animate-pulse decoration-0"
+              >
+                Sim, Quero aproveitar a RECEITA SEGRETA!
+              </a>
+              <a 
+                href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/JG2bv732rP?accepted=no"
+                id="btn-brickcake-decline" 
+                className="text-red-600 hover:underline text-sm"
+              >
                 Não, não quero aproveitar a RECEITA SEGRETA
-              </Link>
+              </a>
             </div>
             
             <p className="mt-4 text-base text-[#16A34A]">
@@ -209,14 +228,6 @@ export function BrickcakeFeatures() {
         </div>
       </section>
       <Script src="https://assets.mycartpanda.com/cartx-ecomm-ui-assets/js/libs/ocu-external.js" strategy="afterInteractive" />
-      <Script id="mycartpanda-ocu-init" strategy="afterInteractive">
-        {`
-          if (typeof OcuExternal !== 'undefined' && !window.ocuInitialized) {
-            new OcuExternal();
-            window.ocuInitialized = true;
-          }
-        `}
-      </Script>
     </>
   );
 }

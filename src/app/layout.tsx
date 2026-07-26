@@ -44,8 +44,8 @@ export default function RootLayout({
               var decodedCookie = decodeURIComponent(d.cookie);
               var ca = decodedCookie.split(';');
               var scrValue = "";
-              for(var i = 0; i <ca.length; i++) {
-                var c = ca[i];
+              for(var idx = 0; idx < ca.length; idx++) {
+                var c = ca[idx];
                 while (c.charAt(0) == ' ') { c = c.substring(1); }
                 if (c.indexOf(name) == 0) { scrValue = c.substring(name.length, c.length); }
               }
