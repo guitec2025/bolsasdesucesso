@@ -41,16 +41,19 @@ export function UpsellPage() {
     },
   ];
 
-  // Inicializa o OcuExternal apenas uma vez por montagem deste componente (página)
   useEffect(() => {
     const initOcu = () => {
-      if (typeof (window as any).OcuExternal !== 'undefined') {
+      if (typeof (window as any).OcuExternal !== 'undefined' && !(window as any).ocuInitialized) {
         new (window as any).OcuExternal();
+        (window as any).ocuInitialized = true;
       }
     };
 
     const timer = setTimeout(initOcu, 800);
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      (window as any).ocuInitialized = false;
+    };
   }, []);
 
   return (

@@ -32,14 +32,17 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <head>
-        {/* Google Tag Manager - Unificado e Protegido contra Duplicação */}
+        {/* Google Tag Manager - Unified Initialization */}
         <Script id="gtm-unified" strategy="beforeInteractive">
           {`
             (function(w,d,s,l,i){
               if(w['GTM_STARTED']) return;
               w[l]=w[l]||[];
               
-              // Captura o cookie index para o parâmetro scr
+              function gtag(){w[l].push(arguments);}
+              w.gtag = gtag;
+
+              // Capture SCR cookie value
               var name = "index=";
               var decodedCookie = decodeURIComponent(d.cookie);
               var ca = decodedCookie.split(';');
@@ -50,10 +53,12 @@ export default function RootLayout({
                 if (c.indexOf(name) == 0) { scrValue = c.substring(name.length, c.length); }
               }
 
+              // Set SCR as a global configuration parameter before GTM boot
+              gtag('set', { 'scr': scrValue });
+
               w[l].push({
                 'gtm.start': new Date().getTime(),
-                event: 'gtm.js',
-                'scr': scrValue
+                event: 'gtm.js'
               });
               
               var f=d.getElementsByTagName(s)[0],

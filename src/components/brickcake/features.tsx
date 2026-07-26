@@ -44,17 +44,20 @@ export function BrickcakeFeatures() {
     },
   ];
 
-  // Inicializa o OcuExternal apenas uma vez por montagem deste componente (página)
   useEffect(() => {
     const initOcu = () => {
-      if (typeof (window as any).OcuExternal !== 'undefined') {
+      // Prevents multiple initializations on the same page view
+      if (typeof (window as any).OcuExternal !== 'undefined' && !(window as any).ocuInitialized) {
         new (window as any).OcuExternal();
+        (window as any).ocuInitialized = true;
       }
     };
 
-    // Pequeno atraso para garantir que o script carregado pelo next/script esteja disponível
     const timer = setTimeout(initOcu, 800);
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      (window as any).ocuInitialized = false; // Reset on unmount to allow re-init on funnel navigation
+    };
   }, []);
   
   return (
