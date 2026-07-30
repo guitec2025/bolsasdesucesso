@@ -15,7 +15,7 @@ const CountdownUnit = ({ value, label }: { value: number; label: string }) => (
 
 export function CountdownHeader() {
   const [isMounted, setIsMounted] = useState(false);
-  const targetDate = useMemo(() => new Date(2026, 6, 30, 23, 59, 59), []);
+  const targetDate = useMemo(() => new Date(2026, 6, 31, 23, 59, 59), []);
   
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -62,7 +62,7 @@ export function CountdownHeader() {
     <div className="bg-background py-3 border-b border-border/10">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 px-4">
         <p className="text-foreground/90 font-body text-base sm:text-lg text-center md:text-left">
-          Inscrições abertas até dia <b>30 de julho</b>
+          Inscrições abertas até dia <b>31 de julho</b>
         </p>
         <div className="flex items-center gap-2 sm:gap-3">
           <CountdownUnit value={timeLeft.days} label="Dias" />
