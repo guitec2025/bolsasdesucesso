@@ -27,8 +27,8 @@ export function CountdownHeaderES() {
     const calculateTimeLeft = () => {
       const now = new Date();
       // Mês 7 no JavaScript é Agosto (0-indexed: 0=Jan, 7=Ago)
-      // Definido para 7 de Agosto de 2026
-      const targetDate = new Date(2026, 7, 7, 23, 59, 59);
+      // Definido para 10 de Agosto de 2026
+      const targetDate = new Date(2026, 7, 10, 23, 59, 59);
       const difference = targetDate.getTime() - now.getTime();
 
       if (difference > 0) {
@@ -63,7 +63,7 @@ export function CountdownHeaderES() {
     <div className="bg-background py-3 border-b border-border/10">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 px-4">
         <p className="text-foreground/90 font-body text-base sm:text-lg text-center md:text-left">
-          Inscripciones abiertas hasta el <b>7 de agosto</b>
+          Inscripciones abiertas hasta el <b>10 de agosto</b>
         </p>
         <div className="flex items-center gap-2 sm:gap-3">
           <CountdownUnit value={timeLeft.days} label="Días" />
