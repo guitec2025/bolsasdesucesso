@@ -3,9 +3,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { CheckCircle, Sparkles, Gift, Pause, Volume2, Download } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
-import Link from 'next/link';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import Image from 'next/image';
 
@@ -261,18 +259,24 @@ export function ThankYou() {
                 <div className="w-full text-center mb-2">
                     <p className="text-red-600 font-bold text-lg animate-pulse">ESTA OFERTA SUMIRÁ EM BREVE!</p>
                 </div>
-                <Button asChild size="lg" className="h-16 w-full text-lg sm:text-2xl font-black bg-[#16A34A] hover:bg-[#15803D] text-white shadow-xl rounded-xl transition-all active:scale-[0.98]">
-                    <Link href="https://checkout.bolsasdesucesso.com/VCCL1O8SCV0P">
-                        <Sparkles className="w-6 h-6 mr-2" />
-                        SIM! QUERO MEU PRESENTE MISTERIOSO
-                    </Link>
-                </Button>
+                <a
+                  id="btn-obrigado-presente"
+                  href="https://checkout.bolsasdesucesso.com/VCCL1O8SCV0P"
+                  className="relative z-[2147483647] flex h-16 w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#16A34A] px-4 text-center text-lg font-black text-white shadow-xl transition-all hover:bg-[#15803D] active:scale-[0.98] sm:text-2xl"
+                  aria-label="Comprar o presente misterioso"
+                >
+                  <Sparkles className="h-6 w-6 shrink-0 pointer-events-none" />
+                  <span>SIM! QUERO MEU PRESENTE MISTERIOSO</span>
+                </a>
                 
-                <Button asChild variant="destructive" size="sm" className="bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg h-10 px-6 transition-all active:scale-[0.98]">
-                  <Link href="https://acessobolsaslucrativas.netlify.app/">
+                <a
+                  id="btn-obrigado-continuar"
+                  href="https://acessobolsaslucrativas.netlify.app/"
+                  className="relative z-[2147483647] flex min-h-10 cursor-pointer items-center justify-center rounded-lg bg-red-600 px-6 py-2 text-center text-sm font-semibold text-white transition-all hover:bg-red-700 active:scale-[0.98]"
+                  aria-label="Continuar apenas com o material comprado"
+                >
                     Prefiro continuar apenas com o material que já comprei
-                  </Link>
-                </Button>
+                </a>
               </motion.div>
             )}
           </AnimatePresence>
