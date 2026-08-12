@@ -2,6 +2,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { CheckCircle, Sparkles, Gift, Pause, Volume2, Download } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -20,6 +21,7 @@ export function ThankYou() {
   const [showOfferImage, setShowOfferImage] = useState(false);
   const [showButtons, setShowButtons] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState(0);
+  const [mounted, setMounted] = useState(false);
   
   const audioRef = useRef<HTMLAudioElement>(null);
   const audioStartedRef = useRef(false);
@@ -31,6 +33,10 @@ export function ThankYou() {
       setTimeout(() => setMessagesVisible(3), 4000),
     ];
     return () => timers.forEach(clearTimeout);
+  }, []);
+
+  useEffect(() => {
+    setMounted(true);
   }, []);
 
   const togglePlay = () => {
@@ -72,8 +78,45 @@ export function ThankYou() {
     window.location.assign(url);
   };
 
+  const ctaButtons = (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="fixed inset-x-0 bottom-0 z-[2147483647] bg-[#f9fafb]/95 px-4 pb-4 pt-3 shadow-[0_-12px_30px_rgba(15,23,42,0.10)] backdrop-blur-sm pointer-events-auto"
+      style={{ pointerEvents: 'auto' }}
+    >
+      <div className="mx-auto flex max-w-2xl flex-col items-center gap-3">
+        <p className="text-center text-base font-bold text-red-600 animate-pulse">
+          ESTA OFERTA SUMIRÁ EM BREVE!
+        </p>
+        <button
+          id="btn-obrigado-presente"
+          type="button"
+          onClick={() => navigateTo(PRESENT_CHECKOUT_URL)}
+          className="flex h-14 w-full cursor-pointer touch-manipulation items-center justify-center gap-2 rounded-xl bg-[#16A34A] px-4 text-center text-base font-black text-white shadow-xl transition-all hover:bg-[#15803D] active:scale-[0.98] sm:h-16 sm:text-2xl"
+          style={{ cursor: 'pointer', pointerEvents: 'auto' }}
+          aria-label="Comprar o presente misterioso"
+        >
+          <Sparkles className="h-5 w-5 shrink-0 pointer-events-none sm:h-6 sm:w-6" />
+          <span>SIM! QUERO MEU PRESENTE MISTERIOSO</span>
+        </button>
+        <button
+          id="btn-obrigado-continuar"
+          type="button"
+          onClick={() => navigateTo(ACCESS_MATERIAL_URL)}
+          className="flex min-h-10 cursor-pointer touch-manipulation items-center justify-center rounded-lg bg-red-600 px-6 py-2 text-center text-sm font-semibold text-white transition-all hover:bg-red-700 active:scale-[0.98]"
+          style={{ cursor: 'pointer', pointerEvents: 'auto' }}
+          aria-label="Continuar apenas com o material comprado"
+        >
+          Prefiro continuar apenas com o material que já comprei
+        </button>
+      </div>
+    </motion.div>
+  );
+
   return (
-    <section className="py-8 sm:py-16 bg-[#f9fafb] min-h-screen font-body">
+    <>
+    <section className="py-8 pb-48 sm:py-16 sm:pb-52 bg-[#f9fafb] min-h-screen font-body">
       <div className="container mx-auto px-4 max-w-2xl">
         
         {/* Bloco de Confirmação */}
@@ -260,7 +303,7 @@ export function ThankYou() {
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="relative z-[2147483647] flex flex-col items-center gap-4 mt-12 pointer-events-auto"
+                className="hidden"
               >
                 <div className="w-full text-center mb-2">
                     <p className="text-red-600 font-bold text-lg animate-pulse">ESTA OFERTA SUMIRÁ EM BREVE!</p>
@@ -292,5 +335,7 @@ export function ThankYou() {
         </div>
       </div>
     </section>
+    {mounted && showButtons ? createPortal(ctaButtons, document.body) : null}
+    </>
   );
 }
