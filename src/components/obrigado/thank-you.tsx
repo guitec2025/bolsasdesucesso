@@ -12,7 +12,7 @@ const MENTOR_AVATAR = "https://i.ibb.co/fG1p4m5s/foto-perfil-novo-tati.webp";
 const AUDIO_URL = "https://files.catbox.moe/ef4ovv.MP3";
 const OFFER_IMAGE = "https://i.imgur.com/zZZZJPO.jpeg";
 const PRESENT_CHECKOUT_URL = "https://checkout.bolsasdesucesso.com/VCCL1O8SCV0P";
-const ACCESS_MATERIAL_URL = "https://acessobolsaslucrativas.netlify.app/";
+const ACCESS_MATERIAL_URL = "https://appsell-software.com/login_app/bolsas-de-sucesso";
 
 export function ThankYou() {
   const [messagesVisible, setMessagesVisible] = useState(0);
