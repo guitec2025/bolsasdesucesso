@@ -10,6 +10,8 @@ import Image from 'next/image';
 const MENTOR_AVATAR = "https://i.ibb.co/fG1p4m5s/foto-perfil-novo-tati.webp";
 const AUDIO_URL = "https://files.catbox.moe/ef4ovv.MP3";
 const OFFER_IMAGE = "https://i.imgur.com/zZZZJPO.jpeg";
+const PRESENT_CHECKOUT_URL = "https://checkout.bolsasdesucesso.com/VCCL1O8SCV0P";
+const ACCESS_MATERIAL_URL = "https://acessobolsaslucrativas.netlify.app/";
 
 export function ThankYou() {
   const [messagesVisible, setMessagesVisible] = useState(0);
@@ -64,6 +66,10 @@ export function ThankYou() {
       }
       setIsPlaying(!isPlaying);
     }
+  };
+
+  const navigateTo = (url: string) => {
+    window.location.assign(url);
   };
 
   return (
@@ -254,29 +260,31 @@ export function ThankYou() {
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="flex flex-col items-center gap-4 mt-12"
+                className="relative z-[2147483647] flex flex-col items-center gap-4 mt-12 pointer-events-auto"
               >
                 <div className="w-full text-center mb-2">
                     <p className="text-red-600 font-bold text-lg animate-pulse">ESTA OFERTA SUMIRÁ EM BREVE!</p>
                 </div>
-                <a
+                <button
                   id="btn-obrigado-presente"
-                  href="https://checkout.bolsasdesucesso.com/VCCL1O8SCV0P"
-                  className="relative z-[2147483647] flex h-16 w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#16A34A] px-4 text-center text-lg font-black text-white shadow-xl transition-all hover:bg-[#15803D] active:scale-[0.98] sm:text-2xl"
+                  type="button"
+                  onClick={() => navigateTo(PRESENT_CHECKOUT_URL)}
+                  className="relative z-[2147483647] flex h-16 w-full cursor-pointer touch-manipulation items-center justify-center gap-2 rounded-xl bg-[#16A34A] px-4 text-center text-lg font-black text-white shadow-xl transition-all hover:bg-[#15803D] active:scale-[0.98] sm:text-2xl pointer-events-auto"
                   aria-label="Comprar o presente misterioso"
                 >
                   <Sparkles className="h-6 w-6 shrink-0 pointer-events-none" />
                   <span>SIM! QUERO MEU PRESENTE MISTERIOSO</span>
-                </a>
+                </button>
                 
-                <a
+                <button
                   id="btn-obrigado-continuar"
-                  href="https://acessobolsaslucrativas.netlify.app/"
-                  className="relative z-[2147483647] flex min-h-10 cursor-pointer items-center justify-center rounded-lg bg-red-600 px-6 py-2 text-center text-sm font-semibold text-white transition-all hover:bg-red-700 active:scale-[0.98]"
+                  type="button"
+                  onClick={() => navigateTo(ACCESS_MATERIAL_URL)}
+                  className="relative z-[2147483647] flex min-h-10 cursor-pointer touch-manipulation items-center justify-center rounded-lg bg-red-600 px-6 py-2 text-center text-sm font-semibold text-white transition-all hover:bg-red-700 active:scale-[0.98] pointer-events-auto"
                   aria-label="Continuar apenas com o material comprado"
                 >
                     Prefiro continuar apenas com o material que já comprei
-                </a>
+                </button>
               </motion.div>
             )}
           </AnimatePresence>
